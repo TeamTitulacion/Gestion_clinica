@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $("#dataTables-example").DataTable({
+  $("#dataTableMedico").DataTable({
     responsive: true,
     language:{
     "processing": "Procesando...",
@@ -17,6 +17,46 @@ $(document).ready(function () {
         "last": "Último",
         "next": "Siguiente",
         "previous": "Anterior"
-    }}
+    }},
+    "ajax":{
+      "url":"./ajax/medico.ajax.php",
+      "method":"POST",
+      "data":{ver:"ver"},
+      "dataSrc":""
+     },
+
+     "columns":[
+       {"data":"id_medico"},
+       {"data":"med_nombre"},
+       {"data":"med_apellido"},
+       {"data":"cat_detalle"},
+       {"data":"per_detalle"},
+       {"data":"med_usuario"},
+       {"defaultContent":"<div class='text-center'><div class='btn-group'><button class='btn btn-primary btn-sm btnEditar'><i class='fa fa-edit'>edit</i></button><button class='btn btn-danger btn-sm btnBorrar'><i class='fa fa-exclamation-triangle'>delete</i></button></div></div>"}
+     ]
   });
+  $(document).on("click",".btnEditar",function() {
+    fila=$(this).closest("tr");
+    userid=parseInt(fila.find('td:eq(0)').text());
+    alert(userid);
+  })
+  $(document).on("click",".btnBorrar", function () {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+        )
+      }
+    })
+  })
 });

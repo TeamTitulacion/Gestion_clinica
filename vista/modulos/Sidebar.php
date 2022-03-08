@@ -34,10 +34,16 @@ else{
                     <a href="tables"><i class="fa fa-table fa-fw"></i> Tables</a>
                 </li>
                 <li>
-                    <a href="pacientesearch/"><i class="fa fa-users fa-fw"></i> Pacientes</a>
+                    <a href="medico" class="active"><i class="fa fa-heart fa-fw"></i>Medicos</a>
+                </li>
+                <li>
+                    <a href="pacientesearch"><i class="fa fa-users fa-fw"></i> Pacientes</a>
                 </li>
                 <li>
                     <a href="forms"><i class="fa fa-edit fa-fw"></i> Forms</a>
+                </li>
+                <li>
+                    <a href="formularios"><i class="fa fa-edit fa-fw"></i> Formulario</a>
                 </li>
                 <li>
                     <a><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>

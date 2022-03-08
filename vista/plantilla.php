@@ -15,6 +15,8 @@ session_start(["name" => "UIC"]);
     <link rel="stylesheet" type="text/css" href="<?php echo SERVERURL ?>/vista/css/sweetalert2.min.css">
     <script type="text/javascript" src="<?php echo SERVERURL ?>/vista/js/sweetalert2.all.min.js"></script>
     <script src="<?php echo SERVERURL ?>/vista/js/fullcalendar/es.js"></script>
+    <script src="<?php echo SERVERURL ?>/vista/js/jquery.min.js"></script>
+<script src="<?php echo SERVERURL ?>/vista/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/locales-all.min.js"></script>
     <link href="<?php echo SERVERURL ?>/vista/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo SERVERURL ?>/vista/css/metisMenu.min.css" rel="stylesheet">
