@@ -1,3 +1,4 @@
+<?php echo 'Recibi '.$_GET['userid'];?>
 <div id="page-wrapper">
     <div class="container-fluid">
         <div class="row">
