@@ -16,7 +16,7 @@ else{
                     <a href="citas" class="active"><i class="fa fa-calendar fa-fw"></i> Citas</a>
                 </li>
                 <li>
-                    <a href="dashboardad" class="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                    <a href="dashboard" class="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                 </li>
                 <li>
                     <a><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
