@@ -37,7 +37,7 @@ if ($vistas == "index" || $vistas == "") { ?>
   <script src="<?php echo SERVERURL ?>/vista/js/flot/jquery.flot.resize.js"></script>
   <script src="<?php echo SERVERURL ?>/vista/js/flot/jquery.flot.time.js"></script>
   <script src="<?php echo SERVERURL ?>/vista/js/flot/jquery.flot.tooltip.min.js"></script>
-  <script src="<?php echo SERVERURL ?>/vista/js/flot-data.js"></script>
+  <!--<script src="<?php echo SERVERURL ?>/vista/js/flot-data.js"></script> -->
   <script src="<?php echo SERVERURL ?>/vista/js/dataTables/jquery.dataTables.min.js"></script>
   <script src="<?php echo SERVERURL ?>/vista/js/dataTables/dataTables.bootstrap.min.js"></script>
 

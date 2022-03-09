@@ -99,23 +99,14 @@ $(document).ready(function () {
         datos1.push([new Date(item.fecha).getTime(),item.contador]);
           
       }
-    var container = $("#flot-line-chart-moving"); 
-    console.log(datos1);
-    var datos = [
-      [new Date('2013/02/28').getTime(), 0],
-        [new Date('2013/03/01').getTime(), 4],
-        [new Date('2013-03-05').getTime(), 2],
-    ];
-  
+      console.log(datos1);
+    var container = $("#flot-line-chart-moving");   
     series = [
       {
         data: datos1,
         lines: {
           show: true,
           fill: true,
-        },
-        points: {
-          show: true,
         },
         fillColor: "rgba(71, 172, 215,0.2)",
         color: "rgb(71, 172, 215)",

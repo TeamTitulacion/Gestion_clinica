@@ -34,8 +34,8 @@ class DashboardControlador extends DashboardModelo
     }
     public function Ctrvisitasgrafica()
     {
-        $fecha= date("y-m-d");
-        $interv= date("Y-m-d",strtotime($fecha."- 10 days"));
+        $fecha= date("y-m-d").' 23:59:59';
+        $interv= date("Y-m-d",strtotime($fecha."- 10 days")).' 00:00:00';
         $datos=["inicio"=>$interv,"final"=>$fecha];
         $Nvisitas = DashboardModelo::MdlVisitasgrafica($datos);
         $respuesta = $Nvisitas->fetchAll(PDO::FETCH_ASSOC);
