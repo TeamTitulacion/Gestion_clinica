@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $("#dataTableMedico").DataTable({
+  Datatables = $("#dataTableMedico").DataTable({
     responsive: true,
     language: {
       processing: "Procesando...",
@@ -42,26 +42,57 @@ $(document).ready(function () {
   $(document).on("click", ".btnEditar", function () {
     fila = $(this).closest("tr");
     userid = parseInt(fila.find("td:eq(0)").text());
-    const crypto = require("crypto");
-    const fs = require("fs");
-    const id = fs.readFileSync(userid);
-    const hash = crypto.createHash("sha256");
-    const resul = hash.update(id).digest("hex");
+    var crypid = $.ajax({
+      type: "POST",
+      url: "./ajax/medico.ajax.php",
+      data: {
+        enc: userid,
+      },
+      dataType: "json",
+      context: document.body,
+      global: false,
+      async: false,
+      success: function (data) {
+        return data;
+      },
+    }).responseText;
 
-    window.location.href = "Edmedico/" + resul;
+    window.location.href = "Edmedico/" + crypid;
   });
   $(document).on("click", ".btnBorrar", function () {
     Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
+      title: "Esta Seguro?!",
+      text: "Este cambio es irreversible",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
+      confirmButtonText: "Si, Borralooo!",
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire("Deleted!", "Your file has been deleted.", "success");
+        fila = $(this).closest("tr");
+        userid = parseInt(fila.find("td:eq(0)").text());
+        $.ajax({
+          url: "./ajax/medico.ajax.php",
+          type: "POST",
+          data: {
+            id: userid,
+            estado: "1",
+          },
+          datatype: "json",
+          success: function (data) {
+            var msg = data;
+            if (msg == 1) {
+              Swal.fire(
+                "Eliminado!",
+                "El usuario fue eliminado",
+                "success"
+              ).then(function () {
+                Datatables.ajax.reload(null, false);
+              });
+            }
+          },
+        });
       }
     });
   });

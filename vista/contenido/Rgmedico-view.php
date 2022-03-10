@@ -26,6 +26,7 @@ $per = $meids->CtrPerfil();
                         <div class="row">
                             <div class="col-lg-12">
                                 <form role="form" autocomplete="off" id="frmRegistrar">
+                                    
                                     <div class="col-lg-6">
                                         <div class="form-group" id="claseError">
                                             <label>Nombre</label>
@@ -38,8 +39,8 @@ $per = $meids->CtrPerfil();
                                         <div class="form-group" id="claseError">
                                             <label>Sexo</label>
                                             <select class="form-control" id="sexo">
-                                                <option>Masculino</option>
-                                                <option>Femenino</option>
+                                            <option value="1">Masculino</option>
+                                                    <option value="2">Femenino</option>
                                             </select>
                                         </div>
                                         <div class="form-group" id="claseError">
@@ -62,7 +63,7 @@ $per = $meids->CtrPerfil();
                                                 <img src="" alt="" id="img-foto" style="width: 50%; height:50% ;">
                                             </div>
                                             <p class="form-control-static">Ingrese una imagen de perfil (Formatos: png o jpg)</p>
-                                            <input type="file" accept="image/png, .jpg, .jpeg" onchange="vista(event)" id="img">
+                                            <input type="file" accept="image/png, .jpg, .jpeg" onchange="vista(event)" id="img" name="img">
                                         </div>
                                         <div class="form-group" id="claseError">
                                             <label>Categoria</label>
@@ -82,11 +83,11 @@ $per = $meids->CtrPerfil();
                                         </div>
                                         <div class="form-group" id="claseError">
                                             <label>Usuario</label>
-                                            <input class="form-control" type="text" placeholder="Ingrese Usuario" id="user">
+                                            <input class="form-control" type="text" placeholder="Ingrese Usuario" id="user" autocomplete="off">
                                         </div>
                                         <div class="form-group" id="claseError">
                                             <label>Contraseña</label>
-                                            <input class="form-control" type="password" placeholder="Ingrese contraseña" id="pass">
+                                            <input class="form-control" type="password" placeholder="Ingrese contraseña" id="pass" autocomplete="off">
                                         </div>
                                     </div>
                                     <div class="col-md-12 text-center">
