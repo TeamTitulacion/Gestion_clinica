@@ -1,6 +1,8 @@
-
-
-
+<?php 
+require_once './controlador/visitas.controlador.php';
+$ip= new VisitasControlador();
+$reg = $ip->CtrVisitas();
+?>
 <!-- Start header -->
 <header class="top-header">
 	<nav class="navbar header-nav navbar-expand-lg">
