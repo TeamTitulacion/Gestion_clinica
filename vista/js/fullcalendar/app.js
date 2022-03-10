@@ -29,6 +29,14 @@ document.addEventListener("DOMContentLoaded", function () {
       right: "dayGridMonth,timeGridWeek listWeek",
     },
     locale: "es",
+    buttonText: {
+      
+      today: 'Hoy',
+      month: 'Mes',
+      week: 'Semana',
+      day: 'Día',
+      list: 'Agenda',
+    },
     events: jqxhr,
     editable: true,
     dateClick: function (info) {
