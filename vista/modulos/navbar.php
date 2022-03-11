@@ -24,12 +24,13 @@ else{
                     <i class="fa fa-user fa-fw"></i> <?php echo $_SESSION['usuario'] ?> <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu dropdown-user">
-                    <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                    <input class="hidden" value="<?php echo $_SESSION['id'] ?>" type="text" name="id" id="id">
+                    <li><a id="pefil"><i class="fa fa-user fa-fw"></i> User Profile</a>
                     </li>
                     <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                     </li>
                     <li class="divider"></li>
-                    <li><a href="salir"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                    <li><a href="<?php echo SERVERURL?>/salir"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                     </li>
                 </ul>
             </li>

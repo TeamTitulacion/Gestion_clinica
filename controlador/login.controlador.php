@@ -18,6 +18,7 @@ class LoginControlador extends LoginModelo
 			session_start(["name" => "UIC"]);
 			$_SESSION['usuario'] = $row['med_usuario'];
 			$_SESSION['password'] = $row['med_password'];
+			$_SESSION['id']=$row['id_medico'];
 
 
 			$url = SERVERURL . "/citas";
