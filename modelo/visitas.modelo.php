@@ -23,7 +23,7 @@ class VisitasModelo extends mainModel
         $sql->bindParam(":ip", $ip, PDO::PARAM_STR);
         $sql->bindParam(":fecha", $fecha, PDO::PARAM_STR);
         $sql->execute();
-        $sql->close();
+       // $sql->close();
         $sql= null;
     }
     
