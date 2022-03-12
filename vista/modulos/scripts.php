@@ -10,7 +10,6 @@
 <?php
 if ($vistas == "index" || $vistas == "") { ?>
   <script src="<?php echo SERVERURL ?>/vista/js/main.js"></script>
-  <script src="<?php echo SERVERURL ?>/vista/js/smoothscroll.js"></script>
   <script src="<?php echo SERVERURL ?>/vista/js/TweenMax.min.js"></script>
   <script src="<?php echo SERVERURL ?>/vista/js/owl.carousel.min.js"></script>
   <script src="<?php echo SERVERURL ?>/vista/js/form-validator.min.js"></script>
