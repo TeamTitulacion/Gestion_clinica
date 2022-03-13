@@ -4,7 +4,7 @@ require_once "./controlador/login.controlador.php";
 $cerrar = new LoginControlador();
 
 if (!isset($_SESSION['usuario']) || !isset($_SESSION['password'])) {
-    
+    session_destroy();
 } 
 else{    
     $sesion = $_SESSION['usuario'];
@@ -25,12 +25,12 @@ else{
                 </a>
                 <ul class="dropdown-menu dropdown-user">
                     <input class="hidden" value="<?php echo $_SESSION['id'] ?>" type="text" name="id" id="id">
-                    <li><a id="pefil"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                    <li><a id="pefil"><i class="fa fa-user fa-fw"></i> Perfi</a>
                     </li>
                     <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                     </li>
                     <li class="divider"></li>
-                    <li><a href="<?php echo SERVERURL?>/salir"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                    <li><a href="<?php echo SERVERURL?>/salir"><i class="fa fa-sign-out fa-fw"></i> Cerrar Sesion</a>
                     </li>
                 </ul>
             </li>
