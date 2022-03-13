@@ -28,8 +28,7 @@ if ($vistas == "index" || $vistas == "") { ?>
   <script src="<?php echo SERVERURL ?>/vista/js/startmin.js"></script>
   <script src="<?php echo SERVERURL ?>/vista/js/tables.js"></script>
   <script src="<?php echo SERVERURL ?>/vista/js/add.js"></script>
-  <script src="<?php echo SERVERURL ?>/vista/js/fullcalendar/app.js"></script>
-  <script src="<?php echo SERVERURL ?>/vista/js/fullcalendar/main.min.js"></script>
+  
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="<?php echo SERVERURL ?>/vista/js/flot/excanvas.min.js"></script>
   <script src="<?php echo SERVERURL ?>/vista/js/flot/jquery.flot.js"></script>

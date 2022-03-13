@@ -1,0 +1,60 @@
+#regiration_form fieldset:not(:first-of-type) {
+    display: none;
+  }/*progressbar*/
+#regiration_form{
+	margin: 50px auto;
+	text-align: center;
+	position: relative;
+}
+#progressbar {
+	/*CSS counters to number the steps*/
+	counter-reset: step;
+}
+#progressbar li {
+	list-style-type: none;
+	color: black;
+	text-transform: uppercase;
+	font-size: 9px;
+	width: 19.5%;
+	float: left;
+	position: relative;
+	font-size: 80%;
+}
+#progressbar li:before {
+	content: counter(step);
+	font-weight: bold;
+	padding-left: 3.5%;
+	counter-increment: step;
+	width: 20px;
+	line-height: 20px;
+	display: block;
+	font-size: 10px;
+	color: rgb(255, 255, 255);
+	background: grey;
+	border-radius: 10px;
+	margin: 0 auto 5px auto;
+}
+/*progressbar connectors*/
+#progressbar li:after {
+	content: '';
+	width: 100%;
+	height: 2px;
+	background: brown;
+	position: absolute;
+	left: -50%;
+	top: 9px;
+	z-index: -1; /*put it behind the numbers*/
+}
+#progressbar li:first-child:after {
+	/*connector not needed before the first step*/
+	content: none; 
+}
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active:before,  #progressbar li.active:after{
+	background: #27AE60;
+	color: white;
+}
+
+
+

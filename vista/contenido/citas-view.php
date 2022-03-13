@@ -74,3 +74,6 @@ if (!isset($_SESSION['usuario']) || !isset($_SESSION['password'])) {
 
 
 </div>
+<script src="<?php echo SERVERURL ?>/vista/js/fullcalendar/app.js"></script>
+
+<script src="<?php echo SERVERURL ?>/vista/js/fullcalendar/main.min.js"></script>
