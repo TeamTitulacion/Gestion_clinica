@@ -528,8 +528,6 @@ if (!isset($_SESSION['usuario']) || !isset($_SESSION['password'])) {
                                     <input type="button" name="next" class="next btn btn-info" value="Siguiente" />
                                 </fieldset>
                                 <fieldset>
-<<<<<<< HEAD
-
                                     <div class="col-lg-3 form-group">
                                         <div class="form-group">
                                             <h2>Tratamiento</h2>
@@ -539,31 +537,28 @@ if (!isset($_SESSION['usuario']) || !isset($_SESSION['password'])) {
                                                                 optionsCaption: 'Seleccione un tratamiento...'">
                                             </select>
 
-                                            
 
-                                                <ul data-bind="foreach: tratamientosAplicados">
-                                                    <li>
-                                                        P<span data-bind="text: diente.id"></span><span data-bind="text: cara"></span>
-                                                        -
-                                                        <span data-bind="text: tratamiento.nombre"></span>
-                                                        |
-                                                        <a href="#" data-bind="click: $parent.quitarTratamiento">Eliminar</a>
-                                                    </li>
-                                                </ul>
-                                            
+
+                                            <ul data-bind="foreach: tratamientosAplicados">
+                                                <li>
+                                                    P<span data-bind="text: diente.id"></span><span data-bind="text: cara"></span>
+                                                    -
+                                                    <span data-bind="text: tratamiento.nombre"></span>
+                                                    |
+                                                    <a href="#" data-bind="click: $parent.quitarTratamiento">Eliminar</a>
+                                                </li>
+                                            </ul>
+
                                         </div>
-=======
-                                    <div class="col-lg-12">
-                                        
->>>>>>> aed2b2006e6ae9db1a6e52053bfee5d1f8a2c332
                                     </div>
-                                    <div class="col-lg-9 form-group">
-                                        <h2>Odontograma</h2>
-                                        <div id="odontograma"></div>
-                                    </div>
+
+                                        <div class="col-lg-9 form-group">
+                                            <h2>Odontograma</h2>
+                                            <div id="odontograma"></div>
+                                        </div>
                                         <input type="button" name="previous" class="previous btn btn-default" value="Previo" />
-                                        
-                                   
+
+
                                 </fieldset>
                             </form>
                         </div>
