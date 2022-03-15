@@ -526,25 +526,8 @@ if (!isset($_SESSION['usuario']) || !isset($_SESSION['password'])) {
                                     <input type="button" name="next" class="next btn btn-info" value="Siguiente" />
                                 </fieldset>
                                 <fieldset>
-                                    <div class="col-lg-9">
-                                        <center>
-                                            <label for="">Antecedentes Medicos Familiares</label>
-
-                                            <div class="field_wrapper">
-                                                <div class="form-group col-lg-5">
-                                                    <label>Tipo de Antecedente </label>
-                                                    <input class="form-control" type="text" name="field_name[]" value="" />
-                                                </div>
-                                                <div class="col-lg-5">
-                                                    <label>Observaciones </label>
-                                                    <input class="form-control" type="text" name="field_name[]" value="" />
-                                                </div>
-                                                <div class="col-lg-1">
-                                                    <a href="javascript:void(0);" class="add_button " title="Add field"><i class="fa fa-plus fa-2x"></i></a>
-                                                </div>
-                                                <div class="col-lg-10"></div>
-                                            </div>
-                                        </center>
+                                    <div class="col-lg-12">
+                                        
                                     </div>
                                     <input type="button" name="previous" class="previous btn btn-default" value="Previo" />
                                 </fieldset>
