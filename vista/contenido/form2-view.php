@@ -7,10 +7,9 @@ if (!isset($_SESSION['usuario']) || !isset($_SESSION['password'])) {
     $cerrar->CtrCerrarSession();
 }
 ?>
+<script src="vista/js/modernizr-2.0.6.min.js"></script>
 <link rel="stylesheet" href="vista/css/stepform.css">
-<style>
 
-</style>
 <div id="wrapper">
     <div id="page-wrapper">
         <div class="container-fluid">
@@ -235,12 +234,13 @@ if (!isset($_SESSION['usuario']) || !isset($_SESSION['password'])) {
                                         </div>
                                     </div>
 
-                                    <div class="col-lg-12"> <h2>Antecedentes medicos y odontologicos</h2>
+                                    <div class="col-lg-12">
+                                        <h2>Antecedentes medicos y odontologicos</h2>
                                     </div>
 
                                     <div class="col-lg-6">
                                         <table class="table table-striped">
-                                           
+
                                             <thead>
                                                 <tr>
                                                     <th>Tipos de antecedentes</th>
@@ -348,18 +348,18 @@ if (!isset($_SESSION['usuario']) || !isset($_SESSION['password'])) {
                                         </table>
                                     </div>
                                     <div class="col-lg-6"><br></div>
-                                    
+
                                     <div class="col-lg-12">
                                         <div class="form-group">
                                             <textarea class="form-control" rows="3" placeholder="Observaciones"></textarea>
                                         </div>
                                     </div>
-                                    
+
                                     <input type="button" name="previous" class="previous btn btn-default" value="Previo" />
                                     <input type="button" name="next" class="next btn btn-info" value="Siguiente" />
-                                    
 
-                                   
+
+
 
 
 
@@ -367,29 +367,31 @@ if (!isset($_SESSION['usuario']) || !isset($_SESSION['password'])) {
 
                                 <fieldset>
                                     <div class="col-lg-12">
-                                        
-                                            <label for="">Antecedentes Medicos Familiares</label>
 
-                                            <div class="field_wrapper">
-                                                <div class="form-group col-lg-5">
-                                                    <label>Tipo de Antecedente </label>
-                                                    <input class="form-control" type="text" name="field_name[]" value="" />
-                                                </div>
-                                                <div class="col-lg-5">
-                                                    <label>Observaciones </label>
-                                                    <input class="form-control" type="text" name="field_name[]" value="" />
-                                                </div>
-                                                <div class="col-lg-1">
-                                                    <a href="javascript:void(0);" class="add_button " title="Add field"><i class="fa fa-plus fa-2x"></i></a>
-                                                </div>
-                                                <div class="col-lg-10"></div>
+                                        <label for="">Antecedentes Medicos Familiares</label>
+
+                                        <div class="field_wrapper">
+                                            <div class="form-group col-lg-5">
+                                                <label>Tipo de Antecedente </label>
+                                                <input class="form-control" type="text" name="field_name[]" value="" />
                                             </div>
-                                        
+                                            <div class="col-lg-5">
+                                                <label>Observaciones </label>
+                                                <input class="form-control" type="text" name="field_name[]" value="" />
+                                            </div>
+                                            <div class="col-lg-1">
+                                                <a href="javascript:void(0);" class="add_button " title="Add field"><i class="fa fa-plus fa-2x"></i></a>
+                                            </div>
+                                            <div class="col-lg-10"></div>
+                                        </div>
+
                                     </div>
-                                    <div class="col-lg-12"> <h2>Examen Estomatologico</h2></div>
+                                    <div class="col-lg-12">
+                                        <h2>Examen Estomatologico</h2>
+                                    </div>
                                     <div class="col-lg-6">
                                         <table class="table table-striped">
-                                           
+
                                             <thead>
                                                 <tr>
                                                     <th>Tejidos Blandos</th>
@@ -470,7 +472,7 @@ if (!isset($_SESSION['usuario']) || !isset($_SESSION['password'])) {
                                         <table class="table table-striped">
                                             <thead>
                                                 <tr>
-                                                <th>ATM-Oclusion</th>
+                                                    <th>ATM-Oclusion</th>
                                                     <th>Normal</th>
                                                     <th>Anormal</th>
                                                 </tr>
@@ -515,38 +517,48 @@ if (!isset($_SESSION['usuario']) || !isset($_SESSION['password'])) {
                                         </table>
                                     </div>
                                     <div class="col-lg-6"><br><br><br><br><br><br><br><br><br></div>
-                                    
+
                                     <div class="col-lg-12">
                                         <div class="form-group">
                                             <textarea class="form-control" rows="3" placeholder="Observaciones"></textarea>
                                         </div>
                                     </div>
-                                    
+
                                     <input type="button" name="previous" class="previous btn btn-default" value="Previo" />
                                     <input type="button" name="next" class="next btn btn-info" value="Siguiente" />
                                 </fieldset>
                                 <fieldset>
-                                    <div class="col-lg-9">
-                                        <center>
-                                            <label for="">Antecedentes Medicos Familiares</label>
 
-                                            <div class="field_wrapper">
-                                                <div class="form-group col-lg-5">
-                                                    <label>Tipo de Antecedente </label>
-                                                    <input class="form-control" type="text" name="field_name[]" value="" />
-                                                </div>
-                                                <div class="col-lg-5">
-                                                    <label>Observaciones </label>
-                                                    <input class="form-control" type="text" name="field_name[]" value="" />
-                                                </div>
-                                                <div class="col-lg-1">
-                                                    <a href="javascript:void(0);" class="add_button " title="Add field"><i class="fa fa-plus fa-2x"></i></a>
-                                                </div>
-                                                <div class="col-lg-10"></div>
-                                            </div>
-                                        </center>
+                                    <div class="col-lg-3 form-group">
+                                        <div class="form-group">
+                                            <h2>Tratamiento</h2>
+                                            <select class="form-control" data-bind=" options: tratamientosPosibles, 
+                                                                value: tratamientoSeleccionado, 
+                                                                optionsText: function(item){ return item.nombre; },
+                                                                optionsCaption: 'Seleccione un tratamiento...'">
+                                            </select>
+
+                                            
+
+                                                <ul data-bind="foreach: tratamientosAplicados">
+                                                    <li>
+                                                        P<span data-bind="text: diente.id"></span><span data-bind="text: cara"></span>
+                                                        -
+                                                        <span data-bind="text: tratamiento.nombre"></span>
+                                                        |
+                                                        <a href="#" data-bind="click: $parent.quitarTratamiento">Eliminar</a>
+                                                    </li>
+                                                </ul>
+                                            
+                                        </div>
                                     </div>
-                                    <input type="button" name="previous" class="previous btn btn-default" value="Previo" />
+                                    <div class="col-lg-9 form-group">
+                                        <h2>Odontograma</h2>
+                                        <div id="odontograma"></div>
+                                    </div>
+                                        <input type="button" name="previous" class="previous btn btn-default" value="Previo" />
+                                        
+                                   
                                 </fieldset>
                             </form>
                         </div>
@@ -558,3 +570,6 @@ if (!isset($_SESSION['usuario']) || !isset($_SESSION['password'])) {
     </div>
 </div>
 <script src="vista/js/stepform.js"></script>
+<script src="vista/js/jquery.svg.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/2.2.1/knockout-min.js"></script>
+<script src="vista/js/odontograma.js"></script>
