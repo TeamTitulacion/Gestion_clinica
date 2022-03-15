@@ -1,75 +1,76 @@
-<?php 
+<?php
 require_once "./controlador/login.controlador.php";
 
 $cerrar = new LoginControlador();
 
 if (!isset($_SESSION['usuario']) || !isset($_SESSION['password'])) {
-  
-} 
-else{
+} else {
 ?>
-<div id="wrapper">
-    <div class="navbar-default sidebar" role="navigation">
-        <div class="sidebar-nav navbar-collapse">
-            <ul class="nav" id="side-menu">
-                <li>
-                    <a href="<?php echo SERVERURL?>/citas" class="active"><i class="fa fa-calendar fa-fw"></i> Citas</a>
-                </li>
-                <li>
-                    <a href="<?php echo SERVERURL?>/dashboard" class="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
-                </li>
-                <li>
-                    <a><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
+    <div id="wrapper">
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav navbar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li>
+                        <a href="<?php echo SERVERURL ?>/citas" class="active"><i class="fa fa-calendar fa-fw"></i> Citas</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo SERVERURL ?>/dashboard" class="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo SERVERURL ?>/form2" class="active"><i class="fa fa-users"></i> Pacientes</a>
+                    </li>
+                    <!--<li>
+                    <a href="<?php echo SERVERURL ?>/form2" class="active"><i class="fa fa-users"></i>Pacientes</a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="<?php echo SERVERURL?>/flot">Flot Charts</a>
+                            <a href="<?php echo SERVERURL ?>/flot" class="hidenn">Flot Charts</a>
                         </li>
                         <li>
-                            <a href="<?php echo SERVERURL?>/form2">form2</a>
+                            <a href="<?php echo SERVERURL ?>/form2" class="hidenn">form2</a>
                         </li>
                     </ul>
-                    <!-- /.nav-second-level -->
+                    
+                </li>-->
+                    <li>
+                        <a href="<?php echo SERVERURL ?>/tables"><i class="fa fa-table fa-fw"></i> Pacientes</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo SERVERURL ?>/medico" class="active"><i class="fa fa-heart fa-fw"></i>Medicos</a>
+                    </li>
+                    <!--<li>
+                    <a href="<?php echo SERVERURL ?>/pacientesearch"><i class="fa fa-users fa-fw"></i> Pacientes</a>
                 </li>
                 <li>
-                    <a href="<?php echo SERVERURL?>/tables"><i class="fa fa-table fa-fw"></i> Tables</a>
+                    <a href="<?php echo SERVERURL ?>/forms"><i class="fa fa-edit fa-fw"></i> Forms</a>
                 </li>
                 <li>
-                    <a href="<?php echo SERVERURL?>/medico" class="active"><i class="fa fa-heart fa-fw"></i>Medicos</a>
-                </li>
-                <li>
-                    <a href="<?php echo SERVERURL?>/pacientesearch"><i class="fa fa-users fa-fw"></i> Pacientes</a>
-                </li>
-                <li>
-                    <a href="<?php echo SERVERURL?>/forms"><i class="fa fa-edit fa-fw"></i> Forms</a>
-                </li>
-                <li>
-                    <a href="<?php echo SERVERURL?>/formularios"><i class="fa fa-edit fa-fw"></i> Formulario</a>
+                    <a href="<?php echo SERVERURL ?>/formularios"><i class="fa fa-edit fa-fw"></i> Formulario</a>
                 </li>
                 <li>
                     <a><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="<?php echo SERVERURL?>/panelswells">Panels and Wells</a>
+                            <a href="<?php echo SERVERURL ?>/panelswells">Panels and Wells</a>
                         </li>
                         <li>
-                            <a href="<?php echo SERVERURL?>/buttons">Buttons</a>
+                            <a href="<?php echo SERVERURL ?>/buttons">Buttons</a>
                         </li>
                         <li>
-                            <a href="<?php echo SERVERURL?>/notifications">Notifications</a>
+                            <a href="<?php echo SERVERURL ?>/notifications">Notifications</a>
                         </li>
                         <li>
-                            <a href="<?php echo SERVERURL?>/typography">Typography</a>
+                            <a href="<?php echo SERVERURL ?>/typography">Typography</a>
                         </li>
                         <li>
-                            <a href="<?php echo SERVERURL?>/icons"> Icons</a>
+                            <a href="<?php echo SERVERURL ?>/icons"> Icons</a>
                         </li>
                         <li>
-                            <a href="<?php echo SERVERURL?>/grid">Grid</a>
+                            <a href="<?php echo SERVERURL ?>/grid">Grid</a>
                         </li>
                     </ul>
-                    <!-- /.nav-second-level -->
-                </li>
-                <li>
+                    
+                </li>-->
+                    <!--<li>
                     <a><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
@@ -94,25 +95,25 @@ else{
                                     <a href="#">Third Level Item</a>
                                 </li>
                             </ul>
-                            <!-- /.nav-third-level -->
+                           
                         </li>
                     </ul>
-                    <!-- /.nav-second-level -->
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level">
-                        <li>
-                            <a href="blank">Blank Page</a>
-                        </li>
-                        <li>
-                            <a href="login">Login Page</a>
-                        </li>
-                    </ul>
-                    <!-- /.nav-second-level -->
-                </li>
-            </ul>
+                    
+                </li>-->
+                    <!--<li>
+                        <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="blank">Blank Page</a>
+                            </li>
+                            <li>
+                                <a href="login">Login Page</a>
+                            </li>
+                        </ul>
+                        
+                    </li>
+                </ul>-->
+            </div>
         </div>
     </div>
-</div>
 <?php }; ?>

@@ -43,7 +43,7 @@ $reg = $ip->CtrVisitas();
 						</div>
 					</div>
 				</div>
-				<div class="pogoSlider-slide" data-transition="fade" data-duration="1400" style="background-image:url(<?php echo SERVERURL ?>/vista/img/slider-02.jpg);">
+				<div class="pogoSlider-slide" data-transition="fade" data-duration="1400" style="background-image:url(<?php echo SERVERURL ?>/vista/img/inicio1.jpg);">
 					<div class="lbox-caption pogoSlider-slide-element">
 						<div class="lbox-details">
 							<h1>Somos expertos en el campo del cuidado dental</h1>
@@ -52,7 +52,7 @@ $reg = $ip->CtrVisitas();
 						</div>
 					</div>
 				</div>
-				<div class="pogoSlider-slide" data-transition="fade" data-duration="1400" style="background-image:url(<?php echo SERVERURL ?>/vista/img/slider-03.jpg);">
+				<div class="pogoSlider-slide" data-transition="fade" data-duration="1400" style="background-image:url(<?php echo SERVERURL ?>/vista/img/inicio3.jpg);">
 					<div class="lbox-caption pogoSlider-slide-element">
 						<div class="lbox-details">
 							<h1>Con todas las normas de bioseguridad</h1>
@@ -96,13 +96,13 @@ $reg = $ip->CtrVisitas();
 							<div class="about-m">
 								<ul id="banner">
 									<li>
-										<img src="<?php echo SERVERURL ?>/vista/img/about-img-01.jpg" alt="">
+										<img src="<?php echo SERVERURL ?>/vista/img/acerca1.jpg" alt="">
 									</li>
 									<li>
-										<img src="<?php echo SERVERURL ?>/vista/img/about-img-02.jpg" alt="">
+										<img src="<?php echo SERVERURL ?>/vista/img/acerca2.jpg" alt="">
 									</li>
 									<li>
-										<img src="<?php echo SERVERURL ?>/vista/img/about-img-03.jpg" alt="">
+										<img src="<?php echo SERVERURL ?>/vista/img/acerca3.jpg" alt="">
 									</li>
 								</ul>
 							</div>
@@ -170,7 +170,7 @@ $reg = $ip->CtrVisitas();
 
 						</div>
 					</div>
-					<div class="item">
+					<!--<div class="item">
 						<div class="serviceBox">
 							<div class="service-icon"><i class="fa fa-wheelchair" aria-hidden="true"></i></div>
 							<h3 class="title">Lorem ipsum dolor</h3>
@@ -219,7 +219,7 @@ $reg = $ip->CtrVisitas();
 							</p>
 
 						</div>
-					</div>
+					</div>-->
 				</div>
 			</div>
 		</div>
@@ -352,7 +352,7 @@ $reg = $ip->CtrVisitas();
 				<div class="box-gallery">
 					<img src="<?php echo SERVERURL ?>/vista/img/gallery-01.jpg" alt="">
 					<div class="box-content">
-						<h3 class="title">Lorem ipsum dolor</h3>
+						
 						<ul class="icon">
 							<li><a href="<?php echo SERVERURL ?>/vista/img/gallery-01.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
 						</ul>
@@ -363,7 +363,7 @@ $reg = $ip->CtrVisitas();
 				<div class="box-gallery">
 					<img src="<?php echo SERVERURL ?>/vista/img/gallery-02.jpg" alt="">
 					<div class="box-content">
-						<h3 class="title">Lorem ipsum dolor</h3>
+						
 						<ul class="icon">
 							<li><a href="<?php echo SERVERURL ?>/vista/img/gallery-02.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
 						</ul>
@@ -372,41 +372,8 @@ $reg = $ip->CtrVisitas();
 			</div>
 			<div class="col-md-3 col-sm-6">
 				<div class="box-gallery">
-					<img src="<?php echo SERVERURL ?>/vista/img/gallery-03.jpg" alt="">
-					<div class="box-content">
-						<ul class="icon">
-							<li><a href="<?php echo SERVERURL ?>/vista/img/gallery-03.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3 col-sm-6">
-				<div class="box-gallery">
-					<img src="<?php echo SERVERURL ?>/vista/img/gallery-04.jpg" alt="">
-					<div class="box-content">
-						<h3 class="title">Lorem ipsum dolor</h3>
-						<ul class="icon">
-							<li><a href="<?php echo SERVERURL ?>/vista/img/gallery-04.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3 col-sm-6">
-				<div class="box-gallery">
-					<img src="<?php echo SERVERURL ?>/vista/img/gallery-05.jpg" alt="">
-					<div class="box-content">
-						<h3 class="title">Lorem ipsum dolor</h3>
-						<ul class="icon">
-							<li><a href="<?php echo SERVERURL ?>/vista/img/gallery-05.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3 col-sm-6">
-				<div class="box-gallery">
 					<img src="<?php echo SERVERURL ?>/vista/img/gallery-06.jpg" alt="">
 					<div class="box-content">
-						<h3 class="title">Lorem ipsum dolor</h3>
 						<ul class="icon">
 							<li><a href="<?php echo SERVERURL ?>/vista/img/gallery-06.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
 						</ul>
@@ -415,11 +382,44 @@ $reg = $ip->CtrVisitas();
 			</div>
 			<div class="col-md-3 col-sm-6">
 				<div class="box-gallery">
-					<img src="<?php echo SERVERURL ?>/vista/img/gallery-07.jpg" alt="">
+					<img src="<?php echo SERVERURL ?>/vista/img/galeria1.jpg" alt="">
 					<div class="box-content">
-						<h3 class="title">Lorem ipsum dolor</h3>
+						
 						<ul class="icon">
-							<li><a href="<?php echo SERVERURL ?>/vista/img/gallery-07.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
+							<li><a href="<?php echo SERVERURL ?>/vista/img/galeria1.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-6">
+				<div class="box-gallery">
+					<img src="<?php echo SERVERURL ?>/vista/img/galeria2.jpg" alt="">
+					<div class="box-content">
+						
+						<ul class="icon">
+							<li><a href="<?php echo SERVERURL ?>/vista/img/galeria2.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-6">
+				<div class="box-gallery">
+					<img src="<?php echo SERVERURL ?>/vista/img/galeria6.jpg" alt="">
+					<div class="box-content">
+						
+						<ul class="icon">
+							<li><a href="<?php echo SERVERURL ?>/vista/img/galeria6.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-6">
+				<div class="box-gallery">
+					<img src="<?php echo SERVERURL ?>/vista/img/galeria7.jpg" alt="">
+					<div class="box-content">
+						
+						<ul class="icon">
+							<li><a href="<?php echo SERVERURL ?>/vista/img/galeria7.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
 						</ul>
 					</div>
 				</div>
@@ -428,7 +428,7 @@ $reg = $ip->CtrVisitas();
 				<div class="box-gallery">
 					<img src="<?php echo SERVERURL ?>/vista/img/gallery-08.jpg" alt="">
 					<div class="box-content">
-						<h3 class="title">Lorem ipsum dolor</h3>
+						
 						<ul class="icon">
 							<li><a href="<?php echo SERVERURL ?>/vista/img/gallery-08.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
 						</ul>

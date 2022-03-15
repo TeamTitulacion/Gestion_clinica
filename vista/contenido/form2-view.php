@@ -528,6 +528,7 @@ if (!isset($_SESSION['usuario']) || !isset($_SESSION['password'])) {
                                     <input type="button" name="next" class="next btn btn-info" value="Siguiente" />
                                 </fieldset>
                                 <fieldset>
+<<<<<<< HEAD
 
                                     <div class="col-lg-3 form-group">
                                         <div class="form-group">
@@ -551,6 +552,10 @@ if (!isset($_SESSION['usuario']) || !isset($_SESSION['password'])) {
                                                 </ul>
                                             
                                         </div>
+=======
+                                    <div class="col-lg-12">
+                                        
+>>>>>>> aed2b2006e6ae9db1a6e52053bfee5d1f8a2c332
                                     </div>
                                     <div class="col-lg-9 form-group">
                                         <h2>Odontograma</h2>
