@@ -17,9 +17,11 @@ session_start(["name" => "UIC"]);
     <script src="<?php echo SERVERURL ?>/vista/js/fullcalendar/es.js"></script>
     <script src="<?php echo SERVERURL ?>/vista/js/fullcalendar/main.js"></script>
     <script src="<?php echo SERVERURL ?>/vista/js/jquery.min.js"></script>
+    <script src="<?php echo SERVERURL ?>/vista/js/jqueryui.custom.min.js"></script>
     <script src="<?php echo SERVERURL ?>/vista/js/bootstrap.min.js"></script>
 
     <link href="<?php echo SERVERURL ?>/vista/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo SERVERURL ?>/vista/css/jqueryui.custom.css" rel="stylesheet">
     <link href="<?php echo SERVERURL ?>/vista/css/metisMenu.min.css" rel="stylesheet">
     <link href="<?php echo SERVERURL ?>/vista/css/morris.css" rel="stylesheet" />
     <link href="<?php echo SERVERURL ?>/vista/css/startmin.css" rel="stylesheet">
