@@ -1,0 +1,14 @@
+<script src="<?php echo SERVERURL ?>/vista/js/metisMenu.min.js"></script>
+<script src="<?php echo SERVERURL ?>/vista/js/startmin.js"></script>
+<script src="<?php echo SERVERURL ?>/vista/js/tables.js"></script>
+<script src="<?php echo SERVERURL ?>/vista/js/add.js"></script>
+<script src="<?php echo SERVERURL ?>/vista/js/flot/excanvas.min.js"></script>
+<script src="<?php echo SERVERURL ?>/vista/js/flot/jquery.flot.js"></script>
+<script src="<?php echo SERVERURL ?>/vista/js/flot/jquery.flot.pie.js"></script>
+<script src="<?php echo SERVERURL ?>/vista/js/flot/jquery.flot.resize.js"></script>
+<script src="<?php echo SERVERURL ?>/vista/js/flot/jquery.flot.time.js"></script>
+<script src="<?php echo SERVERURL ?>/vista/js/flot/jquery.flot.tooltip.min.js"></script>
+<!--<script src="<?php echo SERVERURL ?>/vista/js/flot-data.js"></script> -->
+<script src="<?php echo SERVERURL ?>/vista/js/dataTables/jquery.dataTables.min.js"></script>
+<script src="<?php echo SERVERURL ?>/vista/js/dataTables/dataTables.bootstrap.min.js"></script>
+<script src="<?php echo SERVERURL ?>/vista/js/perfil.js"></script>

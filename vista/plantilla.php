@@ -46,8 +46,6 @@ session_start(["name" => "UIC"]);
     //creamos un objeto para llamar a las paginas
     $vt = new vistaControlador();
     $vistas = $vt->ctrMostrarVistas();
-
-
     if ($vistas == "login" || $vistas == "404" || $vistas == "index") :
         if ($vistas == "login") {
             require_once "./vista/contenido/login-view.php";
@@ -79,9 +77,22 @@ session_start(["name" => "UIC"]);
     <?php endif;
     ?>
     <!--====== Scripts -->
+    <script>
+        console.log(<?php echo $vistas ?>);
+    </script>
     <?php
 
-    include 'modulos/scripts.php';
+    include 'modulos/scriptsgene.php';
+    if (
+        $vistas == "./vista/contenido/login-view.php" || $vistas == "./vista/contenido/404-view.php"
+        || $vistas == "./vista/contenido/index-view.php"
+    ) {
+        include 'modulos/scriptsindex.php';
+    } else {
+        include 'modulos/scriptsapp.php';
+    }
+
+
 
 
     ?>
