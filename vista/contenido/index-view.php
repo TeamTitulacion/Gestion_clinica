@@ -1,6 +1,6 @@
-<?php 
+<?php
 require_once './controlador/visitas.controlador.php';
-$ip= new VisitasControlador();
+$ip = new VisitasControlador();
 $reg = $ip->CtrVisitas();
 ?>
 <!-- Start header -->
@@ -14,7 +14,7 @@ $reg = $ip->CtrVisitas();
 				<span></span>
 			</button>
 			<div class="collapse navbar-collapse navbar-right" id="navbar-wd">
-				<ul class="navbar-nav"> 
+				<ul class="navbar-nav">
 					<li><a class="nav-link" href="#home">Inicio</a></li>
 					<li><a class="nav-link" href="#about">Acerca de Nosotros</a></li>
 					<li><a class="nav-link" href="#services">Nuestros Servicios </a></li>
@@ -257,14 +257,14 @@ $reg = $ip->CtrVisitas();
 							<div class="col-md-6">
 								<div class="form-group">
 									<label class="control-label" for="email">Email</label>
-									<input id="email" name="email" type="text" placeholder="E-Mail" class="form-control input-md">
+									<input id="email" name="email" type="text" placeholder="test@mail.com" class="form-control input-md">
 								</div>
 							</div>
 							<!-- Text input-->
 							<div class="col-md-6">
 								<div class="form-group">
 									<label class="control-label" for="date">Fecha preferida</label>
-									<input id="date" name="date" type="text" placeholder="Preferred Date" class="form-control input-md">
+									<input type="date" name="date" type="text" placeholder="Preferred Date" class="form-control input-md">
 								</div>
 							</div>
 							<!-- Select Basic -->
@@ -281,21 +281,16 @@ $reg = $ip->CtrVisitas();
 							<!-- Select Basic -->
 							<div class="col-md-12">
 								<div class="form-group">
-									<label class="control-label" for="appointmentfor">Department</label>
+									<label class="control-label" for="appointmentfor">Departmento</label>
 									<select id="appointmentfor" name="appointmentfor" class="form-control">
-										<option value="Choose Department">Choose Department</option>
-										<option value="Gynacology">Gynacology</option>
-										<option value="Dermatologist">Dermatologist</option>
-										<option value="Orthology">Orthology</option>
-										<option value="Anesthesiology">Anesthesiology</option>
-										<option value="Ayurvedic">Ayurvedic</option>
+										<option value="Gynacology">Consulta General</option>
 									</select>
 								</div>
 							</div>
 							<!-- Button -->
 							<div class="col-md-12">
 								<div class="form-group">
-									<button id="singlebutton" name="singlebutton" class="new-btn-d br-2">Make An Appointment</button>
+									<button id="singlebutton" name="singlebutton" class="new-btn-d br-2">AGENDAR</button>
 								</div>
 							</div>
 						</div>
@@ -306,26 +301,23 @@ $reg = $ip->CtrVisitas();
 			<div class="col-lg-6 col-md-6">
 				<div class="well-block">
 					<div class="well-title">
-						<h2>Why Appointment with Us</h2>
+						<h2>¿Porque agendar una cita con nosotros?</h2>
 					</div>
 					<div class="feature-block">
 						<div class="feature feature-blurb-text">
-							<h4 class="feature-title">24/7 Hours Available</h4>
+							<h4 class="feature-title">Disponibilidad</h4>
 							<div class="feature-content">
-								<p>Integer nec nisi sed mi hendrerit mattis. Vestibulum mi nunc, ultricies quis vehicula et, iaculis in magnestibulum.</p>
+								<p>De Lunes a Viernes de 8:00 a 17:00</p>
+								<p>Sabados 10:00 a 14:00</p>
 							</div>
 						</div>
 						<div class="feature feature-blurb-text">
-							<h4 class="feature-title">Experienced Staff Available</h4>
-							<div class="feature-content">
-								<p>Aliquam sit amet mi eu libero fermentum bibendum pulvinar a turpis. Vestibulum quis feugiat risus. </p>
-							</div>
+							<h4 class="feature-title">Personal experimentado disponible</h4>
+
 						</div>
 						<div class="feature feature-blurb-text">
-							<h4 class="feature-title">Low Price & Fees</h4>
-							<div class="feature-content">
-								<p>Praesent eu sollicitudin nunc. Cras malesuada vel nisi consequat pretium. Integer auctor elementum nulla suscipit in.</p>
-							</div>
+							<h4 class="feature-title">Precios Accesibles</h4>
+
 						</div>
 					</div>
 				</div>
@@ -352,7 +344,7 @@ $reg = $ip->CtrVisitas();
 				<div class="box-gallery">
 					<img src="<?php echo SERVERURL ?>/vista/img/gallery-01.jpg" alt="">
 					<div class="box-content">
-						
+
 						<ul class="icon">
 							<li><a href="<?php echo SERVERURL ?>/vista/img/gallery-01.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
 						</ul>
@@ -363,7 +355,7 @@ $reg = $ip->CtrVisitas();
 				<div class="box-gallery">
 					<img src="<?php echo SERVERURL ?>/vista/img/gallery-02.jpg" alt="">
 					<div class="box-content">
-						
+
 						<ul class="icon">
 							<li><a href="<?php echo SERVERURL ?>/vista/img/gallery-02.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
 						</ul>
@@ -384,7 +376,7 @@ $reg = $ip->CtrVisitas();
 				<div class="box-gallery">
 					<img src="<?php echo SERVERURL ?>/vista/img/galeria1.jpg" alt="">
 					<div class="box-content">
-						
+
 						<ul class="icon">
 							<li><a href="<?php echo SERVERURL ?>/vista/img/galeria1.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
 						</ul>
@@ -395,7 +387,7 @@ $reg = $ip->CtrVisitas();
 				<div class="box-gallery">
 					<img src="<?php echo SERVERURL ?>/vista/img/galeria2.jpg" alt="">
 					<div class="box-content">
-						
+
 						<ul class="icon">
 							<li><a href="<?php echo SERVERURL ?>/vista/img/galeria2.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
 						</ul>
@@ -406,7 +398,7 @@ $reg = $ip->CtrVisitas();
 				<div class="box-gallery">
 					<img src="<?php echo SERVERURL ?>/vista/img/galeria6.jpg" alt="">
 					<div class="box-content">
-						
+
 						<ul class="icon">
 							<li><a href="<?php echo SERVERURL ?>/vista/img/galeria6.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
 						</ul>
@@ -417,7 +409,7 @@ $reg = $ip->CtrVisitas();
 				<div class="box-gallery">
 					<img src="<?php echo SERVERURL ?>/vista/img/galeria7.jpg" alt="">
 					<div class="box-content">
-						
+
 						<ul class="icon">
 							<li><a href="<?php echo SERVERURL ?>/vista/img/galeria7.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
 						</ul>
@@ -428,7 +420,7 @@ $reg = $ip->CtrVisitas();
 				<div class="box-gallery">
 					<img src="<?php echo SERVERURL ?>/vista/img/gallery-08.jpg" alt="">
 					<div class="box-content">
-						
+
 						<ul class="icon">
 							<li><a href="<?php echo SERVERURL ?>/vista/img/gallery-08.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
 						</ul>
@@ -446,8 +438,7 @@ $reg = $ip->CtrVisitas();
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="title-box">
-					<h2>Our Doctor</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+					<h2>Nuestros Doctores</h2>
 				</div>
 			</div>
 		</div>
@@ -521,15 +512,15 @@ $reg = $ip->CtrVisitas();
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="title-box">
-					<h2>Ubicanos</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+					
+					<h2><i class="fa fa-location-arrow" aria-hidden="true"></i>Ubicanos</h2>
 					<div id="map"></div>
 				</div>
 			</div>
 			<div class="left-contact">
-			<div class="media cont-line col-lg-1 hidden" >
-				
-			</div>
+				<div class="media cont-line col-lg-1 hidden">
+
+				</div>
 
 				<div class="media cont-line">
 					<div class="media-left icon-b">
@@ -547,7 +538,7 @@ $reg = $ip->CtrVisitas();
 					<div class="media-body dit-right">
 						<h4>Email</h4>
 						<p>demoinfo@gmail.com</p>
-						
+
 					</div>
 				</div>
 				<div class="media cont-line">
