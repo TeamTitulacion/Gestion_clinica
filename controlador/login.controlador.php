@@ -24,14 +24,7 @@ class LoginControlador extends LoginModelo
 			$url = SERVERURL . "/citas";
 			return $urllocation = '<script> window.location = "' . $url . '"</script>';
 		} else {
-			$alerta = [
-
-				"Alerta" => "simple",
-				"Titulo" => "error del sistema",
-				"Texto" => "usuario y o  contraseña incorrectos",
-				"Tipo" => "error",
-
-			];
+			echo '<script> Swal.fire("Error", "Credenciales Incorrectas!", "warning");</script>';
 		}
 		return mainModel::sweet_alert($alerta);
 	}

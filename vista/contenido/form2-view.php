@@ -20,10 +20,12 @@ if (!isset($_SESSION['usuario']) || !isset($_SESSION['password'])) {
             </div>
             <div>
                 <ul id="progressbar">
-                    <li class="active">Account Setup</li>
-                    <li><strong>Social Profiles</strong> </li>
-                    <li><strong>Personal Details</strong></li>
-                    <li><strong>Personal Details</strong></li>
+                    <li class="active">Inicio</li>
+                    <li><strong>Anamnesis</strong> </li>
+                    <li><strong>Examenes y antecedentes medicos</strong></li>
+                    <li><strong>Odontograma</strong></li>
+                    <li><strong>Examenes complementarios</strong></li>
+                    <li><strong>Diagnostico y plan de tratamiento</strong></li>
                 </ul>
             </div>
 

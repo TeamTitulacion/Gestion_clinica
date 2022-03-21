@@ -32,7 +32,7 @@ if (!isset($_SESSION['usuario']) || !isset($_SESSION['password'])) {
                     
                 </li>-->
                     <li>
-                        <a href="<?php echo SERVERURL ?>/tables"><i class="fa fa-table fa-fw"></i> Pacientes</a>
+                        <a href="<?php echo SERVERURL ?>/pacientesearch"><i class="fa fa-table fa-fw"></i> Pacientes</a>
                     </li>
                     <li>
                         <a href="<?php echo SERVERURL ?>/medico" class="active"><i class="fa fa-heart fa-fw"></i>Medicos</a>

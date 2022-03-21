@@ -77,15 +77,13 @@ session_start(["name" => "UIC"]);
     <?php endif;
     ?>
     <!--====== Scripts -->
-    <script>
-        console.log(<?php echo $vistas ?>);
-    </script>
+   
     <?php
 
     include 'modulos/scriptsgene.php';
     if (
         $vistas == "./vista/contenido/login-view.php" || $vistas == "./vista/contenido/404-view.php"
-        || $vistas == "./vista/contenido/index-view.php"
+        || $vistas == "./vista/contenido/index-view.php"|| $vistas == ""
     ) {
         include 'modulos/scriptsindex.php';
     } else {

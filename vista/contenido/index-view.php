@@ -333,7 +333,7 @@ $reg = $ip->CtrVisitas();
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="title-box">
-					<h2>Galleria</h2>
+					<h2>Galeria</h2>
 					<p>Echa un vistaso a nuestras mejores fotos. </p>
 				</div>
 			</div>
@@ -443,7 +443,7 @@ $reg = $ip->CtrVisitas();
 			</div>
 		</div>
 
-		<div class="row">
+		<!--<div class="row">
 			<div class="col-md-4 col-sm-6">
 				<div class="our-team">
 					<div class="pic">
@@ -460,12 +460,12 @@ $reg = $ip->CtrVisitas();
 						</ul>
 					</div>
 				</div>
-			</div>
+			</div>-->
 
 			<div class="col-md-4 col-sm-6">
 				<div class="our-team">
 					<div class="pic">
-						<img src="<?php echo SERVERURL ?>/vista/img/img-2.jpg" alt="">
+						<img src="<?php echo SERVERURL ?>/vista/img/perfil/Dr01.jpg">
 					</div>
 					<div class="team-content">
 						<h3 class="title">kristina</h3>
@@ -480,7 +480,7 @@ $reg = $ip->CtrVisitas();
 				</div>
 			</div>
 
-			<div class="col-md-4 col-sm-6">
+			<!--<div class="col-md-4 col-sm-6">
 				<div class="our-team">
 					<div class="pic">
 						<img src="<?php echo SERVERURL ?>/vista/img/img-3.jpg" alt="">
@@ -496,7 +496,7 @@ $reg = $ip->CtrVisitas();
 						</ul>
 					</div>
 				</div>
-			</div>
+			</div>-->
 		</div>
 
 	</div>
