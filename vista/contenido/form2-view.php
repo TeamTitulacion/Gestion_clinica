@@ -1,14 +1,18 @@
 <?php
 require_once "./controlador/login.controlador.php";
+require_once "./controlador/paciente.controlador.php";
 
 $cerrar = new LoginControlador();
+
 
 if (!isset($_SESSION['usuario']) || !isset($_SESSION['password'])) {
     $cerrar->CtrCerrarSession();
 }
+$info = new PacienteControlador();
+$res = $info->CtrHistoria();
 ?>
-<script src="vista/js/modernizr-2.0.6.min.js"></script>
-<link rel="stylesheet" href="vista/css/stepform.css">
+<script src="<?php echo SERVERURL ?>/vista/js/modernizr-2.0.6.min.js"></script>
+<link rel="stylesheet" href="<?php echo SERVERURL ?>/vista/css/stepform.css">
 
 <div id="wrapper">
     <div id="page-wrapper">
@@ -51,19 +55,18 @@ if (!isset($_SESSION['usuario']) || !isset($_SESSION['password'])) {
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <span class="input-group-addon">Apellido</span>
-                                                <input type="text" class="form-control">
+                                                <input type="text" value="<?php echo $res['pac_apellido'] ?>" class="form-control">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <span class="input-group-addon">Nombre</span>
-                                                <input type="text" class="form-control">
+                                                <input type="text" value="<?php echo $res['pac_nombre'] ?>" class="form-control">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <select class="form-control">
-                                                <option value="0">Sexo</option>
-                                                <option value="1">Masculino</option>
+                                                <option value="<?php echo $res['pac_sexo'] ?>">Masculino</option>
                                                 <option value="2">Femenino</option>
                                             </select>
                                         </div>
@@ -71,12 +74,19 @@ if (!isset($_SESSION['usuario']) || !isset($_SESSION['password'])) {
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <span class="input-group-addon">Edad</span>
-                                                <input type="text" class="form-control">
+                                                <?php
+                                                $fechaActual = date('Y-m-d');
+                                                $datetime1 = date_create($res['pac_fecha_nacimiento']);
+                                                $datetime2 = date_create($fechaActual);
+                                                $contador = date_diff($datetime2, $datetime1);
+                                                $differenceFormat = '%y';
+                                                ?>
+                                                <input type="text" value="<?php echo $contador->format($differenceFormat) ?>" class="form-control">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group">
-                                                <input type="date" class="form-control">
+                                                <input type="date" value="<?php echo $res['pac_fecha_nacimiento']?>" class="form-control">
                                                 <span class="input-group-btn">
                                                     <label class="btn btn-default" disabled>Fecha de nacimiento</label>
                                                 </span>
@@ -84,7 +94,7 @@ if (!isset($_SESSION['usuario']) || !isset($_SESSION['password'])) {
                                         </div>
                                         <div class="form-group">
                                             <select class="form-control">
-                                                <option value="0">Seleccione tipo de sangre</option>
+                                            <option value="<?php echo $res['pac_sangre'] ?>"><?php echo $res['pac_sangre'] ?></option>
                                                 <option>O Negativo</option>
                                                 <option>O Positivo</option>
                                                 <option>A Negativo</option>
@@ -97,7 +107,7 @@ if (!isset($_SESSION['usuario']) || !isset($_SESSION['password'])) {
                                         </div>
                                         <div class="form-group">
                                             <select class="form-control">
-                                                <option value="0">Seleccionar Estado Civil</option>
+                                            <option value="<?php echo $res['pac_estado_civil'] ?>"><?php echo $res['pac_estado_civil'] ?></option>
                                                 <option>Soltero</option>
                                                 <option>Casado</option>
                                                 <option>Viudo</option>
@@ -114,13 +124,13 @@ if (!isset($_SESSION['usuario']) || !isset($_SESSION['password'])) {
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <span class="input-group-addon">Telefono de residencia</span>
-                                                <input type="text" class="form-control">
+                                                <input type="text" value="<?php echo $res['pac_telefono']?>" class="form-control">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <span class="input-group-addon">Direccion y lugra de residencia</span>
-                                                <input type="text" class="form-control">
+                                                <input type="text" value="<?php echo $res['pac_direccion']?>" class="form-control">
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -132,7 +142,7 @@ if (!isset($_SESSION['usuario']) || !isset($_SESSION['password'])) {
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="input-group">
-                                            <input type="date" class="form-control">
+                                            <input type="date" value="<?php echo $fechaActual ?>" class="form-control">
                                             <span class="input-group-btn">
                                                 <label class="btn btn-default" disabled>Fecha de elaboracion</label>
                                             </span>
@@ -554,11 +564,11 @@ if (!isset($_SESSION['usuario']) || !isset($_SESSION['password'])) {
                                         </div>
                                     </div>
 
-                                        <div class="col-lg-9 form-group">
-                                            <h2>Odontograma</h2>
-                                            <div id="odontograma"></div>
-                                        </div>
-                                        <input type="button" name="previous" class="previous btn btn-default" value="Previo" />
+                                    <div class="col-lg-9 form-group">
+                                        <h2>Odontograma</h2>
+                                        <div id="odontograma"></div>
+                                    </div>
+                                    <input type="button" name="previous" class="previous btn btn-default" value="Previo" />
 
 
                                 </fieldset>
@@ -571,7 +581,7 @@ if (!isset($_SESSION['usuario']) || !isset($_SESSION['password'])) {
         </div>
     </div>
 </div>
-<script src="vista/js/stepform.js"></script>
-<script src="vista/js/jquery.svg.min.js"></script>
+<script src="<?php echo SERVERURL ?>/vista/js/stepform.js"></script>
+<script src="<?php echo SERVERURL ?>/vista/js/jquery.svg.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/2.2.1/knockout-min.js"></script>
-<script src="vista/js/odontograma.js"></script>
+<script src="<?php echo SERVERURL ?>/vista/js/odontograma.js"></script>

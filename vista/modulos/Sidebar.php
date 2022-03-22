@@ -16,9 +16,6 @@ if (!isset($_SESSION['usuario']) || !isset($_SESSION['password'])) {
                     <li>
                         <a href="<?php echo SERVERURL ?>/dashboard" class="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                     </li>
-                    <li>
-                        <a href="<?php echo SERVERURL ?>/form2" class="active"><i class="fa fa-users"></i> Pacientes</a>
-                    </li>
                     <!--<li>
                     <a href="<?php echo SERVERURL ?>/form2" class="active"><i class="fa fa-users"></i>Pacientes</a>
                     <ul class="nav nav-second-level">
@@ -111,8 +108,13 @@ if (!isset($_SESSION['usuario']) || !isset($_SESSION['password'])) {
                             </li>
                         </ul>
                         
+                    </li>-->
+                    <li>
+                        <a href="<?php echo SERVERURL ?>/reporteria" class="active"><i class="fa fa-file-pdf-o"></i>Reporteria</a>
                     </li>
-                </ul>-->
+                </ul>
+
+
             </div>
         </div>
     </div>

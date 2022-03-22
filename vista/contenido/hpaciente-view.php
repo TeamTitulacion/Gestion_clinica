@@ -3,7 +3,8 @@ require_once "./controlador/login.controlador.php";
 require_once "./controlador/paciente.controlador.php";
 $cerrar = new LoginControlador();
 $info =new PacienteControlador();
-$res=$info->CtrHistoriaPac();
+$res=$info->CtrDecryp();
+
 if (!isset($_SESSION['usuario']) || !isset($_SESSION['password'])) {
     $cerrar->CtrCerrarSession();
 }
@@ -27,10 +28,7 @@ if (!isset($_SESSION['usuario']) || !isset($_SESSION['password'])) {
                                 <div class="col-md-6">
                                     Info Historias del Paciente
                                 </div>
-                                <div class="col-md-6 text-right">
-                                    <a href=""><button type="button" class="btn btn-success text-right"><i class="fa fa-plus-circle"></i><span> Registrar</span></button></a>
-
-                                </div>
+                                
                             </div>
                         </div>
 

@@ -40,4 +40,23 @@ $(document).ready(function () {
       },
     ],
   });
+  $(document).on("click", ".btnVer", function () {
+    fila = $(this).closest("tr");
+    userid = parseInt(fila.find("td:eq(0)").text());
+    var crypid = $.ajax({
+      type: "POST",
+      url: "../ajax/paciente.ajax.php",
+      data: {
+        enc: userid,
+      },
+      dataType: "json",
+      context: document.body,
+      global: false,
+      async: false,
+      success: function (data) {
+        return data;
+      },
+    }).responseText;
+    window.location.href = base_url+"/form2/" + crypid;
+  });
 });
