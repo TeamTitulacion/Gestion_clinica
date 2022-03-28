@@ -27,7 +27,7 @@ if ($_SESSION['rol'] != 1) {
                                     </div>
                                 </div>
                             </div>
-                            <a href="<?php echo SERVERURL ?>/vista/contenido/repmedicos.php" TARGET="_blanc">
+                            <a href="<?php echo SERVERURL ?>/controlador/reporteria.controlador.php" TARGET="_blanc">
                                 <div class="panel-footer">
                                     <span class="pull-left">PDF</span>
                                     <span class="pull-right"><i class="fa fa-file-pdf-o"></i></span>
@@ -70,7 +70,7 @@ if ($_SESSION['rol'] != 1) {
                                     </div>
                                 </div>
                             </div>
-                            <a href="#">
+                            <a href="<?php echo SERVERURL ?>/controlador/repopaciente.controlador.php" TARGET="_blanc">
                                 <div class="panel-footer">
                                     <span class="pull-left">PDF</span>
                                     <span class="pull-right"><i class="fa fa-file-pdf-o"></i></span>

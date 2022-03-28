@@ -49,19 +49,25 @@ class PDF extends FPDF
     function TablaSimple()
     {
         
-        $this->SetFont('Helvetica', '', 12);
+        $this->SetFont('Helvetica', '', 10);
         $respuesta = ReporteriaControlador::CtrReporteriaMedico();
-        $header = array('Nomina', 'Area', 'Telefono', 'Direccion');
+        $header = array('Nomina', 'Area', 'Telefono', 'Direccion','Estado');
         //Cabecera
+        $size = 36;
         foreach ($header as $col)
-        $this->Cell(40, 7, $col, 1);
+        $this->Cell($size, 7, $col, 1);
         $this->Ln();
         //body
         foreach ($respuesta as $key => $value) {
-            $this->Cell(40, 7, utf8_decode($value['med_nombre'] . " " . $value['med_apellido']), 1);
-            $this->Cell(40, 7, $value['id_categoria'], 1);
-            $this->Cell(40, 7, $value['med_telefono'], 1);
-            $this->Cell(40, 7, $value['med_direccion'], 1);
+            $this->Cell($size, 7, utf8_decode($value['med_nombre'] . " " . $value['med_apellido']), 1);
+            $this->Cell($size, 7, utf8_decode($value['cat_detalle']), 1);
+            $this->Cell($size, 7, $value['med_telefono'], 1);
+            $this->Cell($size, 7, $value['med_direccion'], 1);
+            if ($value['med_estado']==0) {
+                $this->Cell($size, 7, "Activo", 1);
+            } else {
+                $this->Cell($size, 7,"Desactivado", 1);
+            }
             $this->Ln();
         }
        

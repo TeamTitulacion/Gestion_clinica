@@ -2,7 +2,7 @@
 require_once "./controlador/login.controlador.php";
 
 $cerrar = new LoginControlador();
-$rol = $cerrar->CtrRol();
+
 
 if (!isset($_SESSION['usuario']) || !isset($_SESSION['password'])) {
 } else {

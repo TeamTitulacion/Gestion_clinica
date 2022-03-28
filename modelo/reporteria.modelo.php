@@ -17,7 +17,7 @@ class ReporteriaModelo extends mainModel
     }
     protected function MdlReporteriaMedico()
     {
-        $sql = mainModel::conectar()->prepare("SELECT * FROM tbl_medico");
+        $sql = mainModel::conectar()->prepare("SELECT * FROM tbl_medico AS m, tbl_categoria AS c, tbl_perfil AS p WHERE m.id_categoria=c.id_categoria AND m.id_perfil=p.id_perfil");
         $sql->execute();
         $respuesta = $sql->fetchAll(PDO::FETCH_ASSOC);
         return $respuesta;
