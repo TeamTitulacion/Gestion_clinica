@@ -1,3 +1,9 @@
+<?php
+if ($_SESSION['rol'] != 1) {
+    $url = SERVERURL . "/permiso";
+    echo $urllocation = '<script> window.location = "' . $url . '"</script>';
+}
+?>
 <div id="wrapper">
     <!-- Page Content -->
     <div id="page-wrapper">
@@ -21,7 +27,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href= "<?php echo SERVERURL?>/vista/contenido/repmedicos.php" TARGET="_blanc">
+                            <a href="<?php echo SERVERURL ?>/vista/contenido/repmedicos.php" TARGET="_blanc">
                                 <div class="panel-footer">
                                     <span class="pull-left">PDF</span>
                                     <span class="pull-right"><i class="fa fa-file-pdf-o"></i></span>

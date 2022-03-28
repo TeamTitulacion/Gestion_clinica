@@ -5,6 +5,7 @@ require_once "./controlador/paciente.controlador.php";
 $cerrar = new LoginControlador();
 
 
+
 if (!isset($_SESSION['usuario']) || !isset($_SESSION['password'])) {
     $cerrar->CtrCerrarSession();
 }

@@ -6,7 +6,13 @@ $Npaciente = $contador->CtrPacientes();
 $Nespecialiades = $contador->CtrEspecialidades();
 $Nvisitas = $contador->Ctrvisitas();
 
-?>
+
+   if ($_SESSION['rol']!=1) {
+    $url = SERVERURL . "/permiso";
+    echo $urllocation = '<script> window.location = "' . $url . '"</script>';
+   }
+   ?>
+    
 <div id="wrapper">
     <div id="page-wrapper">
         <div class="container-fluid">
@@ -134,3 +140,4 @@ $Nvisitas = $contador->Ctrvisitas();
 </div>
 </div>
 <script src="./vista/js/dashboard.js"></script>
+

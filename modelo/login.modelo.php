@@ -18,5 +18,6 @@ class LoginModelo extends mainModel
         $sql->close();
         $sql = null;
     }
+    
 
 }

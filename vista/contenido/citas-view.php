@@ -2,11 +2,8 @@
 require_once "./controlador/login.controlador.php";
 
 $cerrar = new LoginControlador();
-
 if (!isset($_SESSION['usuario']) || !isset($_SESSION['password'])) {
-    
     echo $cerrar->CtrCerrarSession();
-    
 } 
 ?>
 <div id="wrapper">
