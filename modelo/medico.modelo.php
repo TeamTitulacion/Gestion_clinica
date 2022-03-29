@@ -12,7 +12,7 @@ class MedicoModelo extends mainModel
         m.med_estado !=1" );
         $sql->execute();
         $respuesta = $sql->fetchAll(PDO::FETCH_ASSOC);
-        return json_encode($respuesta, JSON_UNESCAPED_UNICODE);
+        return $respuesta;
         $sql->close();
         $sql = null;
     }

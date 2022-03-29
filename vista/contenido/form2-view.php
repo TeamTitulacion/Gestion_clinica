@@ -1,6 +1,7 @@
 <?php
 require_once "./controlador/login.controlador.php";
 require_once "./controlador/paciente.controlador.php";
+require_once "./controlador/medico.controlador.php";
 
 $cerrar = new LoginControlador();
 
@@ -11,6 +12,9 @@ if (!isset($_SESSION['usuario']) || !isset($_SESSION['password'])) {
 }
 $info = new PacienteControlador();
 $res = $info->CtrHistoria();
+$med = new MedicoControlador();
+$medifo = $med->CtrDoctor();
+
 ?>
 <script src="<?php echo SERVERURL ?>/vista/js/modernizr-2.0.6.min.js"></script>
 <link rel="stylesheet" href="<?php echo SERVERURL ?>/vista/css/stepform.css">
@@ -29,6 +33,7 @@ $res = $info->CtrHistoria();
                     <li><strong>Anamnesis</strong> </li>
                     <li><strong>Examenes y antecedentes medicos</strong></li>
                     <li><strong>Odontograma</strong></li>
+                    <li><strong>Placa bacteriana</strong></li>
                     <li><strong>Examenes complementarios</strong></li>
                     <li><strong>Diagnostico y plan de tratamiento</strong></li>
                 </ul>
@@ -43,12 +48,17 @@ $res = $info->CtrHistoria();
                                 <!-- Informacion del paciente -->
                                 <fieldset>
                                     <div class="col-lg-6">
-                                        <div class="form-group">
-                                            <input class="form-control" placeholder="Historia clinica No">
+                                        <div class="input-group form-group">
+                                            <span class="input-group-addon" id="basic-addon1">Numero de historia</span>
+                                            <input class="form-control" value="<?php echo $res['pac_nhistoria'] ?>" disabled>
                                         </div>
-                                        <div class="form-group">
-
-                                            <input class="form-control" placeholder="Nombre del odontologo">
+                                        <div class="input-group form-group">
+                                            <span class="input-group-addon" id="basic-addon1">Nombre del odontologo</span>
+                                            <select class="form-control" id="">
+                                                <?php foreach ($medifo as $key => $value) {
+                                                ?><option value="<?php echo $value["id_medico"]; ?>"><?php echo $value["med_nombre"] . " " . $value["med_apellido"]; ?></option>
+                                                <?php }; ?>
+                                            </select>
                                         </div>
                                         <div class="form-group">
                                             <label>Informacion general del Paciente</label>
@@ -87,7 +97,7 @@ $res = $info->CtrHistoria();
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group">
-                                                <input type="date" value="<?php echo $res['pac_fecha_nacimiento']?>" class="form-control">
+                                                <input type="date" value="<?php echo $res['pac_fecha_nacimiento'] ?>" class="form-control">
                                                 <span class="input-group-btn">
                                                     <label class="btn btn-default" disabled>Fecha de nacimiento</label>
                                                 </span>
@@ -95,7 +105,7 @@ $res = $info->CtrHistoria();
                                         </div>
                                         <div class="form-group">
                                             <select class="form-control">
-                                            <option value="<?php echo $res['pac_sangre'] ?>"><?php echo $res['pac_sangre'] ?></option>
+                                                <option value="<?php echo $res['pac_sangre'] ?>"><?php echo $res['pac_sangre'] ?></option>
                                                 <option>O Negativo</option>
                                                 <option>O Positivo</option>
                                                 <option>A Negativo</option>
@@ -108,7 +118,7 @@ $res = $info->CtrHistoria();
                                         </div>
                                         <div class="form-group">
                                             <select class="form-control">
-                                            <option value="<?php echo $res['pac_estado_civil'] ?>"><?php echo $res['pac_estado_civil'] ?></option>
+                                                <option value="<?php echo $res['pac_estado_civil'] ?>"><?php echo $res['pac_estado_civil'] ?></option>
                                                 <option>Soltero</option>
                                                 <option>Casado</option>
                                                 <option>Viudo</option>
@@ -125,13 +135,13 @@ $res = $info->CtrHistoria();
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <span class="input-group-addon">Telefono de residencia</span>
-                                                <input type="text" value="<?php echo $res['pac_telefono']?>" class="form-control">
+                                                <input type="text" value="<?php echo $res['pac_telefono'] ?>" class="form-control">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <span class="input-group-addon">Direccion y lugra de residencia</span>
-                                                <input type="text" value="<?php echo $res['pac_direccion']?>" class="form-control">
+                                                <input type="text" value="<?php echo $res['pac_direccion'] ?>" class="form-control">
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -570,8 +580,246 @@ $res = $info->CtrHistoria();
                                         <div id="odontograma"></div>
                                     </div>
                                     <input type="button" name="previous" class="previous btn btn-default" value="Previo" />
+                                    <input type="button" name="next" class="next btn btn-info" value="Siguiente" />
 
 
+                                </fieldset>
+                                <fieldset>
+                                    <div class="col-lg-12">
+                                        <h2>Accion Preventiva</h2>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <table class="table table-striped">
+
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th>Si</th>
+                                                    <th>Frecuencia</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th>Ha recibido charlas de higiene oral</th>
+                                                    <td><input type="checkbox"></td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Practica el cepillado diario</th>
+                                                    <td><input type="checkbox"></td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Usa seda dental</th>
+                                                    <td><input type="checkbox"></td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Usa enjuague bucal</th>
+                                                    <td><input type="checkbox"></td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Le han aplicado fluor</th>
+                                                    <td><input type="checkbox"></td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Le han colocado sellantes</th>
+                                                    <td><input type="checkbox"></td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <h2>Indice de placa bacteriana inicial</h2>
+                                    </div>
+                                    <div class="col-lg-12">
+
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <h2>Indice de placa pos-tratamiento</h2>
+                                    </div>
+                                    <div class="col-lg-12">
+
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <h2>observacines al indice de placa</h2>
+                                        <input class="form-control" type="text">
+                                    </div>
+                                    <input type="button" name="previous" class="previous btn btn-default" value="Previo" />
+                                    <input type="button" name="next" class="next btn btn-info" value="Siguiente" />
+                                </fieldset>
+                                <fieldset>
+                                    <div class="col-lg-12">
+                                        <h2>Examenes complementarios</h2>
+                                        <div class="col-lg-6">
+                                            <input type="file" class="form-control">
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <input class="form-control" type="text" placeholder="Observaciones">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6">
+                                        <h3>Radiografia Extra oral</h3>
+                                        <table class="table table-striped">
+
+                                            <tbody>
+                                                <tr>
+                                                    <th>Panoramica</th>
+                                                    <td><input type="file"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Lateral de craneo</th>
+                                                    <td><input type="file"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Carpograma</th>
+                                                    <td><input type="file"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Antero posaterior</th>
+                                                    <td><input type="file"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Postero anterior</th>
+                                                    <td><input type="file"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>ATM</th>
+                                                    <td><input type="file"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Axial</th>
+                                                    <td><input type="file"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Trascraneal de condilos</th>
+                                                    <td><input type="file"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <h3>Examenes complementarios</h3>
+                                        <input class="form-control" type="text" placeholder="Examenes de laboratorio">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <br>
+                                        <br>
+                                        <br><br><br><br><br><br><br><br><br><br>
+                                    </div>
+                                    <input type="button" name="previous" class="previous btn btn-default" value="Previo" />
+                                    <input type="button" name="next" class="next btn btn-info" value="Siguiente" />
+
+
+                                </fieldset>
+                                <fieldset>
+                                    <div class="col-lg-6">
+                                        <h1>Diagnosticos</h1>
+                                        <div class="input-group form-group">
+                                            <span class="input-group-addon" id="basic-addon1">Diagnostico General</span>
+                                            <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon2">
+                                                <span class="input-group-addon" id="basic-addon2">Pronostico</span>
+                                            </div>
+                                        </div>
+                                        <div class="input-group form-group">
+                                            <span class="input-group-addon" id="basic-addon1">Diagnostico Bucal</span>
+                                            <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1">
+
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon2">
+                                                <span class="input-group-addon" id="basic-addon2">Pronostico</span>
+                                            </div>
+                                        </div>
+                                        <div class="input-group form-group">
+                                            <span class="input-group-addon" id="basic-addon1">Diagnostico periodontal</span>
+                                            <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1">
+
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon2">
+                                                <span class="input-group-addon" id="basic-addon2">Pronostico</span>
+                                            </div>
+                                        </div>
+                                        <div class="input-group form-group">
+                                            <span class="input-group-addon" id="basic-addon1">Diagnostico pulpar</span>
+                                            <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1">
+
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon2">
+                                                <span class="input-group-addon" id="basic-addon2">Pronostico</span>
+                                            </div>
+                                        </div>
+                                        <div class="input-group form-group">
+                                            <span class="input-group-addon" id="basic-addon1">Diagnostico dental</span>
+                                            <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1">
+
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon2">
+                                                <span class="input-group-addon" id="basic-addon2">Pronostico</span>
+                                            </div>
+                                        </div>
+                                        <div class="input-group form-group">
+                                            <span class="input-group-addon" id="basic-addon1">Diagnostico craneo facial</span>
+                                            <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon2">
+                                                <span class="input-group-addon" id="basic-addon2">Pronostico</span>
+                                            </div>
+                                        </div>
+                                        <div class="input-group form-group">
+                                            <span class="input-group-addon" id="basic-addon1">Otros</span>
+                                            <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1">
+
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon2">
+                                                <span class="input-group-addon" id="basic-addon2">Pronostico</span>
+                                            </div>
+                                        </div>
+                                        <input type="text" class="form-control" placeholder="Observaciones">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <h2>Plan de tratamiento</h2>
+                                        <div class="input-group form-group">
+                                            <span class="input-group-addon" id="basic-addon1">Cirugia Oral</span>
+                                            <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1">
+                                        </div>
+                                        <div class="input-group form-group">
+                                            <span class="input-group-addon" id="basic-addon1">Endodoncia</span>
+                                            <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1">
+                                        </div>
+                                        <div class="input-group form-group">
+                                            <span class="input-group-addon" id="basic-addon1">Periodoncia</span>
+                                            <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1">
+                                        </div>
+                                        <div class="input-group form-group">
+                                            <span class="input-group-addon" id="basic-addon1">Operatoria</span>
+                                            <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1">
+                                        </div>
+
+                                        <div class="input-group form-group">
+                                            <span class="input-group-addon" id="basic-addon1">Prostodoncia</span>
+                                            <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1">
+                                        </div>
+                                        <div class="input-group form-group">
+                                            <span class="input-group-addon" id="basic-addon1">Oclucion</span>
+                                            <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1">
+                                        </div>
+                                        <div class="input-group form-group">
+                                            <span class="input-group-addon" id="basic-addon1">Otros</span>
+                                            <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <br><br><br><br><br><br><br><br><br><br><br>
+                                    </div>
+                                    <input type="button" name="previous" class="previous btn btn-default" value="Previo" />
+                                    <input type="button" name="guardar" class="next btn btn-info" value="Guardar" />
                                 </fieldset>
                             </form>
                         </div>

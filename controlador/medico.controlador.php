@@ -9,6 +9,11 @@ class MedicoControlador extends MedicoModelo
     public function CtrListar()
     {
         $lista = MedicoModelo::MdlListar();
+        return json_encode($lista,JSON_UNESCAPED_UNICODE);
+    }
+    public function CtrDoctor()
+    {
+        $lista = MedicoModelo::MdlListar();
         return $lista;
     }
     public function CtrIngresar($urlimg, $pathimg)
