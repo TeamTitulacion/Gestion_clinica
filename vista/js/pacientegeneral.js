@@ -30,7 +30,7 @@ $(document).ready(function () {
       { data: "id_paciente" },
       { data: "pac_nombre" },
       { data: "pac_apellido" },
-      { data: "pac_num_documento" },
+      { data: "pac_dni" },
       { data: "pac_telefono" },
       {
         defaultContent:
