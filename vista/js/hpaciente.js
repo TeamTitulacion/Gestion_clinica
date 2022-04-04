@@ -21,9 +21,9 @@ $(document).ready(function () {
       },
     },
     ajax: {
-      url: "../ajax/paciente.ajax.php",
+      url: "../ajax/historia.ajax.php",
       method: "POST",
-      data: { Pac: ajaxpac },
+      data: { his: ajaxpac },
       dataSrc: "",
       datatype: "json",
     },
@@ -33,7 +33,7 @@ $(document).ready(function () {
       { data: "pac_nombre" },
       { data: "pac_apellido" },
       { data: "pac_dni" },
-      { data: "pac_telefono" },
+      { data: "enc_nhistoria" },
       {
         defaultContent:
           "<div class='text-center'><div class='btn-group'><button class='btn btn-primary btn-sm btnVer'><i class='fa fa-eye'>ver</i></button></div></div>",
@@ -90,14 +90,37 @@ $(document).ready(function () {
         Dirr = document.getElementById("Dirr").value;
         Corre = document.getElementById("Corre").value;
         Tele = document.getElementById("Tele").value;
-        if (Tele == "" || Corre == "" || Dirr == ""||Estado == "" || Sangre == "" || CI == ""||FechaNa == "" || Sexo == "" || Nombre == ""|| Apellido=="") {
+        if (
+          Tele == "" ||
+          Corre == "" ||
+          Dirr == "" ||
+          Estado == "" ||
+          Sangre == "" ||
+          CI == "" ||
+          FechaNa == "" ||
+          Sexo == "" ||
+          Nombre == "" ||
+          Apellido == ""
+        ) {
           Swal.fire("Aviso", "Todos los campos son requeridos", "warning");
         } else {
           $("#myModal").modal("hide");
-         $.ajax({
+          $.ajax({
             url: "../ajax/historia.ajax.php",
             type: "POST",
-            data: { id:ajaxpac, Apellido:Apellido,Nombre:Nombre,Sexo:Sexo,FechaNa:FechaNa,CI:CI,Sangre:Sangre,Estado:Estado,Dirr:Dirr,Corre:Corre,Tele:Tele},
+            data: {
+              id: ajaxpac,
+              Apellido: Apellido,
+              Nombre: Nombre,
+              Sexo: Sexo,
+              FechaNa: FechaNa,
+              CI: CI,
+              Sangre: Sangre,
+              Estado: Estado,
+              Dirr: Dirr,
+              Corre: Corre,
+              Tele: Tele,
+            },
             datatype: "json",
             success: function (data) {
               console.log(data);
@@ -114,7 +137,6 @@ $(document).ready(function () {
         }
       });
     } else {
-      console.log("entre else");
       var DNIH = $.ajax({
         type: "POST",
         url: "../ajax/historia.ajax.php",
@@ -144,8 +166,71 @@ $(document).ready(function () {
           return data;
         },
       }).responseText;
-      com = JSON.parse(DNIH);
-      console.log(com);
+      enc = JSON.parse(encabezado);
+      if (enc == false) {
+        $("#elecDoc").modal("show");
+        nhistoria = "CMD" + com["pac_dni"] + "-" + 1;
+        $(document).on('click','#Btncrear',function () {
+          med = document.getElementById("med").value;
+          var f= new Date();
+          fecha= f.getFullYear()+"-" + (f.getMonth() +1)+ "-" + f.getDate();
+         $.ajax({
+            url: "../ajax/historia.ajax.php",
+            type: "POST",
+            data: {
+              pac: ajaxpac,
+              med: med,
+              nhistoria: nhistoria,
+              fecha: fecha,
+            },
+            datatype: "json",
+            success: function (data) {
+              console.log(data);
+              var msg = data;
+              if (msg == 1) {
+                Swal.fire("Exito", "Se ha creado una historia", "success").then(
+                  function () {
+                    location.reload();
+                  }
+                );
+              }
+            },
+          });
+        })
+        
+      } else {
+        $("#elecDoc").modal("show");
+       conSubstr = enc['enc_nhistoria'].substr(14, 25);
+       nuevahistoria= "CMD" + com["pac_dni"] + "-" +(parseInt(conSubstr)+1);
+       $(document).on('click','#Btncrear',function () {
+        med = document.getElementById("med").value;
+        var f= new Date();
+        fecha= f.getFullYear()+"-" + (f.getMonth() +1)+ "-" + f.getDate();
+       $.ajax({
+          url: "../ajax/historia.ajax.php",
+          type: "POST",
+          data: {
+            pac: ajaxpac,
+            med: med,
+            nhistoria: nuevahistoria,
+            fecha: fecha,
+          },
+          datatype: "json",
+          success: function (data) {
+            console.log(data);
+            var msg = data;
+            if (msg == 1) {
+              Swal.fire("Exito", "Se ha creado una historia", "success").then(
+                function () {
+                  location.reload();
+                }
+              );
+            }
+          },
+        });
+      })
+      }
     }
   });
+  
 });

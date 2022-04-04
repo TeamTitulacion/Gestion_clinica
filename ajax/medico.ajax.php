@@ -7,7 +7,7 @@ if (isset($_POST['estado']) || isset($_POST['ver']) || (isset($_POST['nombre']) 
   require_once "../controlador/medico.controlador.php";
   if (isset($_POST['ver'])) {
     $listarTabla = new MedicoControlador();
-    echo $listarTabla->CtrListar();
+    echo json_encode($listarTabla->CtrListar(),JSON_UNESCAPED_UNICODE);
   }
   if (isset($_POST['nombre']) && isset($_POST['apellido']) && isset($_POST['sexo']) && isset($_POST['fecha']) && isset($_POST['dir']) && isset($_POST['tele']) && isset($_POST['cat']) && isset($_POST['rol']) && isset($_POST['user']) && isset($_POST['pass'])) {
 

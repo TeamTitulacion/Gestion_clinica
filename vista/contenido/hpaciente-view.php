@@ -2,12 +2,14 @@
 require_once "./controlador/login.controlador.php";
 require_once "./controlador/paciente.controlador.php";
 require_once "./controlador/historia.controlador.php";
+require_once "./controlador/medico.controlador.php";
 $cerrar = new LoginControlador();
 $info = new PacienteControlador();
 $res = $info->CtrDecryp();
 $historia = new HistoriaControlador();
 $infoH = $historia->CtrDatosP($res);
-
+$med= new MedicoControlador();
+$list= $med->CtrListar();
 if (!isset($_SESSION['usuario']) || !isset($_SESSION['password'])) {
     $cerrar->CtrCerrarSession();
 }
@@ -49,7 +51,7 @@ if (!isset($_SESSION['usuario']) || !isset($_SESSION['password'])) {
                                             <th>Nombre</th>
                                             <th>Apellido</th>
                                             <th>DNI</th>
-                                            <th>Telefono</th>
+                                            <th>Historia</th>
                                             <th>Opciones</th>
                                         </tr>
                                     </thead>
@@ -169,6 +171,38 @@ if (!isset($_SESSION['usuario']) || !isset($_SESSION['password'])) {
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                     <button type="button" id="BtnGuardar" class="btn btn-primary">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="elecDoc" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Datos del Paciente</h4>
+                </div>
+                <div class="modal-body">
+                    <form role="form">
+                        <div class="col-md-6 form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">Medico</span>
+                                <select class="form-control" name="med" id="med">
+                                    <?php 
+                                    foreach ($list as $key => $value) {
+                                        ?>
+                                        <option value="<?php echo $value['id_medico'] ?>"><?php echo $value['med_nombre'].' '.$value['med_apellido'] ?></option>
+                                        <?php
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    <button type="button" id="Btncrear" class="btn btn-primary">Crear</button>
                 </div>
             </div>
         </div>
