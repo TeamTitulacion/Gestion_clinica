@@ -36,7 +36,7 @@ class PacienteControlador extends PacienteModelo
         $desencryp = explode("/", $_GET['views']);
         $idpass = mainModel::decryption($desencryp[1]);
         $idpass = mainModel::limpiar_cadena($idpass);       
-        $sql=mainModel::ejecutar_consulta_simple("SELECT * FROM tbl_pacientep AS p, tbl_cuerpop AS c, tbl_encabezadop AS e, tbl_placa AS pl, tbl_dientes AS d, tbl_haccionprevP AS hacc,   WHERE id_paciente='$idpass'");
+        $sql=mainModel::ejecutar_consulta_simple("SELECT * FROM tbl_pacientep AS p, tbl_cuerpop AS c, tbl_encabezadop AS e, tbl_placa AS pl, tbl_dientes AS d, tbl_haccionprevP AS hacc, tbl_tratamientoP AS tra, tbl_examenesP AS exa, tbl_diagnosticoP AS diag, tbl_observacionesP AS ob,    WHERE id_paciente='$idpass'");
         $respuesta=$sql->fetch();
         return $respuesta;
 
