@@ -52,16 +52,33 @@ class HistoriaControlador extends HistoriaModelo
         $fecha = mainModel::limpiar_cadena($_POST['fecha']);
         $datos = ['id' => $id, 'med' => $med, 'nhis' => $nhis, 'fecha' => $fecha];
         $respuesta = HistoriaModelo::MdlCrearHistoria($datos);
-        
+
         if ($respuesta->rowCount() >= 1) {
             echo 1;
         } else {
             echo 2;
         };
     }
-    public function CtrlistarHistoria(){
-       $id= mainModel::limpiar_cadena($_POST['his']);
-       $respuesta=HistoriaModelo::MdlistarHistoria($id);
-       return $respuesta;
+    public function CtrlistarHistoria()
+    {
+        $id = mainModel::limpiar_cadena($_POST['his']);
+        $respuesta = HistoriaModelo::MdlistarHistoria($id);
+        return $respuesta;
+    }
+    public function CtrActualizar()
+    {
+        $id = mainModel::limpiar_cadena($_POST['NumHist']);
+        $Estatura = mainModel::limpiar_cadena($_POST['Estatura']);
+        $Temp = mainModel::limpiar_cadena($_POST['Temp']);
+        $Peso = mainModel::limpiar_cadena($_POST['Peso']);
+        $Pulso = mainModel::limpiar_cadena($_POST['Pulso']);
+        $TenArte = mainModel::limpiar_cadena($_POST['TenArte']);
+        $FrecuRespi = mainModel::limpiar_cadena($_POST['FrecuRespi']);
+
+        $datos = ['id' => $id, 'Estatura' => $Estatura, 'Temp' => $Temp, 'Peso' => $Peso, 'Pulso' => $Pulso, 'TenArte' => $TenArte, 'FrecuRespi' => $FrecuRespi];
+
+        $respuesta = HistoriaModelo::MdlActualizar($datos);
+        return $respuesta;
+        
     }
 }

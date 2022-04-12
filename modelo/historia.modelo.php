@@ -81,15 +81,24 @@ class HistoriaModelo extends mainModel
         $sql->close();
         $sql = null;
 
-       
+
         mainModel::conectar()->commit();
     }
-    protected function MdlistarHistoria($dato){
+    protected function MdlistarHistoria($dato)
+    {
         $sql = mainModel::conectar()->prepare("SELECT * FROM tbl_pacienteP as p, tbl_encabezadop as e 
         WHERE p.id_paciente=:id and p.id_paciente=e.id_paciente");
         $sql->execute(array(":id" => $dato));
         $respuesta = $sql->fetchAll(PDO::FETCH_ASSOC);
         return $respuesta;
+        $sql->close();
+        $sql = null;
+    }
+    protected function MdlActualizar($datos)
+    {
+        $sql = mainModel::conectar()->prepare("UPDATE tbl_encabezadop AS e, tbl_cuerpop AS c, tbl_signosvitalesp AS s SET s.sig_estatura=:Estatura, s.sig_temperatura=:Temp, s.sig_peso=:Peso, s.sig_pulso=:Pulso, s.sig_tensionarterial=:TenArte, s.sig_frecuenciarespiratoria=:FrecuRespi WHERE e.` id_encabezado`=c.id_encabezado AND c.id_cuerpo=s.id_cuerpo AND e.enc_nhistoria=:id");
+        $sql->execute(array(':id' => $datos['id'], ':Estatura' => $datos['Estatura'], ':Temp' => $datos['Temp'], ':Peso' => $datos['Peso'], ':Pulso' => $datos['Pulso'], ':TenArte' => $datos['TenArte'], ':FrecuRespi' => $datos['FrecuRespi']));
+        return $sql;
         $sql->close();
         $sql = null;
     }

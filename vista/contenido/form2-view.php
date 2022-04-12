@@ -15,6 +15,8 @@ $res = $info->CtrHistoria();
 $med = new MedicoControlador();
 $medifo = $med->CtrDoctor();
 
+
+
 ?>
 <link rel="stylesheet" href="<?php echo SERVERURL ?>/vista/css/stepform.css">
 
@@ -181,37 +183,37 @@ $medifo = $med->CtrDoctor();
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <span class="input-group-addon">Estatura</span>
-                                                <input id="Estatura" name="Estatura" type="text" class="form-control" placeholder="cm.">
+                                                <input id="Estatura" name="Estatura" type="text" class="form-control" placeholder="cm." value="<?php echo $res['sig_estatura'] ?>">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <span class="input-group-addon">Temperatura</span>
-                                                <input id="Temp" name="Temp" type="text" class="form-control" placeholder="°C">
+                                                <input id="Temp" name="Temp" type="text" class="form-control" placeholder="°C" value="<?php echo $res['sig_temperatura'] ?>">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <span class="input-group-addon">Pulso</span>
-                                                <input id="Pulso" name="Pulso" type="text" class="form-control" placeholder="ppm.">
+                                                <input id="Pulso" name="Pulso" type="text" class="form-control" placeholder="ppm." value="<?php echo $res['sig_pulso'] ?>">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <span class="input-group-addon">Peso</span>
-                                                <input id="Peso" name="Peso" type="text" class="form-control" placeholder="Kg.">
+                                                <input id="Peso" name="Peso" type="text" class="form-control" placeholder="Kg." value="<?php echo $res['sig_peso'] ?>">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <span class="input-group-addon">Tension Arterial</span>
-                                                <input id="TenArte" name="TenArte" type="text" class="form-control" placeholder="mm/Hg">
+                                                <input id="TenArte" name="TenArte" type="text" class="form-control" placeholder="mm/Hg" value="<?php echo $res['sig_tensionarterial'] ?>">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <span class="input-group-addon">Frecuencia respiratoria</span>
-                                                <input id="FrecuRespi" name="FrecuRespi" type="text" class="form-control" placeholder="rpm">
+                                                <input id="FrecuRespi" name="FrecuRespi" type="text" class="form-control" placeholder="rpm" value="<?php echo $res['sig_frecuenciarespiratoria'] ?>">
                                             </div>
 
                                         </div>
@@ -1207,7 +1209,7 @@ $medifo = $med->CtrDoctor();
                                         <br><br><br><br><br><br><br><br><br><br><br>
                                     </div>
                                     <input type="button" name="previous" class="previous btn btn-default" value="Previo" />
-                                    <input type="button" name="guardar" class="next btn btn-info" value="Guardar" />
+                                    <input type="button" id="guardar"  class="btn btn-info" value="Guardar" />
                                 </fieldset>
                             </form>
                         </div>
@@ -1219,3 +1221,4 @@ $medifo = $med->CtrDoctor();
     </div>
 </div>
 <script src="<?php echo SERVERURL ?>/vista/js/stepform.js"></script>
+<script src="<?php echo SERVERURL ?>/vista/js/form2.js"></script>

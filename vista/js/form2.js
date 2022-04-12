@@ -7,10 +7,10 @@ let Edad = document.getElementById("Edad").value;
 let FechaNac = document.getElementById("FechaNac").value;
 let Sangre = document.getElementById("Sangre").value;
 let Estado = document.getElementById("Estado").value;
-let DirrTra = document.getElementById("DirrTra").value;
+//let DirrTra = document.getElementById("DirrTra").value;
 let Tele = document.getElementById("Tele").value;
 let DirrCas = document.getElementById("DirrCas").value;
-let TeleTra = document.getElementById("TeleTra").value;
+//let TeleTra = document.getElementById("TeleTra").value;
 let FechaEla = document.getElementById("FechaEla").value;
 let Motivo = document.getElementById("Motivo").value;
 let FechaMo = document.getElementById("FechaMo").value;
@@ -89,7 +89,7 @@ let AtmN6 = document.getElementById("AtmN6").value;
 let AtmA6 = document.getElementById("AtmA6").value;
 let AtmN7 = document.getElementById("AtmN7").value;
 let AtmA7 = document.getElementById("AtmA7").value;
-let Tratamiento = document.getElementById("Tratamiento").value;
+//let Tratamiento = document.getElementById("Tratamiento").value;
 let AccioPreveSI1 = document.getElementById("AccioPreveSI1").value;
 let AccioPreveFre1 = document.getElementById("AccioPreveFre1").value;
 let AccioPreveSI2 = document.getElementById("AccioPreveSI2").value;
@@ -131,3 +131,34 @@ let PlanTra4 = document.getElementById("PlanTra4").value;
 let PlanTra5 = document.getElementById("PlanTra5").value;
 let PlanTra6 = document.getElementById("PlanTra6").value;
 let PlanTra7 = document.getElementById("PlanTra7").value;
+$(document).on("click", "#guardar", function () {
+  $.ajax({
+    type: "POST",
+    url: "../ajax/historia.ajax.php",
+    data: {
+        NumHist:NumHist,
+        Estatura:Estatura,
+        Temp:Temp,
+        Pulso:Pulso,
+        Peso:Peso,
+        TenArte:TenArte,
+        FrecuRespi:FrecuRespi,
+    },
+    dataType: "json",
+    success: function (data) {
+        var msg = data;
+        console.log(msg);
+              if (msg == 1) {
+                Swal.fire("Exito", "Historia Actualizada", "success").then(
+                  function () {
+                    location.reload();
+                  }
+                );
+              }
+      
+    },
+    error:function (data) {
+        console.log("ERRORRRR!!!");
+    }
+  });
+});
