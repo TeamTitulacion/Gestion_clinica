@@ -42,7 +42,7 @@ $(document).ready(function () {
   });
   $(document).on("click", ".btnVer", function () {
     fila = $(this).closest("tr");
-    userid = parseInt(fila.find("td:eq(0)").text());
+    userid = fila.find("td:eq(4)").text();
     var crypid = $.ajax({
       type: "POST",
       url: "../ajax/paciente.ajax.php",

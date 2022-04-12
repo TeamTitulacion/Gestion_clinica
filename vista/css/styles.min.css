@@ -5,7 +5,7 @@
   background-size: 100% 100%;
   position: relative;
 }
-.fa-arrow-circle-left{
+.fa-arrow-circle-left{ 
   font-size: 5vh;
   color:#fff;
 }
@@ -76,4 +76,28 @@
 }
 .login-dark form .btn-primary:active {
   transform: translateY(1px);
+}
+.contenedor div{
+  word-wrap: break-word;
+}
+.odontog table tr{
+  text-align: center;
+  width: 50%;
+}
+.diente {
+  width: 15%;
+  height: 5%;
+  border: 2px solid #F8F8F8;
+  align-items: center;
+  
+  outline: none;
+  word-break:break-all;
+  text-decoration: none;
+  transition: background-color 0.2s ease-out,
+              color 0.2s ease-out;
+}
+.diente:hover, .diente:active {
+  color: #000;
+  transition: background-color 0.3s ease-in,
+              color 0.3s ease-in;
 }
