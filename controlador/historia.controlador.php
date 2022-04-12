@@ -75,10 +75,14 @@ class HistoriaControlador extends HistoriaModelo
         $TenArte = mainModel::limpiar_cadena($_POST['TenArte']);
         $FrecuRespi = mainModel::limpiar_cadena($_POST['FrecuRespi']);
 
-        $datos = ['id' => $id, 'Estatura' => $Estatura, 'Temp' => $Temp, 'Peso' => $Peso, 'Pulso' => $Pulso, 'TenArte' => $TenArte, 'FrecuRespi' => $FrecuRespi];
-
+        $datos = ['id' => $id, 'Estatura' => $Estatura, 'Temp' => $Temp, 'Peso' => $Peso, 
+        'Pulso' => $Pulso, 'TenArte' => $TenArte, 'FrecuRespi' => $FrecuRespi];
         $respuesta = HistoriaModelo::MdlActualizar($datos);
-        return $respuesta;
+        if ($respuesta->rowCount() > 0) {
+            echo 1;
+        } else {
+            echo 2;
+        };
         
     }
 }

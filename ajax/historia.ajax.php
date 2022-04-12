@@ -36,6 +36,6 @@ if ( isset($_POST['his'])||(isset($_POST['pac']) && isset($_POST['fecha']) && is
     }
     if (isset($_POST['Estatura'])&&isset($_POST['Temp'])&&isset($_POST['Pulso'])&&isset($_POST['Peso'])&&isset($_POST['TenArte'])&&isset($_POST['FrecuRespi']) && isset($_POST['NumHist'])) {
         $actualizar = new HistoriaControlador();
-        print_r($actualizar->CtrActualizar());
+        print_r( $actualizar->CtrActualizar());
     }
 }

@@ -165,11 +165,13 @@ $medifo = $med->CtrDoctor();
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <select id="Vih" name="Vih" class="form-control">
-                                                <option value="0">VIH</option>
-                                                <option value="1">Positivo</option>
-                                                <option value="2">Negativo</option>
-                                            </select>
+                                            <div class="input-group">
+                                                <span class="input-group-addon">VIH</span>
+                                                <select id="Vih" name="Vih" class="form-control">
+                                                    <option value="1">Positivo</option>
+                                                    <option value="2">Negativo</option>
+                                                </select>
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="">Diagnosticado en:</label>
@@ -1209,7 +1211,7 @@ $medifo = $med->CtrDoctor();
                                         <br><br><br><br><br><br><br><br><br><br><br>
                                     </div>
                                     <input type="button" name="previous" class="previous btn btn-default" value="Previo" />
-                                    <input type="button" id="guardar"  class="btn btn-info" value="Guardar" />
+                                    <input type="button" id="guardar" class="btn btn-info" value="Guardar" />
                                 </fieldset>
                             </form>
                         </div>

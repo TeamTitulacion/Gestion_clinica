@@ -96,8 +96,16 @@ class HistoriaModelo extends mainModel
     }
     protected function MdlActualizar($datos)
     {
-        $sql = mainModel::conectar()->prepare("UPDATE tbl_encabezadop AS e, tbl_cuerpop AS c, tbl_signosvitalesp AS s SET s.sig_estatura=:Estatura, s.sig_temperatura=:Temp, s.sig_peso=:Peso, s.sig_pulso=:Pulso, s.sig_tensionarterial=:TenArte, s.sig_frecuenciarespiratoria=:FrecuRespi WHERE e.` id_encabezado`=c.id_encabezado AND c.id_cuerpo=s.id_cuerpo AND e.enc_nhistoria=:id");
-        $sql->execute(array(':id' => $datos['id'], ':Estatura' => $datos['Estatura'], ':Temp' => $datos['Temp'], ':Peso' => $datos['Peso'], ':Pulso' => $datos['Pulso'], ':TenArte' => $datos['TenArte'], ':FrecuRespi' => $datos['FrecuRespi']));
+        
+        $sql = mainModel::conectar()->prepare("UPDATE tbl_encabezadop AS e, tbl_cuerpop AS c, 
+        tbl_signosvitalesp AS s SET s.sig_estatura=:Estatura, s.sig_temperatura=:Temp, s.sig_peso=:Peso,
+         s.sig_pulso=:Pulso, s.sig_tensionarterial=:TenArte, s.sig_frecuenciarespiratoria=:FrecuRespi
+          WHERE e.` id_encabezado`=c.id_encabezado AND c.id_cuerpo=s.id_cuerpo AND e.enc_nhistoria=:id");
+        $sql->execute(array(
+            ':id' => $datos['id'], ':Estatura' => $datos['Estatura'],
+            ':Temp' => $datos['Temp'], ':Peso' => $datos['Peso'], ':Pulso' => $datos['Pulso'],
+            ':TenArte' => $datos['TenArte'], ':FrecuRespi' => $datos['FrecuRespi']
+        ));
         return $sql;
         $sql->close();
         $sql = null;

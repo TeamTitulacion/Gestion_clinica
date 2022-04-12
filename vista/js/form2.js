@@ -1,4 +1,5 @@
-let NumHist = document.getElementById("NumHist").value;
+$(document).on("click", "#guardar", function () {
+  let NumHist = document.getElementById("NumHist").value;
 let NomOdontologo = document.getElementById("NomOdontologo").value;
 let Apellido = document.getElementById("Apellido").value;
 let Nombre = document.getElementById("Nombre").value;
@@ -131,7 +132,6 @@ let PlanTra4 = document.getElementById("PlanTra4").value;
 let PlanTra5 = document.getElementById("PlanTra5").value;
 let PlanTra6 = document.getElementById("PlanTra6").value;
 let PlanTra7 = document.getElementById("PlanTra7").value;
-$(document).on("click", "#guardar", function () {
   $.ajax({
     type: "POST",
     url: "../ajax/historia.ajax.php",
@@ -154,6 +154,8 @@ $(document).on("click", "#guardar", function () {
                     location.reload();
                   }
                 );
+              }else{
+                Swal.fire("Advertencia!", "No se realizo ningun cambio", "warning")
               }
       
     },
