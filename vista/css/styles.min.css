@@ -79,14 +79,17 @@
 }
 .contenedor div{
   word-wrap: break-word;
+  display: flex;
+}
+.contenedor div a{
+  width: 70%;
 }
 .odontog table tr{
   text-align: center;
   width: 50%;
 }
-.diente {
-  width: 15%;
-  height: 5%;
+.diente, .limpio {
+  width: 40%;
   border: 2px solid #F8F8F8;
   align-items: center;
   
