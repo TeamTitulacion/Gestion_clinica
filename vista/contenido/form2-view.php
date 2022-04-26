@@ -63,20 +63,24 @@ $medifo = $med->CtrDoctor();
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <span class="input-group-addon">Apellido</span>
-                                                <input id="Apellido" name="Apellido" type="text" value="<?php echo $res['pac_apellido'] ?>" class="form-control">
+                                                <input type="text" value="<?php echo $res['pac_apellido'] ?>" class="form-control" disabled>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <span class="input-group-addon">Nombre</span>
-                                                <input id="Nombre" name="Nombre" type="text" value="<?php echo $res['pac_nombre'] ?>" class="form-control">
+                                                <input type="text" value="<?php echo $res['pac_nombre'] ?>" class="form-control" disabled>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <select id="Sexo" name="Sexo" class="form-control">
-                                                <option value="<?php echo $res['pac_sexo'] ?>">Masculino</option>
-                                                <option value="2">Femenino</option>
-                                            </select>
+                                            <div class="input-group">
+                                                <span class="input-group-addon">Sexo</span>
+                                                <?php if ($res['pac_sexo'] = 1) { ?>
+                                                    <input type="text" value="Masculino" class="form-control" disabled>
+                                                <?php } else { ?>
+                                                    <input type="text" value="Femenino" class="form-control" disabled>
+                                                <?php  } ?>
+                                            </div>
                                         </div>
 
                                         <div class="form-group">
@@ -89,96 +93,87 @@ $medifo = $med->CtrDoctor();
                                                 $contador = date_diff($datetime2, $datetime1);
                                                 $differenceFormat = '%y';
                                                 ?>
-                                                <input id="Edad" name="Edad" type="text" value="<?php echo $contador->format($differenceFormat) ?>" class="form-control">
+                                                <input type="text" value="<?php echo $contador->format($differenceFormat) ?>" class="form-control" disabled>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group">
-                                                <input id="FechaNac" name="FechaNac" type="date" value="<?php echo $res['pac_nacimiento'] ?>" class="form-control">
-                                                <span class="input-group-btn">
-                                                    <label class="btn btn-default" disabled>Fecha de nacimiento</label>
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <select id="Sangre" name="Sangre" class="form-control">
-                                                <option value="<?php echo $res['pac_sangre'] ?>"><?php echo $res['pac_sangre'] ?></option>
-                                                <option>O Negativo</option>
-                                                <option>O Positivo</option>
-                                                <option>A Negativo</option>
-                                                <option>A Positivo</option>
-                                                <option>B Negativo</option>
-                                                <option>B Positivo</option>
-                                                <option>AB Negativo</option>
-                                                <option>AB Negativo</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <select id="Estado" name="Estado" class="form-control">
-                                                <option value="<?php echo $res['pac_estado_civil'] ?>"><?php echo $res['pac_estado_civil'] ?></option>
-                                                <option>Soltero</option>
-                                                <option>Casado</option>
-                                                <option>Viudo</option>
-                                                <option>Divorciado</option>
-                                                <option>Union Libre</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="input-group">
-                                                <span class="input-group-addon">Telefono de residencia</span>
-                                                <input name="Tele" id="Tele" type="text" value="<?php echo $res['pac_telefono'] ?>" class="form-control">
+                                                <span class="input-group-addon">Fecha de nacimiento</span>
+                                                <input type="date" value="<?php echo $res['pac_nacimiento'] ?>" class="form-control" disabled>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group">
-                                                <span class="input-group-addon">Direccion y lugar de residencia</span>
-                                                <input id="DirrCas" name="DirrCas" type="text" value="<?php echo $res['pac_direccion'] ?>" class="form-control">
+                                                <span class="input-group-addon">Sangre</span>
+                                                <input type="text" value="<?php echo $res['pac_sangre'] ?>" class="form-control" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">Estado Civil</span>
+                                                <input type="text" value="<?php echo $res['pac_estado_civil'] ?>" class="form-control" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">Telefono</span>
+                                                <input type="text" value="<?php echo $res['pac_telefono'] ?>" class="form-control" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">Direccion</span>
+                                                <input type="text" value="<?php echo $res['pac_direccion'] ?>" class="form-control" disabled>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="input-group">
                                             <input id="FechaEla" name="FechaEla" type="date" value="<?php echo $res['enc_fechaelab'] ?>" class="form-control" disabled>
-                                            <span class="input-group-btn">
-                                                <label class="btn btn-default" disabled>Fecha de elaboracion</label>
-                                            </span>
+                                            <span class="input-group-addon">Fecha de elaboracion</span>
                                         </div><br><br><br>
                                         <div class="form-group">
                                             <span class="help-block">Motivo y fecha de ultima visita al odontologo</span>
                                             <div class="input-group">
-                                                <input id="Motivo" name="Motivo" type="text" class="form-control">
+                                                <input id="Motivo" name="Motivo" type="text" value="<?php echo $res['cue_motivo'] ?>" class="form-control">
                                                 <span class="input-group-btn">
-                                                    <input id="FechaMo" name="FechaMo" type="date" class="form-control">
+                                                    <input id="FechaMo" name="FechaMo" type="date" value="<?php echo $res['cue_fecha'] ?>" class="form-control">
                                                 </span>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <span class="input-group-addon">Nombre del acompañante</span>
-                                                <input id="NomAcompa" name="NomAcompa" type="text" class="form-control" placeholder="">
+                                                <input id="NomAcompa" name="NomAcompa" type="text" value="<?php echo $res['cue_nacompanante'] ?>" class="form-control" placeholder="">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <span class="input-group-addon">Telefono del acompañante</span>
-                                                <input id="TeleAcompa" name="TeleAcompa" type="text" class="form-control" placeholder="">
+                                                <input id="TeleAcompa" name="TeleAcompa" type="text" value="<?php echo $res['cue_telefonoacomp'] ?>" class="form-control" placeholder="">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <span class="input-group-addon">VIH</span>
                                                 <select id="Vih" name="Vih" class="form-control">
-                                                    <option value="1">Positivo</option>
-                                                    <option value="2">Negativo</option>
+                                                    <?php if ($res['cue_vih'] == 1) { ?>
+                                                        <option value="1">Positivo</option>
+                                                        <option value="2">Negativo</option>
+                                                    <?php  } else { ?>
+                                                        <option value="2">Negativo</option>
+                                                        <option value="1">Positivo</option>
+                                                    <?php } ?>
+
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="">Diagnosticado en:</label>
                                             <div class="input-group">
-                                                <input id="DiagVIH" name="DiagVIH" type="text" class="form-control">
+                                                <input id="DiagVIH" name="DiagVIH" type="text" value="<?php echo $res['cue_vihdiagnostico'] ?>" class="form-control">
                                                 <span class="input-group-btn">
-                                                    <input id="FechaVIH" name="FechaVIH" type="date" class="form-control">
+                                                    <input id="FechaVIH" name="FechaVIH" type="date" value="<?php echo $res['cue_vihfecha'] ?>" class="form-control">
                                                 </span>
                                             </div>
                                         </div>
@@ -367,12 +362,6 @@ $medifo = $med->CtrDoctor();
 
                                     <input type="button" name="previous" class="previous btn btn-default" value="Previo" />
                                     <input type="button" name="next" class="next btn btn-info" value="Siguiente" />
-
-
-
-
-
-
                                 </fieldset>
 
                                 <fieldset>
@@ -547,7 +536,7 @@ $medifo = $med->CtrDoctor();
                                                         <img class="btn btn-default diente" id="1" src="<?php echo 'http://localhost/dientes/' ?>/assets/dientes/1.png" alt=""><br>
                                                         <p> sano</p>
                                                     </a>
-                                                    <a >
+                                                    <a>
                                                         <img class="btn btn-default limpio" id="2" src="<?php echo 'http://localhost/dientes/' ?>/assets/dientes/2-1.png" alt=""><br>
                                                         <p>Obturacion Temp</p>
                                                     </a>

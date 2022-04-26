@@ -74,15 +74,25 @@ class HistoriaControlador extends HistoriaModelo
         $Pulso = mainModel::limpiar_cadena($_POST['Pulso']);
         $TenArte = mainModel::limpiar_cadena($_POST['TenArte']);
         $FrecuRespi = mainModel::limpiar_cadena($_POST['FrecuRespi']);
+        $motivo = mainModel::limpiar_cadena($_POST['Motivo']);
+        $fechaMo = mainModel::limpiar_cadena($_POST['FechaMo']);
+        $acompa = mainModel::limpiar_cadena($_POST['NomAcompa']);
+        $telacompa = mainModel::limpiar_cadena($_POST['TeleAcompa']);
+        $vih = mainModel::limpiar_cadena($_POST['Vih']);
+        $vihdiag = mainModel::limpiar_cadena($_POST['DiagVIH']);
+        $vihfecha = mainModel::limpiar_cadena($_POST['FechaVIH']);
 
-        $datos = ['id' => $id, 'Estatura' => $Estatura, 'Temp' => $Temp, 'Peso' => $Peso, 
-        'Pulso' => $Pulso, 'TenArte' => $TenArte, 'FrecuRespi' => $FrecuRespi];
-        $respuesta = HistoriaModelo::MdlActualizar($datos);
+        $datos = [
+            'id' => $id, 'Estatura' => $Estatura, 'Temp' => $Temp, 'Peso' => $Peso,
+            'Pulso' => $Pulso, 'TenArte' => $TenArte, 'FrecuRespi' => $FrecuRespi, 'motivo' => $motivo,
+            'fechaMo' => $fechaMo, 'acompa' => $acompa, 'telacompa' => $telacompa, 'vih' => $vih, 
+            'vihdiag' => $vihdiag, 'vihfecha' => $vihfecha
+        ];
+       $respuesta = HistoriaModelo::MdlActualizar($datos);
         if ($respuesta->rowCount() > 0) {
             echo 1;
         } else {
             echo 2;
-        };
-        
+        }; 
     }
 }
