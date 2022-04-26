@@ -81,12 +81,14 @@ class HistoriaControlador extends HistoriaModelo
         $vih = mainModel::limpiar_cadena($_POST['Vih']);
         $vihdiag = mainModel::limpiar_cadena($_POST['DiagVIH']);
         $vihfecha = mainModel::limpiar_cadena($_POST['FechaVIH']);
+        $moconsulta = mainModel::limpiar_cadena($_POST['MoConsulta']);
+        $efeActuales = mainModel::limpiar_cadena($_POST['EnfeActuales']);
 
         $datos = [
             'id' => $id, 'Estatura' => $Estatura, 'Temp' => $Temp, 'Peso' => $Peso,
             'Pulso' => $Pulso, 'TenArte' => $TenArte, 'FrecuRespi' => $FrecuRespi, 'motivo' => $motivo,
             'fechaMo' => $fechaMo, 'acompa' => $acompa, 'telacompa' => $telacompa, 'vih' => $vih, 
-            'vihdiag' => $vihdiag, 'vihfecha' => $vihfecha
+            'vihdiag' => $vihdiag, 'vihfecha' => $vihfecha , 'moconsulta'=>$moconsulta , 'efeActuales'=>$efeActuales
         ];
        $respuesta = HistoriaModelo::MdlActualizar($datos);
         if ($respuesta->rowCount() > 0) {

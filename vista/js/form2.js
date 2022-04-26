@@ -119,11 +119,36 @@ $(document).on("click", "#guardar", function () {
   let PlanTra5 = document.getElementById("PlanTra5").value;
   let PlanTra6 = document.getElementById("PlanTra6").value;
   let PlanTra7 = document.getElementById("PlanTra7").value;
-  console.log(Motivo+FechaMo+NomAcompa+TeleAcompa+Vih+DiagVIH+FechaVIH);
+  console.log(
+    Motivo + FechaMo + NomAcompa + TeleAcompa + Vih + DiagVIH + FechaVIH
+  );
   $.ajax({
     type: "POST",
     url: "../ajax/historia.ajax.php",
     data: {
+      TiposAnte1: TiposAnte1,
+      TiposAnte2: TiposAnte2,
+      TiposAnte3: TiposAnte3,
+      TiposAnte4: TiposAnte4,
+      TiposAnte5: TiposAnte5,
+      TiposAnte6: TiposAnte6,
+      TiposAnte7: TiposAnte7,
+      TiposAnte8: TiposAnte8,
+      TiposAnte9: TiposAnte9,
+      TiposAnte10: TiposAnte10,
+      TiposAnte11: TiposAnte11,
+      TiposAnte12: TiposAnte12,
+      TiposAnte13: TiposAnte13,
+      TiposAnte14: TiposAnte14,
+      TiposAnte15: TiposAnte15,
+      TiposAnte16: TiposAnte16,
+      TiposAnte17: TiposAnte17,
+      TiposAnte18: TiposAnte18,
+      TiposAnte19: TiposAnte19,
+      TiposAnte20: TiposAnte20,
+      TiposAnte21: TiposAnte21,
+      MoConsulta: MoConsulta,
+      EnfeActuales: EnfeActuales,
       Motivo: Motivo,
       FechaMo: FechaMo,
       NomAcompa: NomAcompa,

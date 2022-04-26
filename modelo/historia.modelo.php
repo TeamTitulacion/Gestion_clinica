@@ -98,11 +98,10 @@ class HistoriaModelo extends mainModel
     {
 
         $sql = mainModel::conectar()->prepare("UPDATE tbl_encabezadop AS e, tbl_cuerpop AS c, 
-        tbl_signosvitalesp AS s SET c.cue_fecha=:fechaMo,c.cue_motivo=:motivo,c.cue_nacompanante=:acompa,
-        c.cue_telefonoacomp=:telacompa,c.cue_vih=:vih,c.cue_vihdiagnostico=:vihdiag,c.cue_vihfecha=:vihfecha,s.sig_estatura=:Estatura, s.sig_temperatura=:Temp, s.sig_peso=:Peso,s.sig_pulso=:Pulso, s.sig_tensionarterial=:TenArte, 
+        tbl_signosvitalesp AS s SET cue_motivo_actual=:motactual,cue_enfermedades=:enfeactual,c.cue_fecha=:fechaMo,c.cue_motivo=:motivo,c.cue_nacompanante=:acompa, c.cue_telefonoacomp=:telacompa,c.cue_vih=:vih,c.cue_vihdiagnostico=:vihdiag,c.cue_vihfecha=:vihfecha,s.sig_estatura=:Estatura, s.sig_temperatura=:Temp, s.sig_peso=:Peso,s.sig_pulso=:Pulso, s.sig_tensionarterial=:TenArte, 
         s.sig_frecuenciarespiratoria=:FrecuRespi
           WHERE e.` id_encabezado`=c.id_encabezado AND c.id_cuerpo=s.id_cuerpo AND e.enc_nhistoria=:id");
-        $sql->execute(array(':id' => $datos['id'], ':Estatura' => $datos['Estatura'],':Temp' => $datos['Temp'], ':Peso' => $datos['Peso'], ':Pulso' => $datos['Pulso'],':TenArte' => $datos['TenArte'], ':FrecuRespi' => $datos['FrecuRespi'], ':motivo' => $datos['motivo'], ':fechaMo' => $datos['fechaMo'], ':acompa' => $datos['acompa'], ':telacompa' => $datos['telacompa'], ':vih' => $datos['vih'], ':vihdiag' => $datos['vihdiag'], ':vihfecha' => $datos['vihfecha']
+        $sql->execute(array(':id' => $datos['id'], ':Estatura' => $datos['Estatura'],':Temp' => $datos['Temp'], ':Peso' => $datos['Peso'], ':Pulso' => $datos['Pulso'],':TenArte' => $datos['TenArte'], ':FrecuRespi' => $datos['FrecuRespi'], ':motivo' => $datos['motivo'], ':fechaMo' => $datos['fechaMo'], ':acompa' => $datos['acompa'], ':telacompa' => $datos['telacompa'], ':vih' => $datos['vih'], ':vihdiag' => $datos['vihdiag'], ':vihfecha' => $datos['vihfecha'], ':motactual'=>$datos['moconsulta'],'enfeactual'=>$datos['efeActuales']
         ));
         return $sql;
         $sql->close();
