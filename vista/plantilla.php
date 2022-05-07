@@ -19,7 +19,8 @@ session_start(["name" => "UIC"]);
     <script src="<?php echo SERVERURL ?>/vista/js/jquery.min.js"></script>
     <script src="<?php echo SERVERURL ?>/vista/js/jqueryui.custom.min.js"></script>
     <script src="<?php echo SERVERURL ?>/vista/js/bootstrap.min.js"></script>
-
+    <script src="<?php echo SERVERURL ?>/vista/js/select2.min.js"></script>
+    <link href="<?php echo SERVERURL ?>/vista/css/select2.min.css" rel="stylesheet">
     <link href="<?php echo SERVERURL ?>/vista/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo SERVERURL ?>/vista/css/jqueryui.custom.css" rel="stylesheet">
     <link href="<?php echo SERVERURL ?>/vista/css/metisMenu.min.css" rel="stylesheet">

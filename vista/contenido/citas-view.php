@@ -7,6 +7,7 @@ if (!isset($_SESSION['usuario']) || !isset($_SESSION['password'])) {
 } 
 $med= new MedicoControlador();
 $list= $med->CtrListar();
+$pac=$med->CtrLpacientes();
 ?>
 <div id="wrapper">
     <!-- Page Content -->
@@ -51,12 +52,26 @@ $list= $med->CtrListar();
 
                             </div>
                             <div class="form-floating mb-3">
-                                <label for="doc" class="form-label">Odontologo</label>
-                                <select name="Odonto" id="Odonto" class="form-control">
+                                <label for="doc" class="form-label">Odontologo</label> <br>
+                                <select name="Odonto" id="Odonto" class="js-example-basic-single js-states form-control">
                                 <?php 
                                     foreach ($list as $key => $value) {
                                         ?>
                                         <option value="<?php echo $value['id_medico'] ?>"><?php echo $value['med_nombre'].' '.$value['med_apellido'] ?></option>
+                                        <?php
+                                    }
+                                    ?>
+                                    
+                                </select>
+
+                            </div>
+                            <div class="form-floating mb-3">
+                                <label for="doc" class="form-label">Paciente</label> <br>
+                                <select id="Pac" class="js-example-basic-single js-states form-control">
+                                <?php 
+                                    foreach ($pac as $key => $value) {
+                                        ?>
+                                        <option value="<?php echo $value['id_paciente'] ?>"><?php echo $value['pac_nombre'].' '.$value['pac_apellido'] ?></option>
                                         <?php
                                     }
                                     ?>
