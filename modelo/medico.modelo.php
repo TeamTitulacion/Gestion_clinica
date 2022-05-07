@@ -9,7 +9,7 @@ class MedicoModelo extends mainModel
     protected function MdlListar()
     {
         $sql = mainModel::conectar()->prepare("SELECT * FROM tbl_medico AS m, tbl_categoria AS c, tbl_perfil AS p WHERE m.id_perfil=p.id_perfil and m.id_categoria = c.id_categoria AND 
-        m.med_estado !=1" );
+        m.med_estado !=1 AND m.id_perfil=2" );
         $sql->execute();
         $respuesta = $sql->fetchAll(PDO::FETCH_ASSOC);
         return $respuesta;

@@ -1,10 +1,12 @@
 <?php 
 require_once "./controlador/login.controlador.php";
-
+require_once "./controlador/medico.controlador.php";
 $cerrar = new LoginControlador();
 if (!isset($_SESSION['usuario']) || !isset($_SESSION['password'])) {
     echo $cerrar->CtrCerrarSession();
 } 
+$med= new MedicoControlador();
+$list= $med->CtrListar();
 ?>
 <div id="wrapper">
     <!-- Page Content -->
@@ -44,10 +46,25 @@ if (!isset($_SESSION['usuario']) || !isset($_SESSION['password'])) {
 
                             </div>
                             <div class="form-floating mb-3">
-                                <label for="color" class="form-label">Color</label>
-                                <input type="color" class="form-control" id="color" name="color">
+                                <label for="hora" class="form-label">Hora</label>
+                                <input type="time" class="form-control" id="hora" name="hora" min="09:00" max="17:00" required pattern="[0-9]{2}:[0-9]{2}">
 
                             </div>
+                            <div class="form-floating mb-3">
+                                <label for="doc" class="form-label">Odontologo</label>
+                                <select name="Odonto" id="Odonto" class="form-control">
+                                <?php 
+                                    foreach ($list as $key => $value) {
+                                        ?>
+                                        <option value="<?php echo $value['id_medico'] ?>"><?php echo $value['med_nombre'].' '.$value['med_apellido'] ?></option>
+                                        <?php
+                                    }
+                                    ?>
+                                    
+                                </select>
+
+                            </div>
+
                         </div>
                         <div class="modal-footer">
                             

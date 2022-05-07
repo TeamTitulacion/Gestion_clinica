@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }).responseText;
 
   jqxhr = JSON.parse(jqxhr);
+  
   var calendar = new FullCalendar.Calendar(calendarEl, {
     initialView: "dayGridMonth",
     headerToolbar: {
@@ -37,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
       day: 'Día',
       list: 'Agenda',
     },
+    hiddenDays:[0],
     events: jqxhr,
     editable: true,
     dateClick: function (info) {
@@ -45,20 +47,27 @@ document.addEventListener("DOMContentLoaded", function () {
       eliminar.classList.add("hidden");
       actualizar.classList.add("hidden");
       document.getElementById("titulos").textContent = "Registro de Cita";
+      document.getElementById("title").value ="";
+      document.getElementById("hora").value ="";
       $("#myModal").modal("show");
       $(document).on("click", "#btnAccion", function (e) {
         e.preventDefault();
         const title = document.getElementById("title").value;
         const fecha = document.getElementById("start").value;
-        const color = document.getElementById("color").value;
-        if (title == "" || fecha == "" || color == "") {
+        const hora = document.getElementById("hora").value;
+        min=Date.parse(hora);
+        console.log(min);
+        if (title == "" || fecha == "" ) {
           Swal.fire("Aviso", "Todos los campos son requeridos", "warning");
-        } else {
+        }if (hora<"08:59:00"||hora>"16:01:00") {
+          Swal.fire("Aviso", "El horario de antencion es de 09:00 AM hasta las 17:00 PM", "warning");
+        } 
+        else {
           $("#myModal").modal("hide");
           $.ajax({
             url: "./ajax/calendar.ajax.php",
             type: "POST",
-            data: { title: title, start: fecha, color: color },
+            data: { title: title, start: fecha+" "+hora},
             datatype: "json",
             success: function (data) {
               var msg = data;
@@ -78,18 +87,20 @@ document.addEventListener("DOMContentLoaded", function () {
       registrar.classList.add("hidden");
       eliminar.classList.remove("hidden");
       actualizar.classList.remove("hidden");
+      resul=new Date(info.event.start).toISOString();
+      horaevent=new Date(info.event.startStr);
       document.getElementById("titulos").textContent = "Modificar elemento";
       document.getElementById("id").value = info.event.id;
       document.getElementById("title").value = info.event.title;
-      document.getElementById("start").value = info.event.startStr;
-      document.getElementById("color").value = info.event.backgroundColor;
+      document.getElementById("start").value = resul.substr(0,10);
+      document.getElementById("hora").value = ("0"+horaevent.getHours()).slice(-2)+":"+("0"+horaevent.getMinutes()).slice(-2);
       $("#myModal").modal("show");
       $(document).on("click", "#btnActualizar", function (e) {
         e.preventDefault();
         var id = document.getElementById("id").value;
         var titulo = document.getElementById("title").value;
         var fecha = document.getElementById("start").value;
-        var color = document.getElementById("color").value;
+        var hora = document.getElementById("hora").value;
         $("#myModal").modal("hide");
         $.ajax({
           type: "POST",
@@ -97,8 +108,8 @@ document.addEventListener("DOMContentLoaded", function () {
           data: {
             id: id,
             titulo: titulo,
-            fecha: fecha,
-            color: color,
+            fecha: fecha+" "+hora,
+            
           },
           dataType: "json",
           success: function (dato) {

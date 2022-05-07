@@ -11,10 +11,10 @@ class CalendarControlador extends CalendarModelo
 
         $fecha = mainModel::limpiar_cadena($_POST['start']);
         $evento = mainModel::limpiar_cadena($_POST['title']);
-        $color = mainModel::limpiar_cadena($_POST['color']);
+       
 
 
-        $dato = ["fecha" => $fecha, "evento" => $evento, "color" => $color];
+        $dato = ["fecha" => $fecha, "evento" => $evento];
 
         $insertar = CalendarModelo::MdlRegistrar($dato);
 
@@ -36,10 +36,10 @@ class CalendarControlador extends CalendarModelo
     {
         $fecha = mainModel::limpiar_cadena($_POST['fecha']);
         $evento = mainModel::limpiar_cadena($_POST['titulo']);
-        $color = mainModel::limpiar_cadena($_POST['color']);
+        
         $id = mainModel::limpiar_cadena($_POST['id']);
 
-        $dato = ["fecha" => $fecha, "evento" => $evento, "color" => $color, "id" => $id];
+        $dato = ["fecha" => $fecha, "evento" => $evento,"id" => $id];
 
         $actualizar = CalendarModelo::MdlActualzar($dato);
         if ($actualizar->rowCount() >= 1) {
