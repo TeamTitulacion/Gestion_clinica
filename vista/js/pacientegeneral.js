@@ -57,5 +57,25 @@ $(document).ready(function () {
     }).responseText;
     window.location.href = "hpaciente/" + crypid;
   });
+  $(document).on("click", ".registrar", function () {
+    
+    $("#myModal").modal("show");
+    /*
+    var crypid = $.ajax({
+      type: "POST",
+      url: "./ajax/paciente.ajax.php",
+      data: {
+        enc: userid,
+      },
+      dataType: "json",
+      context: document.body,
+      global: false,
+      async: false,
+      success: function (data) {
+        return data;
+      },
+    }).responseText;
+    window.location.href = "hpaciente/" + crypid; */
+  });
  
 });

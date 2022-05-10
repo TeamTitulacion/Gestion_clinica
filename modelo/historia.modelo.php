@@ -46,8 +46,7 @@ class HistoriaModelo extends mainModel
     {
         $sql = mainModel::conectar()->prepare("INSERT INTO tbl_encabezadoP(enc_nhistoria,enc_fechaelab,
         id_paciente,id_medico) VALUES (:nhis,:fecha,:id,:med)");
-        $sql1 = mainModel::conectar()->prepare("SELECT MAX(` id_encabezado`) as encabezado FROM tbl_encabezadoP Where 
-        id_paciente=:ipac");
+        $sql1 = mainModel::conectar()->prepare("SELECT MAX(` id_encabezado`) as encabezado FROM tbl_encabezadoP Where id_paciente=:ipac");
         $sql2 = mainModel::conectar()->prepare("INSERT INTO tbl_cuerpoP(id_encabezado) VALUES (:enca)");
         $sql3 = mainModel::conectar()->prepare("SELECT MAX(id_cuerpo) as id_cuerpo FROM tbl_cuerpoP Where 
         id_encabezado=:ienc");
@@ -55,7 +54,7 @@ class HistoriaModelo extends mainModel
         $sql5 = mainModel::conectar()->prepare('INSERT INTO tbl_haccionprevP(id_cuerpo) values(:icue2)');
         $sql6 = mainModel::conectar()->prepare('INSERT INTO tbl_ptratamientoP(id_cuerpo) values(:icue3)');
         $sql7 = mainModel::conectar()->prepare('INSERT INTO tbl_placabacP(id_cuerpo) values(:icue4)');
-        $sql8 = mainModel::conectar()->prepare('INSERT INTO tbl_tbl_diagnosticop(id_cuerpo) values(:icue5)');
+        $sql8 = mainModel::conectar()->prepare('INSERT INTO tbl_diagnosticop(id_cuerpo) values(:icue5)');
         $sql9 = mainModel::conectar()->prepare('INSERT INTO tbl_dientesP(id_cuerpo) values(:icue6)');
         $sql10 = mainModel::conectar()->prepare('INSERT INTO tbl_signosvitalesP(id_cuerpo) values(:icue7)');
         mainModel::conectar()->beginTransaction();
@@ -63,6 +62,7 @@ class HistoriaModelo extends mainModel
             ':nhis' => $datos['nhis'], ':fecha' => $datos['fecha'], ':id' => $datos['id'],
             ':med' => $datos['med']
         ));
+        $sql11 = mainModel::conectar()->prepare('INSERT INTO tbl_antecedentesp(id_paciente) values(:ante)');
         $sql1->execute(array(':ipac' => $datos['id']));
         $encabezado = $sql1->fetch(PDO::FETCH_ASSOC);
         $idencabezado = $encabezado['encabezado'];
@@ -77,6 +77,7 @@ class HistoriaModelo extends mainModel
         $sql8->execute(array(':icue5' => $idcuerpo));
         $sql9->execute(array(':icue6' => $idcuerpo));
         $sql10->execute(array(':icue7' => $idcuerpo));
+        $sql11->execute(array(':ante'=>$datos['id']));
         return $sql10;
         $sql->close();
         $sql = null;
@@ -98,10 +99,10 @@ class HistoriaModelo extends mainModel
     {
 
         $sql = mainModel::conectar()->prepare("UPDATE tbl_encabezadop AS e, tbl_cuerpop AS c, 
-        tbl_signosvitalesp AS s SET cue_motivo_actual=:motactual,cue_enfermedades=:enfeactual,c.cue_fecha=:fechaMo,c.cue_motivo=:motivo,c.cue_nacompanante=:acompa, c.cue_telefonoacomp=:telacompa,c.cue_vih=:vih,c.cue_vihdiagnostico=:vihdiag,c.cue_vihfecha=:vihfecha,s.sig_estatura=:Estatura, s.sig_temperatura=:Temp, s.sig_peso=:Peso,s.sig_pulso=:Pulso, s.sig_tensionarterial=:TenArte, 
+        tbl_signosvitalesp AS s SET ant_tmactual=:t1,ant_tmedicamentos=:t2,ant_alergias=:t3,ant_cardiopatia=:t4,ant_aparterial=:t5,ant_embarazo=:t6,ant_diabetes=:t7,ant_hepatitis=:t8,ant_irradiaciones=:t9,ant_dsanguineas=:t10,ant_freumatica=:t11,ant_erenales=:t12,ant_inmunosupresion=:t13,ant_tranemocional=:t14,ant_tgastricos=:t15,ant_epilepsia=:t16,ant_trespiratorio=:t17,ant_cirugia=:t18,ant_eoral=:t19,ant_otras=:t20,ant_vicios=:t21,ant_observaciones=:ObservaAntece,cue_motivo_actual=:motactual,cue_enfermedades=:enfeactual,c.cue_fecha=:fechaMo,c.cue_motivo=:motivo,c.cue_nacompanante=:acompa, c.cue_telefonoacomp=:telacompa,c.cue_vih=:vih,c.cue_vihdiagnostico=:vihdiag,c.cue_vihfecha=:vihfecha,s.sig_estatura=:Estatura, s.sig_temperatura=:Temp, s.sig_peso=:Peso,s.sig_pulso=:Pulso, s.sig_tensionarterial=:TenArte, 
         s.sig_frecuenciarespiratoria=:FrecuRespi
           WHERE e.` id_encabezado`=c.id_encabezado AND c.id_cuerpo=s.id_cuerpo AND e.enc_nhistoria=:id");
-        $sql->execute(array(':id' => $datos['id'], ':Estatura' => $datos['Estatura'],':Temp' => $datos['Temp'], ':Peso' => $datos['Peso'], ':Pulso' => $datos['Pulso'],':TenArte' => $datos['TenArte'], ':FrecuRespi' => $datos['FrecuRespi'], ':motivo' => $datos['motivo'], ':fechaMo' => $datos['fechaMo'], ':acompa' => $datos['acompa'], ':telacompa' => $datos['telacompa'], ':vih' => $datos['vih'], ':vihdiag' => $datos['vihdiag'], ':vihfecha' => $datos['vihfecha'], ':motactual'=>$datos['moconsulta'],'enfeactual'=>$datos['efeActuales']
+        $sql->execute(array(':id' => $datos['id'], ':Estatura' => $datos['Estatura'],':Temp' => $datos['Temp'], ':Peso' => $datos['Peso'], ':Pulso' => $datos['Pulso'],':TenArte' => $datos['TenArte'], ':FrecuRespi' => $datos['FrecuRespi'], ':motivo' => $datos['motivo'], ':fechaMo' => $datos['fechaMo'], ':acompa' => $datos['acompa'], ':telacompa' => $datos['telacompa'], ':vih' => $datos['vih'], ':vihdiag' => $datos['vihdiag'], ':vihfecha' => $datos['vihfecha'], ':motactual'=>$datos['moconsulta'],'enfeactual'=>$datos['efeActuales'],':t1'=>$datos['t1'],':t2'=>$datos['t2'],':t3'=>$datos['t3'],':t4'=>$datos['t4'],':t5'=>$datos['t5'],':t6'=>$datos['t6'],':t7'=>$datos['t7'],':t8'=>$datos['t8'],':t9'=>$datos['t9'],':t10'=>$datos['t10'],':t11'=>$datos['t11'],':t12'=>$datos['t12'],':t13'=>$datos['t13'],':t14'=>$datos['t14'],':t15'=>$datos['t15'],':t16'=>$datos['t16'],':t17'=>$datos['t17'],':t18'=>$datos['t18'],':t19'=>$datos['t19'],':t20'=>$datos['t20'],':t21'=>$datos['t21'],':ObservaAntece'=>$datos['ObservaAntece']
         ));
         return $sql;
         $sql->close();
