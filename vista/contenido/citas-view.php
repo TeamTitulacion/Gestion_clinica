@@ -103,6 +103,13 @@ $pac=$med->CtrLpacientes();
 
 
 </div>
-<script src="<?php echo SERVERURL ?>/vista/js/fullcalendar/app.js"></script>
+<?php if ($_SESSION['rol']==1) { ?>
+    <script src="<?php echo SERVERURL ?>/vista/js/fullcalendar/app.js"></script>
+    <?php }
+    else { ?>
+    <script src="<?php echo SERVERURL ?>/vista/js/fullcalendar/appmed.js"></script>
+    <?php  } ?>
+
+
 
 <script src="<?php echo SERVERURL ?>/vista/js/fullcalendar/main.min.js"></script>

@@ -46,6 +46,7 @@ $(document).ready(function () {
     frmData.append("userUP", user);
     frmData.append("passUP", pass);
     frmData.append("id", id);
+    
     if (
       nombre == "" ||
       apellido == "" ||

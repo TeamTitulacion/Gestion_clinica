@@ -1,7 +1,11 @@
 <?php
 require_once './controlador/visitas.controlador.php';
+require_once './controlador/index.controlador.php';
 $ip = new VisitasControlador();
 $reg = $ip->CtrVisitas();
+$galeria = new Index();
+$img = $galeria->CtrGaleria();
+$med = $galeria->CtrMedicos();
 ?>
 <!-- Start header -->
 <header class="top-header">
@@ -171,56 +175,7 @@ $reg = $ip->CtrVisitas();
 
 						</div>
 					</div>
-					<!--<div class="item">
-						<div class="serviceBox">
-							<div class="service-icon"><i class="fa fa-wheelchair" aria-hidden="true"></i></div>
-							<h3 class="title">Lorem ipsum dolor</h3>
-							<p class="description">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium consequuntur.
-							</p>
 
-						</div>
-					</div>
-					<div class="item">
-						<div class="serviceBox">
-							<div class="service-icon"><i class="fa fa-plus-square" aria-hidden="true"></i></div>
-							<h3 class="title">Lorem ipsum dolor</h3>
-							<p class="description">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium consequuntur.
-							</p>
-
-						</div>
-					</div>
-					<div class="item">
-						<div class="serviceBox">
-							<div class="service-icon"><i class="fa fa-medkit" aria-hidden="true"></i></div>
-							<h3 class="title">Lorem ipsum dolor</h3>
-							<p class="description">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium consequuntur.
-							</p>
-
-						</div>
-					</div>
-					<div class="item">
-						<div class="serviceBox">
-							<div class="service-icon"><i class="fa fa-user-md" aria-hidden="true"></i></div>
-							<h3 class="title">Lorem ipsum dolor</h3>
-							<p class="description">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium consequuntur.
-							</p>
-
-						</div>
-					</div>
-					<div class="item">
-						<div class="serviceBox">
-							<div class="service-icon"><i class="fa fa-ambulance" aria-hidden="true"></i></div>
-							<h3 class="title">Lorem ipsum dolor</h3>
-							<p class="description">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium consequuntur.
-							</p>
-
-						</div>
-					</div>-->
 				</div>
 			</div>
 		</div>
@@ -228,105 +183,6 @@ $reg = $ip->CtrVisitas();
 </div>
 <!-- End Services -->
 
-<!-- Start Appointment -->
-<div id="appointment" class="appointment-main">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<div class="title-box">
-					<h2>Agenda una cita </h2>
-					<p>Que estas esperando y agenda una cita con nosotros. </p>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-6 col-md-6">
-				<div class="well-block">
-					<div class="well-title">
-						<h2>Libro de citas</h2>
-					</div>
-					<form>
-						<!-- Form start -->
-						<div class="row">
-							<div class="col-md-6">
-								<div class="form-group">
-									<label class="control-label" for="name">Nombre</label>
-									<input id="name" name="name" type="text" placeholder="Name" class="form-control input-md">
-								</div>
-							</div>
-							<!-- Text input-->
-							<div class="col-md-6">
-								<div class="form-group">
-									<label class="control-label" for="email">Email</label>
-									<input id="email" name="email" type="text" placeholder="test@mail.com" class="form-control input-md">
-								</div>
-							</div>
-							<!-- Text input-->
-							<div class="col-md-6">
-								<div class="form-group">
-									<label class="control-label" for="date">Fecha preferida</label>
-									<input type="date" name="date" type="text" placeholder="Preferred Date" class="form-control input-md">
-								</div>
-							</div>
-							<!-- Select Basic -->
-							<div class="col-md-6">
-								<div class="form-group">
-									<label class="control-label" for="time">Hora preferida</label>
-									<select id="time" name="time" class="form-control">
-										<option value="8:00 to 9:00">8:00 a 9:00</option>
-										<option value="9:00 to 10:00">9:00 a 10:00</option>
-										<option value="10:00 to 1:00">10:00 a 1:00</option>
-									</select>
-								</div>
-							</div>
-							<!-- Select Basic -->
-							<div class="col-md-12">
-								<div class="form-group">
-									<label class="control-label" for="appointmentfor">Departmento</label>
-									<select id="appointmentfor" name="appointmentfor" class="form-control">
-										<option value="Gynacology">Consulta General</option>
-									</select>
-								</div>
-							</div>
-							<!-- Button -->
-							<div class="col-md-12">
-								<div class="form-group">
-									<button id="singlebutton" name="singlebutton" class="new-btn-d br-2">AGENDAR</button>
-								</div>
-							</div>
-						</div>
-					</form>
-					<!-- form end -->
-				</div>
-			</div>
-			<div class="col-lg-6 col-md-6">
-				<div class="well-block">
-					<div class="well-title">
-						<h2>¿Porque agendar una cita con nosotros?</h2>
-					</div>
-					<div class="feature-block">
-						<div class="feature feature-blurb-text">
-							<h4 class="feature-title">Disponibilidad</h4>
-							<div class="feature-content">
-								<p>De Lunes a Viernes de 8:00 a 17:00</p>
-								<p>Sabados 10:00 a 14:00</p>
-							</div>
-						</div>
-						<div class="feature feature-blurb-text">
-							<h4 class="feature-title">Personal experimentado disponible</h4>
-
-						</div>
-						<div class="feature feature-blurb-text">
-							<h4 class="feature-title">Precios Accesibles</h4>
-
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- End Appointment -->
 
 <!-- Start Gallery -->
 <div id="gallery" class="gallery-box">
@@ -341,93 +197,20 @@ $reg = $ip->CtrVisitas();
 		</div>
 
 		<div class="popup-gallery row clearfix">
-			<div class="col-md-3 col-sm-6">
-				<div class="box-gallery">
-					<img src="<?php echo SERVERURL ?>/vista/img/gallery-01.jpg" alt="">
-					<div class="box-content">
+			<?php foreach ($img as $key) { ?>
+				<div class="col-md-3 col-sm-6">
+					<div class="box-gallery">
+						<img src="<?php echo SERVERURL ?>/assets/app/galeria/<?php echo $key ?>" alt="">
+						<div class="box-content">
+							<ul class="icon">
+								<li><a href="<?php echo SERVERURL ?>/assets/app/galeria/<?php echo $key ?>"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			<?php }  ?>
 
-						<ul class="icon">
-							<li><a href="<?php echo SERVERURL ?>/vista/img/gallery-01.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3 col-sm-6">
-				<div class="box-gallery">
-					<img src="<?php echo SERVERURL ?>/vista/img/gallery-02.jpg" alt="">
-					<div class="box-content">
 
-						<ul class="icon">
-							<li><a href="<?php echo SERVERURL ?>/vista/img/gallery-02.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3 col-sm-6">
-				<div class="box-gallery">
-					<img src="<?php echo SERVERURL ?>/vista/img/gallery-06.jpg" alt="">
-					<div class="box-content">
-						<ul class="icon">
-							<li><a href="<?php echo SERVERURL ?>/vista/img/gallery-06.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3 col-sm-6">
-				<div class="box-gallery">
-					<img src="<?php echo SERVERURL ?>/vista/img/galeria1.jpg" alt="">
-					<div class="box-content">
-
-						<ul class="icon">
-							<li><a href="<?php echo SERVERURL ?>/vista/img/galeria1.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3 col-sm-6">
-				<div class="box-gallery">
-					<img src="<?php echo SERVERURL ?>/vista/img/galeria2.jpg" alt="">
-					<div class="box-content">
-
-						<ul class="icon">
-							<li><a href="<?php echo SERVERURL ?>/vista/img/galeria2.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3 col-sm-6">
-				<div class="box-gallery">
-					<img src="<?php echo SERVERURL ?>/vista/img/galeria6.jpg" alt="">
-					<div class="box-content">
-
-						<ul class="icon">
-							<li><a href="<?php echo SERVERURL ?>/vista/img/galeria6.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3 col-sm-6">
-				<div class="box-gallery">
-					<img src="<?php echo SERVERURL ?>/vista/img/galeria7.jpg" alt="">
-					<div class="box-content">
-
-						<ul class="icon">
-							<li><a href="<?php echo SERVERURL ?>/vista/img/galeria7.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3 col-sm-6">
-				<div class="box-gallery">
-					<img src="<?php echo SERVERURL ?>/vista/img/gallery-08.jpg" alt="">
-					<div class="box-content">
-
-						<ul class="icon">
-							<li><a href="<?php echo SERVERURL ?>/vista/img/gallery-08.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
 		</div>
 	</div>
 </div>
@@ -443,64 +226,21 @@ $reg = $ip->CtrVisitas();
 				</div>
 			</div>
 		</div>
-
-		<!--<div class="row">
+		<?php foreach ($med as $key) { ?>
 			<div class="col-md-4 col-sm-6">
 				<div class="our-team">
 					<div class="pic">
-						<img src="<?php echo SERVERURL ?>/vista/img/img-1.jpg" alt="">
-					</div>
-					<div class="team-content">
-						<h3 class="title">Williamson</h3>
-						<span class="post">web developer</span>
-						<ul class="social">
-							<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>-->
-
-			<div class="col-md-4 col-sm-6">
-				<div class="our-team">
-					<div class="pic">
-						<img src="<?php echo SERVERURL ?>/vista/img/perfil/Dr01.jpg">
-					</div>
-					<div class="team-content">
-						<h3 class="title">kristina</h3>
-						<span class="post">Web Designer</span>
-						<ul class="social">
-							<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
-						</ul>
+						<img src="<?php echo SERVERURL ?>/assets/app/medico/<?php echo $key ?>">
 					</div>
 				</div>
 			</div>
+		<?php }  ?>
 
-			<!--<div class="col-md-4 col-sm-6">
-				<div class="our-team">
-					<div class="pic">
-						<img src="<?php echo SERVERURL ?>/vista/img/img-3.jpg" alt="">
-					</div>
-					<div class="team-content">
-						<h3 class="title">Steve Thomas</h3>
-						<span class="post">web developer</span>
-						<ul class="social">
-							<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>-->
-		</div>
+
 
 	</div>
+
+</div>
 </div>
 
 <!-- End Team -->
@@ -513,7 +253,7 @@ $reg = $ip->CtrVisitas();
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="title-box">
-					
+
 					<h2><i class="fa fa-location-arrow" aria-hidden="true"></i>Ubicanos</h2>
 					<div id="map"></div>
 				</div>
