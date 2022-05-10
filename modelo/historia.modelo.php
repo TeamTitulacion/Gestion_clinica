@@ -32,6 +32,14 @@ class HistoriaModelo extends mainModel
         $sql->close();
         $sql = null;
     }
+    protected function MdlCrearPaciente($datos)
+    {
+        $sql = mainModel::conectar()->prepare("INSERT INTO tbl_pacienteP(pac_nombre,pac_apellido,pac_sexo,pac_dni,pac_nacimiento,pac_sangre,pac_estado_civil,pac_direccion,pac_correo,pac_telefono) VALUES (:nombre,:apellido,:sexo,:dni,:fechaNa,:sangre,:estado,:dirr,:corre,:tele)");
+        $sql->execute(array(':nombre' => $datos['nombre'], ':apellido' => $datos['apellido'], ':sexo' => $datos['sexo'], ':dni' => $datos['dni'], ':fechaNa' => $datos['fechaNa'], ':sangre' => $datos['sangre'], ':estado' => $datos['estado'], ':dirr' => $datos['dirr'], ':corre' => $datos['corre'], ':tele' => $datos['tele']));
+        return $sql;
+        $sql->close();
+        $sql = null;
+    }
     protected function MdlEncabezado($datos)
     {
         $sql = mainModel::conectar()->prepare("SELECT * FROM tbl_encabezadoP as e, tbl_pacienteP as p 

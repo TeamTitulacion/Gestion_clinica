@@ -4,7 +4,7 @@ require_once "./controlador/login.controlador.php";
 $cerrar = new LoginControlador();
 
 if (!isset($_SESSION['usuario']) || !isset($_SESSION['password'])) {
-    $cerrar->CtrCerrarSession();
+    echo $cerrar->CtrCerrarSession();
 }
 ?>
 <div id="wrapper">
@@ -75,13 +75,13 @@ if (!isset($_SESSION['usuario']) || !isset($_SESSION['password'])) {
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon">Apellido</span>
-                                <input id="Apellido" name="Apellido" type="text" value="<?php echo $infoH['pac_apellido'] ?>" class="form-control">
+                                <input id="Apellido" name="Apellido" type="text"  class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon">Nombre</span>
-                                <input id="Nombre" name="Nombre" type="text" value="<?php echo $infoH['pac_nombre'] ?>" class="form-control">
+                                <input id="Nombre" name="Nombre" type="text"  class="form-control">
                             </div>
                         </div>
                         <div class="row">
@@ -104,7 +104,7 @@ if (!isset($_SESSION['usuario']) || !isset($_SESSION['password'])) {
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon">C.I</span>
-                                <input id="CI" name="CI" type="text" value="<?php echo $infoH['pac_dni'] ?>" class="form-control">
+                                <input id="CI" name="CI" type="text"  class="form-control">
                             </div>
                         </div>
                         <div class="row">
@@ -145,13 +145,13 @@ if (!isset($_SESSION['usuario']) || !isset($_SESSION['password'])) {
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon">Correo</span>
-                                <input id="Corre" name="Corre" type="text" value="<?php echo $infoH['pac_correo'] ?>" class="form-control">
+                                <input id="Corre" name="Corre" type="text" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon">Telefono</span>
-                                <input id="Tele" name="Tele" type="text" value="<?php echo $infoH['pac_telefono'] ?>" class="form-control">
+                                <input id="Tele" name="Tele" type="text"  class="form-control">
                             </div>
                         </div>
                     </form>

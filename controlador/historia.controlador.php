@@ -38,6 +38,30 @@ class HistoriaControlador extends HistoriaModelo
             echo 2;
         }
     }
+    public function CtrCrearPaciente()
+    {
+        $nombre = mainModel::limpiar_cadena($_POST['Nombre']);
+        $apellido = mainModel::limpiar_cadena($_POST['Apellido']);
+        $sexo = mainModel::limpiar_cadena($_POST['Sexo']);
+        $dni = mainModel::limpiar_cadena($_POST['CI']);
+        $fechaNa = mainModel::limpiar_cadena($_POST['FechaNa']);
+        $sangre = mainModel::limpiar_cadena($_POST['Sangre']);
+        $estado = mainModel::limpiar_cadena($_POST['Estado']);
+        $dirr = mainModel::limpiar_cadena($_POST['Dirr']);
+        $corre = mainModel::limpiar_cadena($_POST['Corre']);
+        $tele = mainModel::limpiar_cadena($_POST['Tele']);
+        $consulta = mainModel::ejecutar_consulta_simple("SELECT * FROM tbl_pacientep WHERE pac_dni = '$dni'");
+        if ($consulta->rowCount() >= 1) {
+            return 'existe';
+        }else{
+        $datos = ['nombre' => $nombre, 'apellido' => $apellido, 'sexo' => $sexo, 'dni' => $dni, 'fechaNa' => $fechaNa, 'sangre' => $sangre, 'estado' => $estado, 'dirr' => $dirr, 'corre' => $corre, 'tele' => $tele];
+        $respuesta = HistoriaModelo::MdlCrearPaciente($datos);
+        if ($respuesta->rowCount() >= 1) {
+            echo 1;
+        } else {
+            echo 2;
+        }}
+    }
     public function CtrEncabezado()
     {
         $Enca = mainModel::limpiar_cadena($_POST['Enca']);

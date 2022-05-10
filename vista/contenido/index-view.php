@@ -7,6 +7,7 @@ $reg = $ip->CtrVisitas();
 <header class="top-header">
 	<nav class="navbar header-nav navbar-expand-lg">
 		<div class="container">
+			<i class="hidden"> <?php echo $reg ?></i>
 			<a class="navbar-brand" href="index"><img src="<?php echo SERVERURL ?>/vista/img/logo.png" alt="image"></a>
 			<button class="navbar-toggler psd" type="button" data-toggle="collapse" data-target="#navbar-wd" aria-controls="navbar-wd" aria-expanded="false" aria-label="Toggle navigation">
 				<span></span>

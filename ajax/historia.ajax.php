@@ -22,6 +22,10 @@ if (isset($_POST['his']) || (isset($_POST['pac']) && isset($_POST['fecha']) && i
         $resh = new HistoriaControlador();
         echo $resh->CtrUpdateP();
     }
+    if (isset($_POST['Apellido']) && isset($_POST['Nombre']) && isset($_POST['Corre']) && isset($_POST['Sexo']) && isset($_POST['FechaNa']) && isset($_POST['CI']) && isset($_POST['Sangre']) && isset($_POST['Estado']) && isset($_POST['Dirr']) && isset($_POST['Tele'])) {
+        $resh = new HistoriaControlador();
+        echo $resh->CtrCrearPaciente();
+    }
     if (isset($_POST['ajaxpac'])) {
         $resh = new HistoriaControlador();
         echo ($resh->CtrHistoria());

@@ -60,22 +60,66 @@ $(document).ready(function () {
   $(document).on("click", ".registrar", function () {
     
     $("#myModal").modal("show");
-    /*
-    var crypid = $.ajax({
-      type: "POST",
-      url: "./ajax/paciente.ajax.php",
-      data: {
-        enc: userid,
-      },
-      dataType: "json",
-      context: document.body,
-      global: false,
-      async: false,
-      success: function (data) {
-        return data;
-      },
-    }).responseText;
-    window.location.href = "hpaciente/" + crypid; */
+    $(document).on("click", "#BtnGuardar", function () {
+      
+      Apellido = document.getElementById("Apellido").value;
+      Nombre = document.getElementById("Nombre").value;
+      Sexo = document.getElementById("Sexo").value;
+      FechaNa = document.getElementById("FechaNa").value;
+      CI = document.getElementById("CI").value;
+      Sangre = document.getElementById("Sangre").value;
+      Estado = document.getElementById("Estado").value;
+      Dirr = document.getElementById("Dirr").value;
+      Corre = document.getElementById("Corre").value;
+      Tele = document.getElementById("Tele").value;
+      
+      if (
+        Tele == "" ||
+        Corre == "" ||
+        Dirr == "" ||
+        Estado == "" ||
+        Sangre == "" ||
+        CI == "" ||
+        FechaNa == "" ||
+        Sexo == "" ||
+        Nombre == "" ||
+        Apellido == ""
+      ) {
+        Swal.fire("Aviso", "Todos los campos son requeridos", "warning");
+      } else {
+        $("#myModal").modal("hide");
+        $.ajax({
+          url: "./ajax/historia.ajax.php",
+          type: "POST",
+          data: {
+            Apellido: Apellido,
+            Nombre: Nombre,
+            Sexo: Sexo,
+            FechaNa: FechaNa,
+            CI: CI,
+            Sangre: Sangre,
+            Estado: Estado,
+            Dirr: Dirr,
+            Corre: Corre,
+            Tele: Tele,
+          },
+          datatype: "json",
+          success: function (data) {
+            var msg = data;
+            if (msg == 1) {
+              Swal.fire("Exito", "Paciente Creado", "success").then(
+                function () {
+                  location.reload();
+                }
+              );
+            }
+            if (msg == 'existe') {
+              Swal.fire("ERROR", "Paciente ya existe", "warning");
+            }
+          },
+        });
+      }
+    })
   });
  
 });
