@@ -30,6 +30,13 @@ class CalendarControlador extends CalendarModelo
         $arreglo = $listar->fetchAll(PDO::FETCH_ASSOC);
         return json_encode($arreglo);
     }
+    public function CtrListarMed()
+    {
+        $medid= mainModel::limpiar_cadena($_POST['rol']);
+        $listar = CalendarModelo::MdlListarMed($medid);
+        $arreglo = $listar->fetchAll(PDO::FETCH_ASSOC);
+        return json_encode($arreglo);
+    }
 
     // Actualizar
     public function CtrActualizar()

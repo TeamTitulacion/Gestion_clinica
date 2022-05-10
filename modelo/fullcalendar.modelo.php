@@ -15,6 +15,15 @@ class CalendarModelo extends mainModel
         $sql->close();
         $sql = null;
     }
+    protected function MdlListarMed($id)
+    {
+        $sql=mainModel::conectar()->prepare("SELECT c.id_cita AS id, c.cit_title AS title, c.cit_start AS start,c.id_medico as custom_param1, CONCAT(m.med_nombre,' ',m.med_apellido) as custom_param2,c.id_paciente as custom_param3, CONCAT(p.pac_nombre,' ',p.pac_apellido) as custom_param4 FROM tbl_citas as c,tbl_medico as m,tbl_pacientep as p WHERE c.id_medico= m.id_medico AND c.id_paciente=p.id_paciente AND m.id_medico='$id' ");
+        $sql->execute();
+        
+        return $sql;
+        $sql->close();
+        $sql = null;
+    }
     //Insertar
     protected function MdlRegistrar($dato)
     {
