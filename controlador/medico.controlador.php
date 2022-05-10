@@ -6,6 +6,11 @@ if ($peticionAjax) {
 }
 class MedicoControlador extends MedicoModelo
 {
+    public function CtrLpacientes()
+    {
+        $listarp=mainModel::ejecutar_consulta_simple("SELECT * FROM tbl_pacientep");
+        return $respaciente=$listarp->fetchAll(PDO::FETCH_ASSOC);
+    }
     public function CtrListar()
     {
         $lista = MedicoModelo::MdlListar();

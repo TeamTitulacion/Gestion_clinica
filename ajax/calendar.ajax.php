@@ -2,12 +2,12 @@
 include '../core/ConfigGeneral.php';
 $peticionAjax = true;
 
-if (isset($_POST['id']) || (isset($_POST['title']) && isset($_POST['start']) && isset($_POST['color'])) || isset($_POST['titulo']) || isset($_POST['fecha'])|| isset($_POST['Eid'])) {
+if (isset($_POST['id'])|| isset($_POST['pac']) || (isset($_POST['title']) && isset($_POST['start']) && isset($_POST['odonto'])) || isset($_POST['titulo']) || isset($_POST['fecha']) || isset($_POST['Eid']) || isset($_POST['odonto'])) {
     require_once "../controlador/fullcalendar.controlador.php";
     //insertar
     //Para ver que las variables no esten vacias XD
 
-    if (isset($_POST['title']) && isset($_POST['start']) && isset($_POST['color'])) {
+    if (isset($_POST['title']) && isset($_POST['start']) && isset($_POST['odonto'])&&isset($_POST['pac'])) {
         $insCalendar = new CalendarControlador();
         echo $insCalendar->CtrRegistrar();
     }
@@ -15,7 +15,7 @@ if (isset($_POST['id']) || (isset($_POST['title']) && isset($_POST['start']) && 
         $insCalendar = new CalendarControlador();
         print_r($insCalendar->CtrListar());
     }
-    if (isset($_POST['id']) && isset($_POST['titulo']) && isset($_POST['fecha']) && isset($_POST['color'])) {
+    if (isset($_POST['id']) && isset($_POST['titulo']) && isset($_POST['fecha']) && isset($_POST['odonto'])&&isset($_POST['pac']) ){
         $insCalendar = new CalendarControlador();
         echo $insCalendar->CtrActualizar();
     }
