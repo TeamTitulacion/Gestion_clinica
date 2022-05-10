@@ -126,7 +126,7 @@ $(document).ready(function () {
               console.log(data);
               var msg = data;
               if (msg == 1) {
-                Swal.fire("Exito", "Su cita fue agendada", "success").then(
+                Swal.fire("Exito", "Datos Actualizados", "success").then(
                   function () {
                     location.reload();
                   }

@@ -83,18 +83,43 @@ class HistoriaControlador extends HistoriaModelo
         $vihfecha = mainModel::limpiar_cadena($_POST['FechaVIH']);
         $moconsulta = mainModel::limpiar_cadena($_POST['MoConsulta']);
         $efeActuales = mainModel::limpiar_cadena($_POST['EnfeActuales']);
+        $t1 = mainModel::limpiar_cadena($_POST['TiposAnte1']);
+        $t2 = mainModel::limpiar_cadena($_POST['TiposAnte2']);
+        $t3 = mainModel::limpiar_cadena($_POST['TiposAnte3']);
+        $t4 = mainModel::limpiar_cadena($_POST['TiposAnte4']);
+        $t5 = mainModel::limpiar_cadena($_POST['TiposAnte5']);
+        $t6 = mainModel::limpiar_cadena($_POST['TiposAnte6']);
+        $t7 = mainModel::limpiar_cadena($_POST['TiposAnte7']);
+        $t8 = mainModel::limpiar_cadena($_POST['TiposAnte8']);
+        $t9 = mainModel::limpiar_cadena($_POST['TiposAnte9']);
+        $t10 = mainModel::limpiar_cadena($_POST['TiposAnte10']);
+        $t11 = mainModel::limpiar_cadena($_POST['TiposAnte11']);
+        $t12 = mainModel::limpiar_cadena($_POST['TiposAnte12']);
+        $t13 = mainModel::limpiar_cadena($_POST['TiposAnte13']);
+        $t14 = mainModel::limpiar_cadena($_POST['TiposAnte14']);
+        $t15 = mainModel::limpiar_cadena($_POST['TiposAnte15']);
+        $t16 = mainModel::limpiar_cadena($_POST['TiposAnte16']);
+        $t17 = mainModel::limpiar_cadena($_POST['TiposAnte17']);
+        $t18 = mainModel::limpiar_cadena($_POST['TiposAnte18']);
+        $t19 = mainModel::limpiar_cadena($_POST['TiposAnte19']);
+        $t20 = mainModel::limpiar_cadena($_POST['TiposAnte20']);
+        $t21 = mainModel::limpiar_cadena($_POST['TiposAnte21']);
+        $obse1= mainModel::limpiar_cadena($_POST['ObservaAntece']);
 
         $datos = [
             'id' => $id, 'Estatura' => $Estatura, 'Temp' => $Temp, 'Peso' => $Peso,
             'Pulso' => $Pulso, 'TenArte' => $TenArte, 'FrecuRespi' => $FrecuRespi, 'motivo' => $motivo,
-            'fechaMo' => $fechaMo, 'acompa' => $acompa, 'telacompa' => $telacompa, 'vih' => $vih, 
-            'vihdiag' => $vihdiag, 'vihfecha' => $vihfecha , 'moconsulta'=>$moconsulta , 'efeActuales'=>$efeActuales
+            'fechaMo' => $fechaMo, 'acompa' => $acompa, 'telacompa' => $telacompa, 'vih' => $vih,
+            'vihdiag' => $vihdiag, 'vihfecha' => $vihfecha, 'moconsulta' => $moconsulta, 'efeActuales' => $efeActuales,
+            't1'=>$t1, 't2'=>$t2, 't3'=>$t3, 't4'=> $t4,'t5'=>$t5,'t6'=>$t6,'t7'=>$t7,'t8'=>$t8,'t9'=>$t9,
+            't10'=>$t10,'t11'=>$t11,'t12'=>$t12,'t13'=>$t13,'t14'=>$t14,'t15'=>$t15,'t16'=>$t16,'t17'=>$t17,
+            't18'=>$t18,'t19'=>$t18, 't19'=>$t19,'t20'=>$t20,'t21'=>$t21,'ObservaAntece'=>$obse1
         ];
-       $respuesta = HistoriaModelo::MdlActualizar($datos);
+        $respuesta = HistoriaModelo::MdlActualizar($datos);
         if ($respuesta->rowCount() > 0) {
             echo 1;
         } else {
             echo 2;
-        }; 
+        };
     }
 }

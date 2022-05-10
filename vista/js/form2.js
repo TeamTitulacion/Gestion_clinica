@@ -77,6 +77,58 @@ $(document).on("click", "#guardar", function () {
   let AtmA6 = document.getElementById("AtmA6").value;
   let AtmN7 = document.getElementById("AtmN7").value;
   let AtmA7 = document.getElementById("AtmA7").value;
+  let d1 = document.getElementById("d1").src;
+  let d2 = document.getElementById("d2").src;
+  let d3 = document.getElementById("d3").src;
+  let d4 = document.getElementById("d4").src;
+  let d5 = document.getElementById("d5").src;
+  let d6 = document.getElementById("d6").src;
+  let d7 = document.getElementById("d7").src;
+  let d8 = document.getElementById("d8").src;
+  let d9 = document.getElementById("d9").src;
+  let d10 = document.getElementById("d10").src;
+  let d11 = document.getElementById("d11").src;
+  let d12 = document.getElementById("d12").src;
+  let d13 = document.getElementById("d13").src;
+  let d14 = document.getElementById("d14").src;
+  let d15 = document.getElementById("d15").src;
+  let d16 = document.getElementById("d16").src;
+  let d17 = document.getElementById("d17").src;
+  let d18 = document.getElementById("d18").src;
+  let d19 = document.getElementById("d19").src;
+  let d20 = document.getElementById("d20").src;
+  let d21 = document.getElementById("d21").src;
+  let d22 = document.getElementById("d22").src;
+  let d23 = document.getElementById("d23").src;
+  let d24 = document.getElementById("d24").src;
+  let d25 = document.getElementById("d25").src;
+  let d26 = document.getElementById("d26").src;
+  let d27 = document.getElementById("d27").src;
+  let d28 = document.getElementById("d28").src;
+  let d29 = document.getElementById("d29").src;
+  let d30 = document.getElementById("d30").src;
+  let d31 = document.getElementById("d31").src;
+  let d32 = document.getElementById("d32").src;
+  let d33 = document.getElementById("d33").src;
+  let d34 = document.getElementById("d34").src;
+  let d35 = document.getElementById("d35").src;
+  let d36 = document.getElementById("d36").src;
+  let d37 = document.getElementById("d37").src;
+  let d38 = document.getElementById("d38").src;
+  let d39 = document.getElementById("d39").src;
+  let d40 = document.getElementById("d40").src;
+  let d41 = document.getElementById("d41").src;
+  let d42 = document.getElementById("d42").src;
+  let d43 = document.getElementById("d43").src;
+  let d44 = document.getElementById("d44").src;
+  let d45 = document.getElementById("d45").src;
+  let d46 = document.getElementById("d46").src;
+  let d47 = document.getElementById("d47").src;
+  let d48 = document.getElementById("d48").src;
+  let d49 = document.getElementById("d49").src;
+  let d50 = document.getElementById("d50").src;
+  let d51 = document.getElementById("d51").src;
+  let d52 = document.getElementById("d52").src;
   //let Tratamiento = document.getElementById("Tratamiento").value;
   let AccioPreveSI1 = document.getElementById("AccioPreveSI1").value;
   let AccioPreveFre1 = document.getElementById("AccioPreveFre1").value;
@@ -119,13 +171,63 @@ $(document).on("click", "#guardar", function () {
   let PlanTra5 = document.getElementById("PlanTra5").value;
   let PlanTra6 = document.getElementById("PlanTra6").value;
   let PlanTra7 = document.getElementById("PlanTra7").value;
-  console.log(
-    Motivo + FechaMo + NomAcompa + TeleAcompa + Vih + DiagVIH + FechaVIH
-  );
   $.ajax({
     type: "POST",
     url: "../ajax/historia.ajax.php",
     data: {
+      d1: d1,
+      d2: d2,
+      d3: d3,
+      d4: d4,
+      d5: d5,
+      d6: d6,
+      d7: d7,
+      d8: d8,
+      d9: d9,
+      d10: d10,
+      d11: d11,
+      d12: d12,
+      d13: d13,
+      d14: d14,
+      d15: d15,
+      d16: d16,
+      d17: d17,
+      d18: d18,
+      d19: d19,
+      d20: d20,
+      d21: d21,
+      d22: d22,
+      d23: d23,
+      d24: d24,
+      d25: d25,
+      d26: d26,
+      d27: d27,
+      d28: d28,
+      d29: d29,
+      d30: d30,
+      d31: d31,
+      d32: d32,
+      d33: d33,
+      d34: d34,
+      d35: d35,
+      d36: d36,
+      d37: d37,
+      d38: d38,
+      d39: d39,
+      d40: d40,
+      d41: d41,
+      d42: d42,
+      d43: d43,
+      d44: d44,
+      d45: d45,
+      d46: d46,
+      d47: d47,
+      d48: d48,
+      d49: d49,
+      d50: d50,
+      d51: d51,
+      d52: d52,
+      ObservaAntece: ObservaAntece,
       TiposAnte1: TiposAnte1,
       TiposAnte2: TiposAnte2,
       TiposAnte3: TiposAnte3,
