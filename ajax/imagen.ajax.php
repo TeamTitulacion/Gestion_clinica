@@ -16,4 +16,16 @@ if (!empty($_FILES['docUP']['name'])) {
     $Actualizar = new Index();
     echo $Actualizar->CtrImgMedico($urlimgUP, $pathimgUP);
 }
+
+if (isset($_POST['img'])) {
+    
+    $eliminar = new Index();
+    echo $eliminar->CtrEliminarGal();
+}
+
+if (isset($_POST['med'])) {
+    
+    $eliminar = new Index();
+    echo $eliminar->CtrEliminarMed();
+}
     
