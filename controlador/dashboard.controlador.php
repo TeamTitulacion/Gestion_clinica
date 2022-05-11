@@ -26,9 +26,10 @@ class DashboardControlador extends DashboardModelo
     }
     public function Ctrvisitas()
     {
-        $fecha= date("y-m-d");
+        $fecha= date("y-m-d").' 00:00:00';
+        $fecha2= date("y-m-d").' 23:59:59';
         $Nvisitas = mainModel::ejecutar_consulta_simple("SELECT Count(*) as contador FROM tbl_visitas where
-        vis_fecha= '$fecha' ");
+        vis_fecha BETWEEN '$fecha' AND '$fecha2' ");
         $respuesta = $Nvisitas->fetchAll();
         return $respuesta;
     }

@@ -102,7 +102,7 @@ $Nvisitas = $contador->Ctrvisitas();
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             Visitas
@@ -117,21 +117,7 @@ $Nvisitas = $contador->Ctrvisitas();
                     </div>
                     <!-- /.panel -->
                 </div>
-                <div class="col-lg-6">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Tratamientos
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <div class="flot-chart">
-                                <div class="flot-chart-content" id="flot-pie-chart"></div>
-                            </div>
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                </div>
+               
             </div>
         </div>
 

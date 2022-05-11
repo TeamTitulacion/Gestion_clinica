@@ -8,6 +8,7 @@ class VisitasControlador extends VisitasModelo
 {
     public function CtrVisitas()
     {
+        
         if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
             $ip = $_SERVER['HTTP_CLIENT_IP'];
         }
@@ -17,7 +18,7 @@ class VisitasControlador extends VisitasModelo
             $ip = $_SERVER['REMOTE_ADDR'];
         }
         $visita = VisitasModelo::MdlVistas($ip);
-
+        
         if ($visita->rowCount() == 0) {
             $fecha = date("y-m-d H:i:s");
             $dato = ['ip' => $ip, 'fecha' => $fecha];
@@ -32,9 +33,11 @@ class VisitasControlador extends VisitasModelo
             $fechaActual = date('Y-m-d H:i:s');
             $nuevaFecha = strtotime($fechaRegistro . '+ 5 hours');
             $nuevaFecha = date('Y-m-d H:i:s', $nuevaFecha);
-            $dato = ['ip' => $ip, 'fecha' => $nuevaFecha];
+            $dato = ['ip' => $ip, 'fecha' => $fechaActual];
             if ($fechaActual >= $nuevaFecha) {
+                
                 $insertarip = VisitasModelo::MdlInsertar($dato);
+                
             }
         }
     }
