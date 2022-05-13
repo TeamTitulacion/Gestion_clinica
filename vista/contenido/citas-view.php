@@ -52,6 +52,11 @@ $pac=$med->CtrLpacientes();
 
                             </div>
                             <div class="form-floating mb-3">
+                                <label for="end" class="form-label">Tiempo Aproximado(horas y minutos)</label>
+                                <input type="time" class="form-control" id="end" name="end" min="09:00" max="17:00" required pattern="[0-9]{2}:[0-9]{2}">
+
+                            </div>
+                            <div class="form-floating mb-3">
                                 <label for="doc" class="form-label">Odontologo</label> <br>
                                 <select name="Odonto" id="Odonto" class="js-example-basic-single js-states form-control">
                                 <?php 

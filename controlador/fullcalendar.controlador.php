@@ -13,15 +13,20 @@ class CalendarControlador extends CalendarModelo
         $evento = mainModel::limpiar_cadena($_POST['title']);
         $odonto = mainModel::limpiar_cadena($_POST['odonto']);
         $pac = mainModel::limpiar_cadena($_POST['pac']);
+        $end = mainModel::limpiar_cadena($_POST['end']);
 
-        $dato = ["fecha" => $fecha, "evento" => $evento, "odonto" => $odonto,"pac"=>$pac];
-
-        $insertar = CalendarModelo::MdlRegistrar($dato);
-
-        if ($insertar->rowCount() >= 1) {
-            echo "1";
+        $dato = ["fecha" => $fecha, "evento" => $evento, "odonto" => $odonto, "pac" => $pac, "end" => $end];
+        $consulta = mainModel::ejecutar_consulta_simple("SELECT * FROM tbl_citas WHERE cit_end BETWEEN '$fecha' AND '$end'");
+        if ($consulta->rowCount() >= 1) {
+            echo "nocita";
         } else {
-            echo "2";
+            $insertar = CalendarModelo::MdlRegistrar($dato);
+
+            if ($insertar->rowCount() >= 1) {
+                echo "1";
+            } else {
+                echo "2";
+            }
         }
     }
     public function CtrListar()
@@ -32,7 +37,7 @@ class CalendarControlador extends CalendarModelo
     }
     public function CtrListarMed()
     {
-        $medid= mainModel::limpiar_cadena($_POST['rol']);
+        $medid = mainModel::limpiar_cadena($_POST['rol']);
         $listar = CalendarModelo::MdlListarMed($medid);
         $arreglo = $listar->fetchAll(PDO::FETCH_ASSOC);
         return json_encode($arreglo);
@@ -46,14 +51,20 @@ class CalendarControlador extends CalendarModelo
         $odonto = mainModel::limpiar_cadena($_POST['odonto']);
         $id = mainModel::limpiar_cadena($_POST['id']);
         $pac = mainModel::limpiar_cadena($_POST['pac']);
+        $end = mainModel::limpiar_cadena($_POST['end']);
 
-        $dato = ["fecha" => $fecha, "evento" => $evento, "id" => $id, "odonto" => $odonto,"pac"=>$pac];
-
-        $actualizar = CalendarModelo::MdlActualzar($dato);
-        if ($actualizar->rowCount() >= 1) {
-            echo  "1";
+        $dato = ["fecha" => $fecha, "evento" => $evento, "id" => $id, "odonto" => $odonto, "pac" => $pac, "end" => $end];
+        $consulta = mainModel::ejecutar_consulta_simple("SELECT * FROM tbl_citas WHERE cit_end BETWEEN '$fecha' AND '$end'");
+        if ($consulta->rowCount() >= 1) {
+            echo "nocita";
         } else {
-            echo "2";
+            $actualizar = CalendarModelo::MdlActualzar($dato);
+
+            if ($actualizar->rowCount() >= 1) {
+                echo  "1";
+            } else {
+                echo "2";
+            }
         }
     }
 
