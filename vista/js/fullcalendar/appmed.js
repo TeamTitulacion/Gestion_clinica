@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const id = document.getElementById("id").value;
   var jqxhr = $.ajax({
     type: "POST",
-    url:"./ajax/calendar.ajax.php",
+    url: "./ajax/calendar.ajax.php",
     data: {
       rol: id,
     },
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }).responseText;
 
   jqxhr = JSON.parse(jqxhr);
-  
+
   var calendar = new FullCalendar.Calendar(calendarEl, {
     initialView: "dayGridMonth",
     headerToolbar: {
@@ -32,14 +32,13 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     locale: "es",
     buttonText: {
-      
-      today: 'Hoy',
-      month: 'Mes',
-      week: 'Semana',
-      day: 'Día',
-      list: 'Agenda',
+      today: "Hoy",
+      month: "Mes",
+      week: "Semana",
+      day: "Día",
+      list: "Agenda",
     },
-    hiddenDays:[0],
+    hiddenDays: [0],
     events: jqxhr,
     editable: true,
     dateClick: function (info) {
@@ -48,30 +47,41 @@ document.addEventListener("DOMContentLoaded", function () {
       eliminar.classList.add("hidden");
       actualizar.classList.add("hidden");
       document.getElementById("titulos").textContent = "Registro de Cita";
-      document.getElementById("title").value ="";
-      document.getElementById("hora").value ="";
-      $('#Odonto').val("").trigger('change');
-      $('#Pac').val("").trigger('change');
+      document.getElementById("title").value = "";
+      document.getElementById("hora").value = "";
+      $("#Odonto").val("").trigger("change");
+      $("#Pac").val("").trigger("change");
       $("#myModal").modal("show");
       $(document).on("click", "#btnAccion", function (e) {
         e.preventDefault();
         const title = document.getElementById("title").value;
         const fecha = document.getElementById("start").value;
         const hora = document.getElementById("hora").value;
-        const odonto= document.getElementById("Odonto").value;
-        const pac= document.getElementById("Pac").value;
-        if (title == "" || fecha == "" ) {
+        const end = document.getElementById("end").value;
+        const odonto = document.getElementById("Odonto").value;
+        const pac = document.getElementById("Pac").value;
+        if (title == "" || fecha == "") {
           Swal.fire("Aviso", "Todos los campos son requeridos", "warning");
-        }if (hora<"08:59:00"||hora>"16:01:00") {
-          Swal.fire("Aviso", "El horario de antencion es de 09:00 AM hasta las 17:00 PM", "warning");
-        } 
-        else {
+        }
+        if (hora < "08:59:00" || hora > "16:01:00") {
+          Swal.fire(
+            "Aviso",
+            "El horario de antencion es de 09:00 AM hasta las 17:00 PM",
+            "warning"
+          );
+        } else {
           $("#myModal").modal("hide");
 
           $.ajax({
             url: "./ajax/calendar.ajax.php",
             type: "POST",
-            data: { title: title, start: fecha+" "+hora, odonto: odonto, pac: pac},
+            data: {
+              title: title,
+              start: fecha + " " + hora,
+              odonto: odonto,
+              pac: pac,
+              end: fecha + " " + end,
+            },
             datatype: "json",
             success: function (data) {
               var msg = data;
@@ -80,6 +90,13 @@ document.addEventListener("DOMContentLoaded", function () {
                   function () {
                     location.reload();
                   }
+                );
+              }
+              if (msg == "nocita") {
+                Swal.fire(
+                  "Error",
+                  "No puede agendar cita a esa hora",
+                  "warning"
                 );
               }
             },
@@ -91,16 +108,23 @@ document.addEventListener("DOMContentLoaded", function () {
       registrar.classList.add("hidden");
       eliminar.classList.remove("hidden");
       actualizar.classList.remove("hidden");
-      resul=new Date(info.event.start).toISOString();
-      horaevent=new Date(info.event.startStr);
+      resul = new Date(info.event.start).toISOString();
+      horaevent = new Date(info.event.startStr);
       document.getElementById("titulos").textContent = "Modificar elemento";
       document.getElementById("id").value = info.event.id;
       document.getElementById("title").value = info.event.title;
-      document.getElementById("start").value = resul.substr(0,10);
-      document.getElementById("hora").value = ("0"+horaevent.getHours()).slice(-2)+":"+("0"+horaevent.getMinutes()).slice(-2);
-      $('#Odonto').val(info.event.extendedProps.custom_param1).trigger('change');
-      $('#Pac').val(info.event.extendedProps.custom_param3).trigger('change');
-
+      document.getElementById("start").value = resul.substr(0, 10);
+      document.getElementById("hora").value =
+        ("0" + horaevent.getHours()).slice(-2) +
+        ":" +
+        ("0" + horaevent.getMinutes()).slice(-2);
+      document.getElementById("end").value =
+        info.event.extendedProps.custom_param2.substr(11, 20);
+      $("#Odonto")
+        .val(info.event.extendedProps.custom_param1)
+        .trigger("change");
+      $("#Pac").val(info.event.extendedProps.custom_param3).trigger("change");
+      
       $("#myModal").modal("show");
       $(document).on("click", "#btnActualizar", function (e) {
         e.preventDefault();
@@ -108,8 +132,9 @@ document.addEventListener("DOMContentLoaded", function () {
         var titulo = document.getElementById("title").value;
         var fecha = document.getElementById("start").value;
         var hora = document.getElementById("hora").value;
-        var odonto= document.getElementById("Odonto").value;
-        var pac= document.getElementById("Pac").value;
+        var end = document.getElementById("end").value;
+        var odonto = document.getElementById("Odonto").value;
+        var pac = document.getElementById("Pac").value;
         $("#myModal").modal("hide");
         $.ajax({
           type: "POST",
@@ -117,23 +142,32 @@ document.addEventListener("DOMContentLoaded", function () {
           data: {
             id: id,
             titulo: titulo,
-            fecha: fecha+" "+hora,
-            odonto:odonto,
-            pac:pac,
+            fecha: fecha + " " + hora,
+            odonto: odonto,
+            pac: pac,
+            end: fecha + " " + end,
           },
           dataType: "json",
           success: function (dato) {
-            var msg = dato;
+            var msg = String(dato);
+            console.log(msg);
             if (msg == 1) {
               Swal.fire("Exito", "Su evento fue Actualizado", "success").then(
                 function () {
                   location.reload();
                 }
               );
-            } else if (msg == 2) {
+            } if (msg == 2) {
               Swal.fire("Error", "NO se modifico el evento", "warning");
             }
+            
           },
+          error:function(dato) {
+            if (dato) {
+              Swal.fire("Error", "No puede agendar cita a esa hora", "warning");
+            }
+            
+          }
         });
       });
       $(document).on("click", "#btnEliminar", function (e) {
@@ -175,20 +209,16 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       });
     },
-    
   });
-  
-  $('#Odonto').select2({
-    placeholder:"Odontologo",
-    allowClear:true,
-  
+
+  $("#Odonto").select2({
+    placeholder: "Odontologo",
+    allowClear: true,
   });
-  $('.js-example-basic-single').select2({
-    placeholder:"Elija una opcion",
-    allowClear:true,
-    selectOnClose:true,
-  
+  $(".js-example-basic-single").select2({
+    placeholder: "Elija una opcion",
+    allowClear: true,
+    selectOnClose: true,
   });
   calendar.render();
 });
-
