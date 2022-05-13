@@ -1,6 +1,7 @@
 $(document).ready(function () {
   $(document).on("click", "#2", function () {
     document.getElementById("opciones").innerHTML = "";
+	document.getElementById("opciones1").innerHTML = "";
     var opciones =
       '<a><img class="btn btn-default diente" id="2-1" src="' +
       base_url +
@@ -12,6 +13,7 @@ $(document).ready(function () {
       base_url +
       '/assets/dientes/2-4.png" alt=""></a>';
     $("#opciones").append(opciones);
+	$("#opciones1").append(opciones);
 	let diente = document.querySelectorAll(".diente").forEach((el) => {
 		el.addEventListener("click", (e) => {
 		  const id1 = e.target.getAttribute("id");
@@ -88,6 +90,7 @@ $(document).ready(function () {
   });
   $(document).on("click", "#3", function () {
     document.getElementById("opciones").innerHTML = "";
+	document.getElementById("opciones1").innerHTML = "";
     var opciones =
       '<a><img class="btn btn-default diente" id="3-1" src="' +
       base_url +
@@ -99,6 +102,7 @@ $(document).ready(function () {
       base_url +
       '/assets/dientes/3-4.png" alt=""></a>';
     $("#opciones").append(opciones);
+	$("#opciones1").append(opciones);
 	let diente = document.querySelectorAll(".diente").forEach((el) => {
 		el.addEventListener("click", (e) => {
 		  const id1 = e.target.getAttribute("id");

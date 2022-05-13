@@ -31,7 +31,8 @@ $medifo = $med->CtrDoctor();
                     <li class="active">Inicio</li>
                     <li><strong>Anamnesis</strong> </li>
                     <li><strong>Examenes y antecedentes medicos</strong></li>
-                    <li><strong>Odontograma</strong></li>
+                    <li><strong>Odontograma Ingreso</strong></li>
+                    <li><strong>Odontograma Egreso</strong></li>
                     <li><strong>Accion Preventiva</strong></li>
                     <li><strong>Examenes complementarios</strong></li>
                     <li><strong>Diagnostico y plan de tratamiento</strong></li>
@@ -630,7 +631,6 @@ $medifo = $med->CtrDoctor();
                                                 </div>
                                                 <div class="form-group" id="opciones" style="width: 60%;"></div>
                                             </div>
-
                                             <div class="form-group ">
                                                 <div class="col-lg-12 odontog">
                                                     <table border="1">
@@ -817,63 +817,118 @@ $medifo = $med->CtrDoctor();
                                                 </div>
 
                                             </div>
-
                                         </div>
                                     </div>
-
+                                    <input type="button" name="previous" class="previous btn btn-default" value="Previo" />
+                                    <input type="button" name="next" class="next btn btn-info" value="Siguiente" />
+                                </fieldset>
+                                <fieldset>
                                     <div class="col-lg-12 form-group">
                                         <h2>Odontograma Egreso</h2>
+                                        <div class=" contenedor">
+                                            <div class="form-group ">
+                                                <a>
+                                                    <img class="btn btn-default diente" id="1" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt=""><br>
+                                                    <p> sano</p>
+                                                </a>
+                                                <a>
+                                                    <img class="btn btn-default limpio" id="2" src="<?php echo SERVERURL ?>/assets/dientes/2-1.png" alt=""><br>
+                                                    <p>Obturacion Temp</p>
+                                                </a>
+                                                <a>
+                                                    <img class="btn btn-default limpio" id="3" src="<?php echo SERVERURL ?>/assets/dientes/3-1.png" alt=""><br>
+                                                    <p> Sup. en Amalgama <br> o resina</p>
+                                                </a>
+                                                <a>
+                                                    <img class="btn btn-default diente" id="4" src="<?php echo SERVERURL ?>/assets/dientes/4.png" alt=""><br>
+                                                    <p> Superficie Sellada</p>
+                                                </a>
+                                                <a>
+                                                    <img class="btn btn-default diente" id="5" src="<?php echo SERVERURL ?>/assets/dientes/5.png" alt=""><br>
+                                                    <p> Superficie por Sellar</p>
+                                                </a>
+                                                <a>
+                                                    <img class="btn btn-default diente" id="6" src="<?php echo SERVERURL ?>/assets/dientes/6.png" alt=""><br>
+                                                    <p> Diente sin Erupcionar</p>
+                                                </a>
+                                            </div>
+                                            <div class="form-group ">
+                                                <a>
+                                                    <img class="btn btn-default diente" id="7" src="<?php echo SERVERURL ?>/assets/dientes/7.png" alt=""><br>
+                                                    Exodoncia Indicada
+                                                </a>
+                                                <a>
+                                                    <img class="btn btn-default diente" id="8" src="<?php echo SERVERURL ?>/assets/dientes/8.png" alt=""><br>
+                                                    Necesita Exodoncia
+                                                </a>
+                                                <a>
+                                                    <img class="btn btn-default diente" id="9" src="<?php echo SERVERURL ?>/assets/dientes/9.png" alt=""><br>
+                                                    Endodoncia Realizada</a>
+                                                <a>
+                                                    <img class="btn btn-default diente" id="10" src="<?php echo SERVERURL ?>/assets/dientes/10.png" alt=""><br>
+                                                    Ausente</a>
+                                                <a>
+                                                    <img class="btn btn-default diente" id="11" src="<?php echo SERVERURL ?>/assets/dientes/11.png" alt=""><br>
+                                                    <p>Protesis Existente</p>
+                                                </a>
+                                                <a>
+                                                    <img class="btn btn-default diente" id="12" src="<?php echo SERVERURL ?>/assets/dientes/12.png" alt=""><br>
+                                                    Protesis Existente
+                                                </a>
+                                            </div>
+                                            <div class="form-group" id="opciones1" style="width: 60%;"></div>
+                                        </div>
                                         <div class="form-group ">
                                             <div class="col-lg-12 odontog">
                                                 <table border="1">
                                                     <tbody>
                                                         <tr>
-                                                            <td><img id="I1" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img1">
+                                                            <td><img id="dd1" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img1">
                                                                 <p>8</p>
                                                             </td>
-                                                            <td><img id="I2" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img2">
+                                                            <td><img id="dd2" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img2">
                                                                 <p>7</p>
                                                             </td>
-                                                            <td><img id="I3" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img3">
+                                                            <td><img id="dd3" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img3">
                                                                 <p>6</p>
                                                             </td>
-                                                            <td><img id="I4" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img4">
+                                                            <td><img id="dd4" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img4">
                                                                 <p>5</p>
                                                             </td>
-                                                            <td><img id="I5" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img5">
+                                                            <td><img id="dd5" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img5">
                                                                 <p>4</p>
                                                             </td>
-                                                            <td><img id="I6" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img6">
+                                                            <td><img id="dd6" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img6">
                                                                 <p>3</p>
                                                             </td>
-                                                            <td><img id="I7" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img7">
+                                                            <td><img id="dd7" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img7">
                                                                 <p>2</p>
                                                             </td>
-                                                            <td><img id="I8" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img8">
+                                                            <td><img id="dd8" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img8">
                                                                 <p>1</p>
                                                             </td>
-                                                            <td><img id="II1" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img1">
+                                                            <td><img id="dd9" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img1">
                                                                 <p>1</p>
                                                             </td>
-                                                            <td><img id="II2" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img2">
+                                                            <td><img id="dd10" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img2">
                                                                 <p>2</p>
                                                             </td>
-                                                            <td><img id="II3" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img3">
+                                                            <td><img id="dd11" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img3">
                                                                 <p>3</p>
                                                             </td>
-                                                            <td><img id="II4" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img4">
+                                                            <td><img id="dd12" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img4">
                                                                 <p>4</p>
                                                             </td>
-                                                            <td><img id="II5" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img5">
+                                                            <td><img id="dd13" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img5">
                                                                 <p>5</p>
                                                             </td>
-                                                            <td><img id="II6" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img6">
+                                                            <td><img id="dd14" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img6">
                                                                 <p>6</p>
                                                             </td>
-                                                            <td><img id="II7" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img7">
+                                                            <td><img id="dd15" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img7">
                                                                 <p>7</p>
                                                             </td>
-                                                            <td><img id="II8" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img8">
+                                                            <td><img id="dd16" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img8">
                                                                 <p>8</p>
                                                             </td>
                                                         </tr>
@@ -882,72 +937,34 @@ $medifo = $med->CtrDoctor();
                                                             <td></td>
                                                             <td></td>
 
-                                                            <td><img id="I9" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img1">
+                                                            <td><img id="dd17" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img1">
                                                                 <p>1</p>
                                                             </td>
-                                                            <td><img id="I10" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img2">
+                                                            <td><img id="dd18" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img2">
                                                                 <p>2</p>
                                                             </td>
-                                                            <td><img id="I11" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img3">
+                                                            <td><img id="dd19" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img3">
                                                                 <p>3</p>
                                                             </td>
-                                                            <td><img id="I12" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img4">
+                                                            <td><img id="dd20" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img4">
                                                                 <p>4</p>
                                                             </td>
-                                                            <td><img id="I13" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img5">
+                                                            <td><img id="dd21" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img5">
                                                                 <p>5</p>
                                                             </td>
-                                                            <td><img id="II9" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img1">
+                                                            <td><img id="dd22" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img1">
                                                                 <p>1</p>
                                                             </td>
-                                                            <td><img id="II10" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img2">
+                                                            <td><img id="dd23" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img2">
                                                                 <p>2</p>
                                                             </td>
-                                                            <td><img id="II11" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img3">
+                                                            <td><img id="dd24" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img3">
                                                                 <p>3</p>
                                                             </td>
-                                                            <td><img id="II12" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img4">
+                                                            <td><img id="dd25" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img4">
                                                                 <p>4</p>
                                                             </td>
-                                                            <td><img id="II13" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img5">
-                                                                <p>5</p>
-                                                            </td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td><img id="IV9" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img1">
-                                                                <p>1</p>
-                                                            </td>
-                                                            <td><img id="IV10" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img2">
-                                                                <p>2</p>
-                                                            </td>
-                                                            <td><img id="IV11" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img3">
-                                                                <p>3</p>
-                                                            </td>
-                                                            <td><img id="IV12" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img4">
-                                                                <p>4</p>
-                                                            </td>
-                                                            <td><img id="IV13" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img5">
-                                                                <p>5</p>
-                                                            </td>
-                                                            <td><img id="III9" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img1">
-                                                                <p>1</p>
-                                                            </td>
-                                                            <td><img id="III10" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img2">
-                                                                <p>2</p>
-                                                            </td>
-                                                            <td><img id="III11" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img3">
-                                                                <p>3</p>
-                                                            </td>
-                                                            <td><img id="III12" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img4">
-                                                                <p>4</p>
-                                                            </td>
-                                                            <td><img id="III13" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img5">
+                                                            <td><img id="dd26" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img5">
                                                                 <p>5</p>
                                                             </td>
                                                             <td></td>
@@ -955,52 +972,90 @@ $medifo = $med->CtrDoctor();
                                                             <td></td>
                                                         </tr>
                                                         <tr>
-                                                            <td><img id="IV1" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img1">
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td><img id="dd27" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img1">
+                                                                <p>1</p>
+                                                            </td>
+                                                            <td><img id="dd28" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img2">
+                                                                <p>2</p>
+                                                            </td>
+                                                            <td><img id="dd29" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img3">
+                                                                <p>3</p>
+                                                            </td>
+                                                            <td><img id="dd30" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img4">
+                                                                <p>4</p>
+                                                            </td>
+                                                            <td><img id="dd31" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img5">
+                                                                <p>5</p>
+                                                            </td>
+                                                            <td><img id="dd32" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img1">
+                                                                <p>1</p>
+                                                            </td>
+                                                            <td><img id="dd33" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img2">
+                                                                <p>2</p>
+                                                            </td>
+                                                            <td><img id="dd34" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img3">
+                                                                <p>3</p>
+                                                            </td>
+                                                            <td><img id="dd35" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img4">
+                                                                <p>4</p>
+                                                            </td>
+                                                            <td><img id="dd36" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img5">
+                                                                <p>5</p>
+                                                            </td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><img id="dd37" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img1">
                                                                 <p>8</p>
                                                             </td>
-                                                            <td><img id="IV2" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img2">
+                                                            <td><img id="dd38" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img2">
                                                                 <p>7</p>
                                                             </td>
-                                                            <td><img id="IV3" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img3">
+                                                            <td><img id="dd39" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img3">
                                                                 <p>6</p>
                                                             </td>
-                                                            <td><img id="IV4" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img4">
+                                                            <td><img id="dd40" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img4">
                                                                 <p>5</p>
                                                             </td>
-                                                            <td><img id="IV5" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img5">
+                                                            <td><img id="dd41" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img5">
                                                                 <p>4</p>
                                                             </td>
-                                                            <td><img id="IV6" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img6">
+                                                            <td><img id="dd42" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img6">
                                                                 <p>3</p>
                                                             </td>
-                                                            <td><img id="IV7" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img7">
+                                                            <td><img id="dd43" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img7">
                                                                 <p>2</p>
                                                             </td>
-                                                            <td><img id="IV8" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img8">
+                                                            <td><img id="dd44" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img8">
                                                                 <p>1</p>
                                                             </td>
-                                                            <td><img id="III1" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img1">
+                                                            <td><img id="dd45" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img1">
                                                                 <p>1</p>
                                                             </td>
-                                                            <td><img id="III2" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img2">
+                                                            <td><img id="dd46" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img2">
                                                                 <p>2</p>
                                                             </td>
-                                                            <td><img id="III3" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img3">
+                                                            <td><img id="dd47" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img3">
                                                                 <p>3</p>
                                                             </td>
-                                                            <td><img id="III4" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img4">
+                                                            <td><img id="dd48" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img4">
                                                                 <p>4</p>
                                                             </td>
-                                                            <td><img id="III5" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img5">
+                                                            <td><img id="dd49" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img5">
                                                                 <p>5</p>
                                                             </td>
-                                                            <td><img id="III6" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img6">
+                                                            <td><img id="dd50" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img6">
                                                                 <p>6</p>
                                                             </td>
-                                                            <td><img id="III7" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img7">
+                                                            <td><img id="dd51" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img7">
                                                                 <p>7</p>
                                                             </td>
-                                                            <td><img id="III8" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img8">
+                                                            <td><img id="dd52" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img8">
                                                                 <p>8</p>
                                                             </td>
                                                         </tr>

@@ -8,7 +8,7 @@ class ReporteriaModelo extends mainModel
 {
     protected function MdlReporteriaGeneral()
     {
-        $sql = mainModel::conectar()->prepare("SELECT * FROM tbl_vitas");
+        $sql = mainModel::conectar()->prepare("SELECT * FROM tbl_visitas");
         $sql->execute();
         $respuesta = $sql->fetchAll(PDO::FETCH_ASSOC);
         return $respuesta;
