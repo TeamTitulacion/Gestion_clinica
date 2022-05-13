@@ -300,17 +300,48 @@ class HistoriaControlador extends HistoriaModelo
         $ha10 = mainModel::limpiar_cadena($_POST['ha10']);
         $ha11 = mainModel::limpiar_cadena($_POST['ha11']);
         $ha12 = mainModel::limpiar_cadena($_POST['ha12']);
+        $exa2 = mainModel::limpiar_cadena($_POST['exa2']);
+        $exa3 = mainModel::limpiar_cadena($_POST['exa3']);
+        $exa4 = mainModel::limpiar_cadena($_POST['exa4']);
+        $exa5 = mainModel::limpiar_cadena($_POST['exa5']);
+        $exa6 = mainModel::limpiar_cadena($_POST['exa6']);
+        $exa7 = mainModel::limpiar_cadena($_POST['exa7']);
+        $exa8 = mainModel::limpiar_cadena($_POST['exa8']);
+        $exa9 = mainModel::limpiar_cadena($_POST['exa9']);
+        $exa10 = mainModel::limpiar_cadena($_POST['exa10']);
+        $exa11 = mainModel::limpiar_cadena($_POST['exa11']);
+        $da1 = mainModel::limpiar_cadena($_POST['da1']);
+        $da2 = mainModel::limpiar_cadena($_POST['da2']);
+        $da3 = mainModel::limpiar_cadena($_POST['da3']);
+        $da4 = mainModel::limpiar_cadena($_POST['da4']);
+        $da5 = mainModel::limpiar_cadena($_POST['da5']);
+        $da6 = mainModel::limpiar_cadena($_POST['da6']);
+        $da7 = mainModel::limpiar_cadena($_POST['da7']);
+        $da8 = mainModel::limpiar_cadena($_POST['da8']);
+        $da9 = mainModel::limpiar_cadena($_POST['da9']);
+        $da10 = mainModel::limpiar_cadena($_POST['da10']);
+        $da11 = mainModel::limpiar_cadena($_POST['da11']);
+        $da12 = mainModel::limpiar_cadena($_POST['da12']);
+        $da13 = mainModel::limpiar_cadena($_POST['da13']);
+        $da14 = mainModel::limpiar_cadena($_POST['da14']);
+        $da15 = mainModel::limpiar_cadena($_POST['da15']);
+        $ptr1 = mainModel::limpiar_cadena($_POST['ptr1']);
+        $ptr2 = mainModel::limpiar_cadena($_POST['ptr2']);
+        $ptr3 = mainModel::limpiar_cadena($_POST['ptr3']);
+        $ptr4 = mainModel::limpiar_cadena($_POST['ptr4']);
+        $ptr5 = mainModel::limpiar_cadena($_POST['ptr5']);
+        $ptr6 = mainModel::limpiar_cadena($_POST['ptr6']);
+        $ptr7 = mainModel::limpiar_cadena($_POST['ptr7']);
+        
+        
 
+       
+        $datos = ['id' => $id, 'Estatura' => $Estatura, 'Temp' => $Temp, 'Peso' => $Peso, 'Pulso' => $Pulso, 'TenArte' => $TenArte, 'FrecuRespi' => $FrecuRespi, 'motivo' => $motivo, 'fechaMo' => $fechaMo, 'acompa' => $acompa, 'telacompa' => $telacompa, 'vih' => $vih, 'vihdiag' => $vihdiag, 'vihfecha' => $vihfecha, 'moconsulta' => $moconsulta, 'efeActuales' => $efeActuales, 'en1' => $en1, 'en2' => $en2, 'en3' => $en3, 'en4' => $en4, 'en5' => $en5, 'en6' => $en6, 'en7' => $en7, 'en8' => $en8, 'en9' => $en9, 'en10' => $en10, 'en11' => $en11, 'en12' => $en12, 'en_obs' => $en_obs, 'tn1' => $tn1, 'tn2' => $tn2, 'tn3' => $tn3, 'tn4' => $tn4, 'tn5' => $tn5, 'tn6' => $tn6, 'tn7' => $tn7, 'tn8' => $tn8, 'tn9' => $tn9, 'tn10' => $tn10, 'tn11' => $tn11, 'tn12' => $tn12, 'tn13' => $tn13, 't1a' => $t1a, 't2a' => $t2a, 't3a' => $t3a, 't4a' => $t4a, 't5a' => $t5a, 't6a' => $t6a, 't7a' => $t7a, 't8a' => $t8a, 't9a' => $t9a, 't10a' => $t10a, 't11a' => $t11a, 't12a' => $t12a, 't13a' => $t13a, 'at1' => $at1, 'at2' => $at2, 'at3' => $at3, 'at4' => $at4, 'at5' => $at5, 'at6' => $at6, 'at7' => $at7, 'at1a' => $at1a, 'at2a' => $at2a, 'at3a' => $at3a, 'at4a' => $at4a, 'at5a' => $at5a, 'at6a' => $at6a, 'at7a' => $at7a, 'exa_obs' => $exa_obs, 't1' => $t1, 't2' => $t2, 't3' => $t3, 't4' => $t4, 't5' => $t5, 't6' => $t6, 't7' => $t7, 't8' => $t8, 't9' => $t9, 't10' => $t10, 't11' => $t11, 't12' => $t12, 't13' => $t13, 't14' => $t14, 't15' => $t15, 't16' => $t16, 't17' => $t17, 't18' => $t18, 't19' => $t18, 't19' => $t19, 't20' => $t20, 't21' => $t21, 'ObservaAntece' => $obse1, 'ha1' => $ha1, 'ha2' => $ha2, 'ha3' => $ha3, 'ha4' => $ha4, 'ha5' => $ha5, 'ha6' => $ha6, 'ha7' => $ha7, 'ha8' => $ha8, 'ha9' => $ha9, 'ha10' => $ha10, 'ha11' => $ha11, 'ha12' => $ha12,'ptr1' => $ptr1,'ptr2' => $ptr2,'ptr3' => $ptr3,'ptr4' => $ptr4,'ptr5' => $ptr5,'ptr6' => $ptr6,'ptr7' => $ptr7];
 
-
-        $datos = [
-            'id' => $id, 'Estatura' => $Estatura, 'Temp' => $Temp, 'Peso' => $Peso, 'Pulso' => $Pulso, 'TenArte' => $TenArte, 'FrecuRespi' => $FrecuRespi, 'motivo' => $motivo, 'fechaMo' => $fechaMo, 'acompa' => $acompa, 'telacompa' => $telacompa, 'vih' => $vih, 'vihdiag' => $vihdiag, 'vihfecha' => $vihfecha, 'moconsulta' => $moconsulta, 'efeActuales' => $efeActuales, 'en1' => $en1, 'en2' => $en2, 'en3' => $en3, 'en4' => $en4, 'en5' => $en5, 'en6' => $en6, 'en7' => $en7, 'en8' => $en8, 'en9' => $en9, 'en10' => $en10, 'en11' => $en11, 'en12' => $en12, 'en_obs' => $en_obs, 'tn1' => $tn1, 'tn2' => $tn2, 'tn3' => $tn3, 'tn4' => $tn4, 'tn5' => $tn5, 'tn6' => $tn6, 'tn7' => $tn7, 'tn8' => $tn8, 'tn9' => $tn9, 'tn10' => $tn10, 'tn11' => $tn11, 'tn12' => $tn12, 'tn13' => $tn13, 't1a' => $t1a, 't2a' => $t2a, 't3a' => $t3a, 't4a' => $t4a, 't5a' => $t5a, 't6a' => $t6a, 't7a' => $t7a, 't8a' => $t8a, 't9a' => $t9a,
-            't10a' => $t10a, 't11a' => $t11a, 't12a' => $t12a, 't13a' => $t13a, 'at1' => $at1, 'at2' => $at2, 'at3' => $at3, 'at4' => $at4, 'at5' => $at5, 'at6' => $at6, 'at7' => $at7, 'at1a' => $at1a, 'at2a' => $at2a, 'at3a' => $at3a, 'at4a' => $at4a, 'at5a' => $at5a,
-            'at6a' => $at6a, 'at7a' => $at7a, 'exa_obs' => $exa_obs, 't1' => $t1, 't2' => $t2, 't3' => $t3, 't4' => $t4, 't5' => $t5, 't6' => $t6, 't7' => $t7, 't8' => $t8, 't9' => $t9, 't10' => $t10, 't11' => $t11, 't12' => $t12, 't13' => $t13, 't14' => $t14, 't15' => $t15, 't16' => $t16, 't17' => $t17, 't18' => $t18, 't19' => $t18, 't19' => $t19, 't20' => $t20, 't21' => $t21, 'ObservaAntece' => $obse1, 'ha1' => $ha1, 'ha2' => $ha2, 'ha3' => $ha3, 'ha4' => $ha4, 'ha5' => $ha5, 'ha6' => $ha6, 'ha7' => $ha7, 'ha8' => $ha8, 'ha9' => $ha9, 'ha10' => $ha10, 'ha11' => $ha11, 'ha12' => $ha12
-        ];
-        $datos2 = ['id' => $id, 'd1' => $d1, 'd2' => $d2, 'd3' => $d3, 'd4' => $d4, 'd5' => $d5, 'd6' => $d6, 'd7' => $d7, 'd8' => $d8, 'd9' => $d9, 'd10' => $d10, 'd11' => $d11, 'd12' => $d12, 'd13' => $d13, 'd14' => $d14, 'd15' => $d15, 'd16' => $d16, 'd17' => $d17, 'd18' => $d18, 'd19' => $d19, 'd20' => $d20, 'd21' => $d21, 'd22' => $d22, 'd23' => $d23, 'd24' => $d24, 'd25' => $d25, 'd26' => $d26, 'd27' => $d27, 'd28' => $d28, 'd29' => $d29, 'd30' => $d30, 'd31' => $d31, 'd32' => $d32, 'd33' => $d33, 'd34' => $d34, 'd35' => $d35, 'd36' => $d36, 'd37' => $d37, 'd38' => $d38, 'd39' => $d39, 'd40' => $d40, 'd41' => $d41, 'd42' => $d42, 'd43' => $d43, 'd44' => $d44, 'd45' => $d45, 'd46' => $d46, 'd47' => $d47, 'd48' => $d48, 'd49' => $d49, 'd50' => $d50, 'd51' => $d51, 'd52' => $d52, 'dd1' => $dd1, 'dd2' => $dd2, 'dd3' => $dd3, 'dd4' => $dd4, 'dd5' => $dd5, 'dd6' => $dd6, 'dd7' => $dd7, 'dd8' => $dd8, 'dd9' => $dd9, 'dd10' => $dd10, 'dd11' => $dd11, 'dd12' => $dd12, 'dd13' => $dd13, 'dd14' => $dd14, 'dd15' => $dd15, 'dd16' => $dd16, 'dd17' => $dd17, 'dd18' => $dd18, 'dd19' => $dd19, 'dd20' => $dd20, 'dd21' => $dd21, 'dd22' => $dd22, 'dd23' => $dd23, 'dd24' => $dd24, 'dd25' => $dd25, 'dd26' => $dd26, 'dd27' => $dd27, 'dd28' => $dd28, 'dd29' => $dd29, 'dd30' => $dd30, 'dd31' => $dd31, 'dd32' => $dd32, 'dd33' => $dd33, 'dd34' => $dd34, 'dd35' => $dd35, 'dd36' => $dd36, 'dd37' => $dd37, 'dd38' => $dd38, 'dd39' => $dd39, 'dd40' => $dd40, 'dd41' => $dd41, 'dd42' => $dd42, 'dd43' => $dd43, 'dd44' => $dd44, 'dd45' => $dd45, 'dd46' => $dd46, 'dd47' => $dd47, 'dd48' => $dd48, 'dd49' => $dd49, 'dd50' => $dd50, 'dd51' => $dd51, 'dd52' => $dd52];
+        $datos2 = ['id' => $id, 'd1' => $d1, 'd2' => $d2, 'd3' => $d3, 'd4' => $d4, 'd5' => $d5, 'd6' => $d6, 'd7' => $d7, 'd8' => $d8, 'd9' => $d9, 'd10' => $d10, 'd11' => $d11, 'd12' => $d12, 'd13' => $d13, 'd14' => $d14, 'd15' => $d15, 'd16' => $d16, 'd17' => $d17, 'd18' => $d18, 'd19' => $d19, 'd20' => $d20, 'd21' => $d21, 'd22' => $d22, 'd23' => $d23, 'd24' => $d24, 'd25' => $d25, 'd26' => $d26, 'd27' => $d27, 'd28' => $d28, 'd29' => $d29, 'd30' => $d30, 'd31' => $d31, 'd32' => $d32, 'd33' => $d33, 'd34' => $d34, 'd35' => $d35, 'd36' => $d36, 'd37' => $d37, 'd38' => $d38, 'd39' => $d39, 'd40' => $d40, 'd41' => $d41, 'd42' => $d42, 'd43' => $d43, 'd44' => $d44, 'd45' => $d45, 'd46' => $d46, 'd47' => $d47, 'd48' => $d48, 'd49' => $d49, 'd50' => $d50, 'd51' => $d51, 'd52' => $d52, 'dd1' => $dd1, 'dd2' => $dd2, 'dd3' => $dd3, 'dd4' => $dd4, 'dd5' => $dd5, 'dd6' => $dd6, 'dd7' => $dd7, 'dd8' => $dd8, 'dd9' => $dd9, 'dd10' => $dd10, 'dd11' => $dd11, 'dd12' => $dd12, 'dd13' => $dd13, 'dd14' => $dd14, 'dd15' => $dd15, 'dd16' => $dd16, 'dd17' => $dd17, 'dd18' => $dd18, 'dd19' => $dd19, 'dd20' => $dd20, 'dd21' => $dd21, 'dd22' => $dd22, 'dd23' => $dd23, 'dd24' => $dd24, 'dd25' => $dd25, 'dd26' => $dd26, 'dd27' => $dd27, 'dd28' => $dd28, 'dd29' => $dd29, 'dd30' => $dd30, 'dd31' => $dd31, 'dd32' => $dd32, 'dd33' => $dd33, 'dd34' => $dd34, 'dd35' => $dd35, 'dd36' => $dd36, 'dd37' => $dd37, 'dd38' => $dd38, 'dd39' => $dd39, 'dd40' => $dd40, 'dd41' => $dd41, 'dd42' => $dd42, 'dd43' => $dd43, 'dd44' => $dd44, 'dd45' => $dd45, 'dd46' => $dd46, 'dd47' => $dd47, 'dd48' => $dd48, 'dd49' => $dd49, 'dd50' => $dd50, 'dd51' => $dd51, 'dd52' => $dd52, 'exa2' => $exa2, 'exa3' => $exa3, 'exa4' => $exa4, 'exa5' => $exa5, 'exa6' => $exa6, 'exa7' => $exa7, 'exa8' => $exa8, 'exa9' => $exa9, 'exa10' => $exa10, 'exa11' => $exa11, 'da1' => $da1, 'da2' => $da2, 'da3' => $da3, 'da4' => $da4, 'da5' => $da5, 'da6' => $da6, 'da7' => $da7, 'da8' => $da8, 'da9' => $da9, 'da10' => $da10, 'da11' => $da11, 'da12' => $da12, 'da13' => $da13, 'da14' => $da14, 'da15' => $da15];
 
         $respuesta = HistoriaModelo::MdlActualizar($datos, $datos2);
+        
         if ($respuesta > 0) {
             echo 1;
         } else {

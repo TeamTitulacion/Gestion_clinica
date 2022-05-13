@@ -208,6 +208,7 @@ $(document).on("click", "#guardar", function () {
   let AccioPreveFre5 = document.getElementById("AccioPreveFre5").value;
   let AccioPreveSI6 = document.querySelector("#AccioPreveSI6").checked;
   let AccioPreveFre6 = document.getElementById("AccioPreveFre6").value;
+  let exam2 = document.getElementById("intrad").value;
   let RadioExtraO1 = document.getElementById("RadioExtraO1").value;
   let RadioExtraO2 = document.getElementById("RadioExtraO2").value;
   let RadioExtraO3 = document.getElementById("RadioExtraO3").value;
@@ -226,10 +227,12 @@ $(document).on("click", "#guardar", function () {
   let Diag4 = document.getElementById("Diag4").value;
   let Prono4 = document.getElementById("Prono4").value;
   let Diag5 = document.getElementById("Diag5").value;
+  let Prono5 = document.getElementById("Prono5").value;
   let Diag6 = document.getElementById("Diag6").value;
   let Prono6 = document.getElementById("Prono6").value;
   let Diag7 = document.getElementById("Diag7").value;
   let Prono7 = document.getElementById("Prono7").value;
+  let dia_obs = document.getElementById("dia_obs").value;
   let PlanTra1 = document.getElementById("PlanTra1").value;
   let PlanTra2 = document.getElementById("PlanTra2").value;
   let PlanTra3 = document.getElementById("PlanTra3").value;
@@ -237,12 +240,275 @@ $(document).on("click", "#guardar", function () {
   let PlanTra5 = document.getElementById("PlanTra5").value;
   let PlanTra6 = document.getElementById("PlanTra6").value;
   let PlanTra7 = document.getElementById("PlanTra7").value;
-  datas = d1;
-  console.log(datas);
-  $.ajax({
+  var frmDatas = new FormData();
+  frmDatas.append("exa1", $("input[name=intra]")[0].files[0]);
+  frmDatas.append("exa2", exam2);
+  frmDatas.append("exa3", RadioExtraO1);
+  frmDatas.append("exa4", RadioExtraO2);
+  frmDatas.append("exa5", RadioExtraO3);
+  frmDatas.append("exa6", RadioExtraO4);
+  frmDatas.append("exa7", RadioExtraO5);
+  frmDatas.append("exa8", RadioExtraO6);
+  frmDatas.append("exa9", RadioExtraO7);
+  frmDatas.append("exa10", RadioExtraO8);
+  frmDatas.append("exa11", ExamenesComple);
+  frmDatas.append("ptr1", PlanTra1);
+  frmDatas.append("ptr2", PlanTra2);
+  frmDatas.append("ptr3", PlanTra3);
+  frmDatas.append("ptr4", PlanTra4);
+  frmDatas.append("ptr5", PlanTra5);
+  frmDatas.append("ptr6", PlanTra6);
+  frmDatas.append("ptr7", PlanTra7);
+  frmDatas.append("da1", Diag1);
+  frmDatas.append("da2", Diag2);
+  frmDatas.append("da3", Diag3);
+  frmDatas.append("da4", Diag4);
+  frmDatas.append("da5", Diag5);
+  frmDatas.append("da6", Diag6);
+  frmDatas.append("da7", Diag7);
+  frmDatas.append("da8", Prono1);
+  frmDatas.append("da9", Prono2);
+  frmDatas.append("da10", Prono3);
+  frmDatas.append("da11", Prono4);
+  frmDatas.append("da12", Prono5);
+  frmDatas.append("da13", Prono6);
+  frmDatas.append("da14", Prono7);
+  frmDatas.append("da15", dia_obs);
+  frmDatas.append("ha1", AccioPreveSI1);
+  frmDatas.append("ha2", AccioPreveSI2);
+  frmDatas.append("ha3", AccioPreveSI3);
+  frmDatas.append("ha4", AccioPreveSI4);
+  frmDatas.append("ha5", AccioPreveSI5);
+  frmDatas.append("ha6", AccioPreveSI6);
+  frmDatas.append("ha7", AccioPreveFre1);
+  frmDatas.append("ha8", AccioPreveFre2);
+  frmDatas.append("ha9", AccioPreveFre3);
+  frmDatas.append("ha10", AccioPreveFre4);
+  frmDatas.append("ha11", AccioPreveFre5);
+  frmDatas.append("ha12", AccioPreveFre6);
+  frmDatas.append("tn1", TejidosN1);
+  frmDatas.append("tn2", TejidosN2);
+  frmDatas.append("tn3", TejidosN3);
+  frmDatas.append("tn4", TejidosN4);
+  frmDatas.append("tn5", TejidosN5);
+  frmDatas.append("tn6", TejidosN6);
+  frmDatas.append("tn7", TejidosN7);
+  frmDatas.append("tn8", TejidosN8);
+  frmDatas.append("tn9", TejidosN9);
+  frmDatas.append("tn10", TejidosN10);
+  frmDatas.append("tn11", TejidosN11);
+  frmDatas.append("tn12", TejidosN12);
+  frmDatas.append("tn13", TejidosN13);
+  frmDatas.append("t1a", TejidosA1);
+  frmDatas.append("t2a", TejidosA2);
+  frmDatas.append("t3a", TejidosA3);
+  frmDatas.append("t4a", TejidosA4);
+  frmDatas.append("t5a", TejidosA5);
+  frmDatas.append("t6a", TejidosA6);
+  frmDatas.append("t7a", TejidosA7);
+  frmDatas.append("t8a", TejidosA8);
+  frmDatas.append("t9a", TejidosA9);
+  frmDatas.append("t10a", TejidosA10);
+  frmDatas.append("t11a", TejidosA11);
+  frmDatas.append("t12a", TejidosA12);
+  frmDatas.append("t13a", TejidosA13);
+  frmDatas.append("at1", AtmN1);
+  frmDatas.append("at2", AtmN2);
+  frmDatas.append("at3", AtmN3);
+  frmDatas.append("at4", AtmN4);
+  frmDatas.append("at5", AtmN5);
+  frmDatas.append("at6", AtmN6);
+  frmDatas.append("at7", AtmN7);
+  frmDatas.append("at1a", AtmA1);
+  frmDatas.append("at2a", AtmA2);
+  frmDatas.append("at3a", AtmA3);
+  frmDatas.append("at4a", AtmA4);
+  frmDatas.append("at5a", AtmA5);
+  frmDatas.append("at6a", AtmA6);
+  frmDatas.append("at7a", AtmA7);
+  frmDatas.append("exa_obs", exa_obs);
+  frmDatas.append("en1", en1);
+  frmDatas.append("en2", en2);
+  frmDatas.append("en3", en3);
+  frmDatas.append("en4", en4);
+  frmDatas.append("en5", en5);
+  frmDatas.append("en6", en6);
+  frmDatas.append("en7", en7);
+  frmDatas.append("en8", en8);
+  frmDatas.append("en9", en9);
+  frmDatas.append("en10", en10);
+  frmDatas.append("en11", en11);
+  frmDatas.append("en12", en12);
+  frmDatas.append("en_obs", en_obs);
+  frmDatas.append("d1", d1);
+  frmDatas.append("d2", d2);
+  frmDatas.append("d3", d3);
+  frmDatas.append("d4", d4);
+  frmDatas.append("d5", d5);
+  frmDatas.append("d6", d6);
+  frmDatas.append("d7", d7);
+  frmDatas.append("d8", d8);
+  frmDatas.append("d9", d9);
+  frmDatas.append("d10", d10);
+  frmDatas.append("d11", d11);
+  frmDatas.append("d12", d12);
+  frmDatas.append("d13", d13);
+  frmDatas.append("d14", d14);
+  frmDatas.append("d15", d15);
+  frmDatas.append("d16", d16);
+  frmDatas.append("d17", d17);
+  frmDatas.append("d18", d18);
+  frmDatas.append("d19", d19);
+  frmDatas.append("d20", d20);
+  frmDatas.append("d21", d21);
+  frmDatas.append("d22", d22);
+  frmDatas.append("d23", d23);
+  frmDatas.append("d24", d24);
+  frmDatas.append("d25", d25);
+  frmDatas.append("d26", d26);
+  frmDatas.append("d27", d27);
+  frmDatas.append("d28", d28);
+  frmDatas.append("d29", d29);
+  frmDatas.append("d30", d30);
+  frmDatas.append("d31", d31);
+  frmDatas.append("d32", d32);
+  frmDatas.append("d33", d33);
+  frmDatas.append("d34", d34);
+  frmDatas.append("d35", d35);
+  frmDatas.append("d36", d36);
+  frmDatas.append("d37", d37);
+  frmDatas.append("d38", d38);
+  frmDatas.append("d39", d39);
+  frmDatas.append("d40", d40);
+  frmDatas.append("d41", d41);
+  frmDatas.append("d42", d42);
+  frmDatas.append("d43", d43);
+  frmDatas.append("d44", d44);
+  frmDatas.append("d45", d45);
+  frmDatas.append("d46", d46);
+  frmDatas.append("d47", d47);
+  frmDatas.append("d48", d48);
+  frmDatas.append("d49", d49);
+  frmDatas.append("d50", d50);
+  frmDatas.append("d51", d51);
+  frmDatas.append("d52", d52);
+  frmDatas.append("dd1", dd1);
+  frmDatas.append("dd2", dd2);
+  frmDatas.append("dd3", dd3);
+  frmDatas.append("dd4", dd4);
+  frmDatas.append("dd5", dd5);
+  frmDatas.append("dd6", dd6);
+  frmDatas.append("dd7", dd7);
+  frmDatas.append("dd8", dd8);
+  frmDatas.append("dd9", dd9);
+  frmDatas.append("dd10", dd10);
+  frmDatas.append("dd11", dd11);
+  frmDatas.append("dd12", dd12);
+  frmDatas.append("dd13", dd13);
+  frmDatas.append("dd14", dd14);
+  frmDatas.append("dd15", dd15);
+  frmDatas.append("dd16", dd16);
+  frmDatas.append("dd17", dd17);
+  frmDatas.append("dd18", dd18);
+  frmDatas.append("dd19", dd19);
+  frmDatas.append("dd20", dd20);
+  frmDatas.append("dd21", dd21);
+  frmDatas.append("dd22", dd22);
+  frmDatas.append("dd23", dd23);
+  frmDatas.append("dd24", dd24);
+  frmDatas.append("dd25", dd25);
+  frmDatas.append("dd26", dd26);
+  frmDatas.append("dd27", dd27);
+  frmDatas.append("dd28", dd28);
+  frmDatas.append("dd29", dd29);
+  frmDatas.append("dd30", dd30);
+  frmDatas.append("dd31", dd31);
+  frmDatas.append("dd32", dd32);
+  frmDatas.append("dd33", dd33);
+  frmDatas.append("dd34", dd34);
+  frmDatas.append("dd35", dd35);
+  frmDatas.append("dd36", dd36);
+  frmDatas.append("dd37", dd37);
+  frmDatas.append("dd38", dd38);
+  frmDatas.append("dd39", dd39);
+  frmDatas.append("dd40", dd40);
+  frmDatas.append("dd41", dd41);
+  frmDatas.append("dd42", dd42);
+  frmDatas.append("dd43", dd43);
+  frmDatas.append("dd44", dd44);
+  frmDatas.append("dd45", dd45);
+  frmDatas.append("dd46", dd46);
+  frmDatas.append("dd47", dd47);
+  frmDatas.append("dd48", dd48);
+  frmDatas.append("dd49", dd49);
+  frmDatas.append("dd50", dd50);
+  frmDatas.append("dd51", dd51);
+  frmDatas.append("dd52", dd52);
+  frmDatas.append("ObservaAntece", ObservaAntece);
+  frmDatas.append("TiposAnte1", TiposAnte1);
+  frmDatas.append("TiposAnte2", TiposAnte2);
+  frmDatas.append("TiposAnte3", TiposAnte3);
+  frmDatas.append("TiposAnte4", TiposAnte4);
+  frmDatas.append("TiposAnte5", TiposAnte5);
+  frmDatas.append("TiposAnte6", TiposAnte6);
+  frmDatas.append("TiposAnte7", TiposAnte7);
+  frmDatas.append("TiposAnte8", TiposAnte8);
+  frmDatas.append("TiposAnte9", TiposAnte9);
+  frmDatas.append("TiposAnte10", TiposAnte10);
+  frmDatas.append("TiposAnte11", TiposAnte11);
+  frmDatas.append("TiposAnte12", TiposAnte12);
+  frmDatas.append("TiposAnte13", TiposAnte13);
+  frmDatas.append("TiposAnte14", TiposAnte14);
+  frmDatas.append("TiposAnte15", TiposAnte15);
+  frmDatas.append("TiposAnte16", TiposAnte16);
+  frmDatas.append("TiposAnte17", TiposAnte17);
+  frmDatas.append("TiposAnte18", TiposAnte18);
+  frmDatas.append("TiposAnte19", TiposAnte19);
+  frmDatas.append("TiposAnte20", TiposAnte20);
+  frmDatas.append("TiposAnte21", TiposAnte21);
+  frmDatas.append("MoConsulta", MoConsulta);
+  frmDatas.append("EnfeActuales", EnfeActuales);
+  frmDatas.append("Motivo", Motivo);
+  frmDatas.append("FechaMo", FechaMo);
+  frmDatas.append("NomAcompa", NomAcompa);
+  frmDatas.append("TeleAcompa", TeleAcompa);
+  frmDatas.append("Vih", Vih);
+  frmDatas.append("DiagVIH", DiagVIH);
+  frmDatas.append("FechaVIH", FechaVIH);
+  frmDatas.append("NumHist", NumHist);
+  frmDatas.append("Estatura", Estatura);
+  frmDatas.append("Temp", Temp);
+  frmDatas.append("Pulso", Pulso);
+  frmDatas.append("Peso", Peso);
+  frmDatas.append("TenArte", TenArte);
+  frmDatas.append("FrecuRespi", FrecuRespi);
+
+  /* $.ajax({
     type: "POST",
     url: "../ajax/historia.ajax.php",
     data: {
+      ptr1: PlanTra1,
+      ptr2: PlanTra2,
+      ptr3: PlanTra3,
+      ptr4: PlanTra4,
+      ptr5: PlanTra5,
+      ptr6: PlanTra6,
+      ptr7: PlanTra7,
+      da1: Diag1,
+      da2: Diag2,
+      da3: Diag3,
+      da4: Diag4,
+      da5: Diag5,
+      da6: Diag6,
+      da7: Diag7,
+      da8: Prono1,
+      da9: Prono2,
+      da10: Prono3,
+      da11: Prono4,
+      da12: Prono5,
+      da13: Prono6,
+      da14: Prono7,
+      da15: dia_obs,
       ha1: AccioPreveSI1,
       ha2: AccioPreveSI2,
       ha3: AccioPreveSI3,
@@ -467,6 +733,25 @@ $(document).on("click", "#guardar", function () {
     error: function (data) {
       var msg = data;
       console.log(msg);
+    },
+  });
+  */
+  $.ajax({
+    url: "../ajax/historia.ajax.php",
+    type: "POST",
+    data: frmDatas,
+    processData: false,
+    contentType: false,
+    cache: false,
+    success: function (data) {
+      var msg = data;
+      if (msg == 1) {
+        Swal.fire("Exito", "Historia Actualizada", "success").then(function () {
+          location.reload();
+        });
+      } else {
+        Swal.fire("Advertencia!", "No se realizo ningun cambio", "warning");
+      }
     },
   });
 });
