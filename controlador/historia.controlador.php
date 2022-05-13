@@ -140,7 +140,7 @@ class HistoriaControlador extends HistoriaModelo
             't18'=>$t18,'t19'=>$t18, 't19'=>$t19,'t20'=>$t20,'t21'=>$t21,'ObservaAntece'=>$obse1
         ];
         $respuesta = HistoriaModelo::MdlActualizar($datos);
-        if ($respuesta->rowCount() > 0) {
+        if ($respuesta > 0) {
             echo 1;
         } else {
             echo 2;

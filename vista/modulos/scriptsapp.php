@@ -1,7 +1,6 @@
 <script src="<?php echo SERVERURL ?>/vista/js/metisMenu.min.js"></script>
 <script src="<?php echo SERVERURL ?>/vista/js/startmin.js"></script>
 <script src="<?php echo SERVERURL ?>/vista/js/tables.js"></script>
-<script src="<?php echo SERVERURL ?>/vista/js/add.js"></script>
 <script src="<?php echo SERVERURL ?>/vista/js/flot/excanvas.min.js"></script>
 <script src="<?php echo SERVERURL ?>/vista/js/flot/jquery.flot.js"></script>
 <script src="<?php echo SERVERURL ?>/vista/js/flot/jquery.flot.pie.js"></script>
