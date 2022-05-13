@@ -833,7 +833,7 @@ $medifo = $med->CtrDoctor();
                                                 <table border="1">
                                                     <tbody>
                                                         <tr>
-                                                            <td><img id="I1" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img1">
+                                                            <td><img id="I1" class="odonto" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img1">
                                                                 <p>8</p>
                                                             </td>
                                                             <td><img id="I2" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt="img2">
