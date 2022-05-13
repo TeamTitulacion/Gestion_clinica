@@ -8,7 +8,15 @@ if (isset($_POST['his']) || (isset($_POST['pac']) && isset($_POST['fecha']) && i
      && isset($_POST['TiposAnte3'])&& isset($_POST['TiposAnte4'])&& isset($_POST['TiposAnte5'])&& isset($_POST['TiposAnte6'])&& isset($_POST['TiposAnte7'])
      && isset($_POST['TiposAnte8'])&& isset($_POST['TiposAnte9'])&& isset($_POST['TiposAnte10'])&& isset($_POST['TiposAnte11']) && isset($_POST['TiposAnte12'])
      && isset($_POST['TiposAnte13'])&& isset($_POST['TiposAnte14'])&& isset($_POST['TiposAnte15'])&& isset($_POST['TiposAnte16'])&& isset($_POST['TiposAnte17'])
-     && isset($_POST['TiposAnte18'])&& isset($_POST['TiposAnte19'])&& isset($_POST['TiposAnte20'])&& isset($_POST['TiposAnte21'])
+     && isset($_POST['TiposAnte18'])&& isset($_POST['TiposAnte19'])&& isset($_POST['TiposAnte20'])&& isset($_POST['TiposAnte21']) 
+     && isset($_POST['en1']) && isset($_POST['en2']) && isset($_POST['en3']) && isset($_POST['en4']) && isset($_POST['en5']) && isset($_POST['en6']) && isset($_POST['en7']) && isset($_POST['en8']) && isset($_POST['en9']) && isset($_POST['en10'])
+     && isset($_POST['en11']) && isset($_POST['en12']) && isset($_POST['en_obs']) && isset($_POST['tn1']) && isset($_POST['tn2']) && isset($_POST['tn3'])
+     && isset($_POST['tn4']) && isset($_POST['tn5']) && isset($_POST['tn6']) && isset($_POST['tn7']) && isset($_POST['tn8']) && isset($_POST['tn9']) && isset($_POST['tn10'])
+     && isset($_POST['tn11']) && isset($_POST['tn12']) && isset($_POST['tn13']) && isset($_POST['t1a']) && isset($_POST['t2a']) && isset($_POST['t3a']) && isset($_POST['t4a'])
+     && isset($_POST['t5a']) && isset($_POST['t6a']) && isset($_POST['t7a']) && isset($_POST['t8a']) && isset($_POST['t9a']) && isset($_POST['t10a']) && isset($_POST['t11a'])
+     && isset($_POST['t12a']) && isset($_POST['t13a']) && isset($_POST['at1']) && isset($_POST['at2']) && isset($_POST['at3']) && isset($_POST['at4']) && isset($_POST['at5'])
+     && isset($_POST['at6']) && isset($_POST['at7']) && isset($_POST['at1a']) && isset($_POST['at2a']) && isset($_POST['at3a']) && isset($_POST['at4a']) && isset($_POST['at5a'])
+     && isset($_POST['at6a']) && isset($_POST['at7a']) && isset($_POST['exa_obs'])
      && isset($_POST['d1']) && isset($_POST['d2'])&& isset($_POST['d3']) && isset($_POST['d4']) && isset($_POST['d5']) && isset($_POST['d6']) && isset($_POST['d7']) && isset($_POST['d8']) && isset($_POST['d9']) && isset($_POST['d10'])
      && isset($_POST['d11']) && isset($_POST['d12']) && isset($_POST['d13']) && isset($_POST['d14']) && isset($_POST['d15'])&& isset($_POST['d16']) && isset($_POST['d17']) && isset($_POST['d18']) && isset($_POST['d19']) && isset($_POST['d20'])
      && isset($_POST['d21']) && isset($_POST['d22']) && isset($_POST['d23']) && isset($_POST['d24']) && isset($_POST['d25']) && isset($_POST['d26']) && isset($_POST['d27']) && isset($_POST['d28']) && isset($_POST['d29']) && isset($_POST['d30'])
@@ -56,7 +64,15 @@ if (isset($_POST['his']) || (isset($_POST['pac']) && isset($_POST['fecha']) && i
      && isset($_POST['TiposAnte3'])&& isset($_POST['TiposAnte4'])&& isset($_POST['TiposAnte5'])&& isset($_POST['TiposAnte6'])&& isset($_POST['TiposAnte7'])
      && isset($_POST['TiposAnte8'])&& isset($_POST['TiposAnte9'])&& isset($_POST['TiposAnte10'])&& isset($_POST['TiposAnte11']) && isset($_POST['TiposAnte12'])
      && isset($_POST['TiposAnte13'])&& isset($_POST['TiposAnte14'])&& isset($_POST['TiposAnte15'])&& isset($_POST['TiposAnte16'])&& isset($_POST['TiposAnte17'])
-     && isset($_POST['TiposAnte18'])&& isset($_POST['TiposAnte19'])&& isset($_POST['TiposAnte20'])&& isset($_POST['TiposAnte21']) && isset($_POST['ObservaAntece']) ) {
+     && isset($_POST['TiposAnte18'])&& isset($_POST['TiposAnte19'])&& isset($_POST['TiposAnte20'])&& isset($_POST['TiposAnte21']) && isset($_POST['ObservaAntece'])
+     && isset($_POST['en1']) && isset($_POST['en2']) && isset($_POST['en3']) && isset($_POST['en4']) && isset($_POST['en5']) && isset($_POST['en6']) && isset($_POST['en7']) && isset($_POST['en8']) && isset($_POST['en9']) && isset($_POST['en10'])
+     && isset($_POST['en11']) && isset($_POST['en12']) && isset($_POST['en_obs']) && isset($_POST['tn1']) && isset($_POST['tn2']) && isset($_POST['tn3'])
+     && isset($_POST['tn4']) && isset($_POST['tn5']) && isset($_POST['tn6']) && isset($_POST['tn7']) && isset($_POST['tn8']) && isset($_POST['tn9']) && isset($_POST['tn10'])
+     && isset($_POST['tn11']) && isset($_POST['tn12']) && isset($_POST['tn13']) && isset($_POST['t1a']) && isset($_POST['t2a']) && isset($_POST['t3a']) && isset($_POST['t4a'])
+     && isset($_POST['t5a']) && isset($_POST['t6a']) && isset($_POST['t7a']) && isset($_POST['t8a']) && isset($_POST['t9a']) && isset($_POST['t10a']) && isset($_POST['t11a'])
+     && isset($_POST['t12a']) && isset($_POST['t13a']) && isset($_POST['at1']) && isset($_POST['at2']) && isset($_POST['at3']) && isset($_POST['at4']) && isset($_POST['at5'])
+     && isset($_POST['at6']) && isset($_POST['at7']) && isset($_POST['at1a']) && isset($_POST['at2a']) && isset($_POST['at3a']) && isset($_POST['at4a']) && isset($_POST['at5a'])
+     && isset($_POST['at6a']) && isset($_POST['at7a']) && isset($_POST['exa_obs']) ) {
         $actualizar = new HistoriaControlador();
         print_r($actualizar->CtrActualizar());
     }

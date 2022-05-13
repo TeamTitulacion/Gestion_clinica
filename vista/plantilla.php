@@ -82,16 +82,12 @@ session_start(["name" => "UIC"]);
     <?php
 
     include 'modulos/scriptsgene.php';
-    if (
-        $vistas == "./vista/contenido/login-view.php" || $vistas == "./vista/contenido/404-view.php"
-        || $vistas == "./vista/contenido/index-view.php"|| $vistas == ""
-    ) {
+    if ($vistas == "./vista/contenido/login-view.php" || $vistas == "./vista/contenido/404-view.php"
+        || $vistas == "./vista/contenido/index-view.php"|| $vistas == " " || $vistas == "index") {
         include 'modulos/scriptsindex.php';
     } else {
         include 'modulos/scriptsapp.php';
     }
-
-
 
 
     ?>

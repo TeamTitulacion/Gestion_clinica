@@ -364,85 +364,80 @@ $medifo = $med->CtrDoctor();
 
                                 <fieldset>
                                     <div class="col-lg-12">
-
                                         <label for="">Antecedentes Medicos Familiares</label>
-
                                         <div class="field_wrapper">
-                                        <div class="col-lg-12">
-                                        <table class="table table-striped">
-
-                                            <thead>
-                                                <tr>
-                                                    <th>Tipos de antecedentes</th>
-                                                    <th>SI</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <th>Enfermedades Mentales</th>
-                                                    <td><input id="en1" name="en1" type="checkbox"></td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Anomalias Congenitas</th>
-                                                    <td><input id="en2" name="en2" type="checkbox"></td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Diabetes</th>
-                                                    <td><input id="en3" name="en3" type="checkbox"></td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Cancer</th>
-                                                    <td><input id="en4" name="en4" type="checkbox"></td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Tuberculosis</th>
-                                                    <td><input id="en5" name="en5" type="checkbox"></td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Hemopatas - Cuagulopaas</th>
-                                                    <td><input id="en6" name="en6" type="checkbox"></td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Policitemia</th>
-                                                    <td><input id="en7" name="en7" type="checkbox"></td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Leucemia</th>
-                                                    <td><input id="en8" name="en8" type="checkbox"></td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Enfermedades Cardiovasculares</th>
-                                                    <td><input id="en9" name="en9" type="checkbox"></td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Alcoholismo</th>
-                                                    <td><input id="en10" name="en10" type="checkbox"></td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Enfermedades de Transimision Sexual (ETS)</th>
-                                                    <td><input id="en11" name="en11" type="checkbox"></td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Consanguinidad con los padres</th>
-                                                    <td><input id="en12" name="en12" type="checkbox"></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="form-group">
-                                            <textarea class="form-control" id="en_obs" rows="3" placeholder="observaciones"></textarea>
+                                            <div class="col-lg-12">
+                                                <table class="table table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Tipos de antecedentes</th>
+                                                            <th>SI</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>Enfermedades Mentales</th>
+                                                            <td><input id="en1" name="en1" type="checkbox"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Anomalias Congenitas</th>
+                                                            <td><input id="en2" name="en2" type="checkbox"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Diabetes</th>
+                                                            <td><input id="en3" name="en3" type="checkbox"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Cancer</th>
+                                                            <td><input id="en4" name="en4" type="checkbox"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Tuberculosis</th>
+                                                            <td><input id="en5" name="en5" type="checkbox"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Hemopatas - Cuagulopaas</th>
+                                                            <td><input id="en6" name="en6" type="checkbox"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Policitemia</th>
+                                                            <td><input id="en7" name="en7" type="checkbox"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Leucemia</th>
+                                                            <td><input id="en8" name="en8" type="checkbox"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Enfermedades Cardiovasculares</th>
+                                                            <td><input id="en9" name="en9" type="checkbox"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Alcoholismo</th>
+                                                            <td><input id="en10" name="en10" type="checkbox"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Enfermedades de Transimision Sexual (ETS)</th>
+                                                            <td><input id="en11" name="en11" type="checkbox"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Consanguinidad con los padres</th>
+                                                            <td><input id="en12" name="en12" type="checkbox"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="form-group">
+                                                    <textarea class="form-control" id="en_obs" rows="3" placeholder="observaciones"></textarea>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                        </div>
-
                                     </div>
                                     <div class="col-lg-12">
                                         <h2>Examen Estomatologico</h2>
                                     </div>
                                     <div class="col-lg-6">
                                         <table class="table table-striped">
-
                                             <thead>
                                                 <tr>
                                                     <th>Tejidos Blandos</th>
@@ -571,7 +566,7 @@ $medifo = $med->CtrDoctor();
 
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <textarea class="form-control" rows="3" placeholder="Observaciones"></textarea>
+                                            <textarea class="form-control" id="exa_obs" rows="3" placeholder="Observaciones"></textarea>
                                         </div>
                                     </div>
 
@@ -584,7 +579,7 @@ $medifo = $med->CtrDoctor();
                                             <h2>Odontograma de ingreso</h2>
                                             <div class=" contenedor">
                                                 <div class="form-group ">
-                                                    <a> 
+                                                    <a>
                                                         <img class="btn btn-default diente" id="1" src="<?php echo SERVERURL ?>/assets/dientes/1.png" alt=""><br>
                                                         <p> sano</p>
                                                     </a>

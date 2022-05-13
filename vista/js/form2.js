@@ -37,19 +37,19 @@ $(document).on("click", "#guardar", function () {
   let TiposAnte20 = document.getElementById("TiposAnte20").value;
   let TiposAnte21 = document.getElementById("TiposAnte21").value;
   let ObservaAntece = document.getElementById("ObservaAntece").value;
-  let en1= document.getElementById('en1').value;
-  let en2= document.getElementById('en2').value;
-  let en3= document.getElementById('en3').value;
-  let en4= document.getElementById('en4').value;
-  let en5= document.getElementById('en5').value;
-  let en6= document.getElementById('en6').value;
-  let en7= document.getElementById('en7').value;
-  let en8= document.getElementById('en8').value;
-  let en9= document.getElementById('en9').value;
-  let en10= document.getElementById('en10').value;
-  let en11= document.getElementById('en11').value;
-  let en12= document.getElementById('en12').value;
-  let en_obs= document.getElementById('en_obs').value; 
+  let en1 = document.getElementById("en1").value;
+  let en2 = document.getElementById("en2").value;
+  let en3 = document.getElementById("en3").value;
+  let en4 = document.getElementById("en4").value;
+  let en5 = document.getElementById("en5").value;
+  let en6 = document.getElementById("en6").value;
+  let en7 = document.getElementById("en7").value;
+  let en8 = document.getElementById("en8").value;
+  let en9 = document.getElementById("en9").value;
+  let en10 = document.getElementById("en10").value;
+  let en11 = document.getElementById("en11").value;
+  let en12 = document.getElementById("en12").value;
+  let en_obs = document.getElementById("en_obs").value;
   let TejidosN1 = document.getElementById("TejidosN1").value;
   let TejidosA1 = document.getElementById("TejidosA1").value;
   let TejidosN2 = document.getElementById("TejidosN2").value;
@@ -90,6 +90,7 @@ $(document).on("click", "#guardar", function () {
   let AtmA6 = document.getElementById("AtmA6").value;
   let AtmN7 = document.getElementById("AtmN7").value;
   let AtmA7 = document.getElementById("AtmA7").value;
+  let exa_obs = document.getElementById("exa_obs").value;
   let d1 = document.getElementById("d1").src;
   let d2 = document.getElementById("d2").src;
   let d3 = document.getElementById("d3").src;
@@ -188,6 +189,60 @@ $(document).on("click", "#guardar", function () {
     type: "POST",
     url: "../ajax/historia.ajax.php",
     data: {
+      tn1: TejidosN1,
+      tn2: TejidosN2,
+      tn3: TejidosN3,
+      tn4: TejidosN4,
+      tn5: TejidosN5,
+      tn6: TejidosN6,
+      tn7: TejidosN7,
+      tn8: TejidosN8,
+      tn9: TejidosN9,
+      tn10: TejidosN10,
+      tn11: TejidosN11,
+      tn12: TejidosN12,
+      tn13: TejidosN13,
+      t1a: TejidosA1,
+      t2a: TejidosA2,
+      t3a: TejidosA3,
+      t4a: TejidosA4,
+      t5a: TejidosA5,
+      t6a: TejidosA6,
+      t7a: TejidosA7,
+      t8a: TejidosA8,
+      t9a: TejidosA9,
+      t10a: TejidosA10,
+      t11a: TejidosA11,
+      t12a: TejidosA12,
+      t13a: TejidosA13,
+      at1: AtmN1,
+      at2: AtmN2,
+      at3: AtmN3,
+      at4: AtmN4,
+      at5: AtmN5,
+      at6: AtmN6,
+      at7: AtmN7,
+      at1a: AtmA1,
+      at2a: AtmA2,
+      at3a: AtmA3,
+      at4a: AtmA4,
+      at5a: AtmA5,
+      at6a: AtmA6,
+      at7a: AtmA7,
+      exa_obs: exa_obs,
+      en1: en1,
+      en2: en2,
+      en3: en3,
+      en4: en4,
+      en5: en5,
+      en6: en6,
+      en7: en7,
+      en8: en8,
+      en9: en9,
+      en10: en10,
+      en11: en11,
+      en12: en12,
+      en_obs: en_obs,
       d1: d1,
       d2: d2,
       d3: d3,
