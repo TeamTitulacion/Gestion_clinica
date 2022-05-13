@@ -14,13 +14,13 @@ class DashboardControlador extends DashboardModelo
     }
     public function CtrMedicos()
     {
-        $Nmedicos = mainModel::ejecutar_consulta_simple("SELECT Count(*) as contador FROM tbl_medico ");
+        $Nmedicos = mainModel::ejecutar_consulta_simple("SELECT Count(*) as contador FROM tbl_medico WHERE id_perfil=2 AND med_estado!=1");
         $respuesta = $Nmedicos->fetchAll();
         return $respuesta;
     }
     public function CtrPacientes()
     {
-        $Npacientes = mainModel::ejecutar_consulta_simple("SELECT Count(*) as contador FROM tbl_paciente");
+        $Npacientes = mainModel::ejecutar_consulta_simple("SELECT Count(*) as contador FROM tbl_pacientep");
         $respuesta = $Npacientes->fetchAll();
         return $respuesta;
     }
