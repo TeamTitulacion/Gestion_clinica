@@ -176,7 +176,7 @@ class HistoriaModelo extends mainModel
 
         $dmatriz = [$d1, $d2, $d3, $d4, $d5, $d6, $d7, $d8, $d9,$d10,$d11];
         $cont = 0;
-        for ($i = 0; $i <= 10; $i++) {
+        for ($i = 0; $i <= 8; $i++) {
             $sql = mainModel::conectar()->prepare($sqlmatriz[$i]);
             $sql->execute($dmatriz[$i]);
             if ($sql->rowCount() >= 1) {
