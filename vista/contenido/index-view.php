@@ -22,7 +22,6 @@ $med = $galeria->CtrMedicos();
 					<li><a class="nav-link" href="#home">Inicio</a></li>
 					<li><a class="nav-link" href="#about">Acerca de Nosotros</a></li>
 					<li><a class="nav-link" href="#services">Nuestros Servicios </a></li>
-					<li><a class="nav-link" href="#appointment">Citas</a></li>
 					<li><a class="nav-link" href="#gallery">Galeria</a></li>
 					<li><a class="nav-link" href="#team">Doctor</a></li>
 					<li><a class="nav-link" href="login">Login</a></li>
