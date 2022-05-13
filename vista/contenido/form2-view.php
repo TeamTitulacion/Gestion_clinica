@@ -1423,7 +1423,7 @@ $medifo = $med->CtrDoctor();
                                     <input type="button" name="next" class="next btn btn-info" value="Siguiente" />
                                 </fieldset>
                                 <fieldset>
-                                 <!--   <div class="col-lg-12">
+                                 <  <div class="col-lg-12">
                                         <h2>Examenes complementarios</h2>
                                         <div class="col-lg-6">
                                             <input type="file" id="intra" name="intra" class="form-control">
@@ -1433,7 +1433,7 @@ $medifo = $med->CtrDoctor();
                                             <input class="form-control" id="intrad" type="text" placeholder="Observaciones">
                                         </div>
                                     </div>
-                                                    -->
+                                                    
                                     <div class="col-lg-6">
                                         <h3>Radiografia Extra oral</h3>
                                         <table class="table table-striped">

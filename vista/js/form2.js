@@ -208,7 +208,7 @@ $(document).on("click", "#guardar", function () {
   let AccioPreveFre5 = document.getElementById("AccioPreveFre5").value;
   let AccioPreveSI6 = document.querySelector("#AccioPreveSI6").checked;
   let AccioPreveFre6 = document.getElementById("AccioPreveFre6").value;
-  //let exam2 = document.getElementById("intrad").value;
+  let exam2 = document.getElementById("intrad").value;
   let RadioExtraO1 = document.getElementById("RadioExtraO1").value;
   let RadioExtraO2 = document.getElementById("RadioExtraO2").value;
   let RadioExtraO3 = document.getElementById("RadioExtraO3").value;
@@ -241,8 +241,8 @@ $(document).on("click", "#guardar", function () {
   let PlanTra6 = document.getElementById("PlanTra6").value;
   let PlanTra7 = document.getElementById("PlanTra7").value;
   var frmDatas = new FormData();
-  //frmDatas.append("exa1", $("input[name=intra]")[0].files[0]);
-  //frmDatas.append("exa2", exam2);
+  frmDatas.append("exa1", $("input[name=intra]")[0].files[0]);
+  frmDatas.append("exa2", exam2);
   frmDatas.append("exa3", RadioExtraO1);
   frmDatas.append("exa4", RadioExtraO2);
   frmDatas.append("exa5", RadioExtraO3);
