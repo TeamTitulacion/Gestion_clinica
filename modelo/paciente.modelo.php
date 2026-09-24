@@ -12,8 +12,6 @@ class  PacienteModelo extends mainModel
         $sql->execute();
         $respuesta = $sql->fetchAll(PDO::FETCH_ASSOC);
         return json_encode($respuesta, JSON_UNESCAPED_UNICODE);
-        $sql->close();
-        $sql = null;
     }
     protected function MdlPacienteHis($id)
     {
@@ -22,8 +20,6 @@ class  PacienteModelo extends mainModel
         $sql->execute(array(":id" => $id));
         $respuestaid = $sql->fetchAll(PDO::FETCH_ASSOC);
         return $respuestaid;
-        $sql->close();
-        $sql = null;
     }
     
 }

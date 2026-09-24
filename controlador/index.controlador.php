@@ -3,14 +3,14 @@ class Index
 {
     public function CtrGaleria()
     {
-        $path = "C:\\xampp\\htdocs\\Gestion_clinica\\assets\\app\\galeria\\";
+        $path = 'F:\laragon\www\Gestion_clinica\assets\app';
         $gale = preg_grep('~\.(jpg|png|jpeg)$~', scandir($path));
         return $gale;
     }
     public function CtrEliminarGal()
     {
         $delgale = $_POST['img'];
-        $path = "C:\\xampp\\htdocs\\Gestion_clinica\\assets\\app\\galeria\\";
+        $path = 'F:\laragon\www\Gestion_clinica\assets\app\galeria';
        
         if (unlink($path.$delgale)) {
             echo "1";
@@ -22,7 +22,7 @@ class Index
     public function CtrEliminarMed()
     {
         $delgale = $_POST['med'];
-        $path = "C:\\xampp\\htdocs\\Gestion_clinica\\assets\\app\\medico\\";
+        $path = 'F:\laragon\www\Gestion_clinica\assets\app\medico';
        
         if (unlink($path.$delgale)) {
             echo "1";
@@ -33,7 +33,7 @@ class Index
     }
     public function CtrMedicos()
     {
-        $path = "C:\\xampp\\htdocs\\Gestion_clinica\\assets\\app\\medico\\";
+        $path = 'F:\laragon\www\Gestion_clinica\assets\app\medico';
         $med = preg_grep('~\.(jpg|png|jpeg)$~', scandir($path));
         return $med;
     }

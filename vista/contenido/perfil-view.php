@@ -1,9 +1,11 @@
 <?php
-require_once './controlador/medico.controlador.php';
+require_once '../../controlador/medico.controlador.php';
+session_start(['name' => 'UIC']);
+$medid = $_SESSION['id'] ?? 0;
 $obj = new MedicoControlador();
-$medit = $obj->CtrObtenerdatos();
-$perid = $obj->CtrPerfilista($medit['id_perfil']);
-$catid = $obj->CtrCategorialista($medit['id_categoria']);
+$medit = $obj->CtrObtenerdatosID($medid);
+$perid = $obj->CtrPerfilista($medit['id_perfil'] ?? 1);
+$catid = $obj->CtrCategorialista($medit['id_categoria'] ?? 1);
 ?>
 <div id="page-wrapper">
     <div class="container-fluid">

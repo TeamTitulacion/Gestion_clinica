@@ -22,7 +22,7 @@ class PDF extends FPDF
     //Cabecera de página
     function Header()
     {
-        $imgurl = "http://localhost/Gestion_clinica/vista/img/logo.png";
+        $imgurl = __DIR__ . "/../vista/img/logo.png";
         //Logo
         $this->Image($imgurl, 20, 8, 30, 20, "PNG");
         //Arial bold 15
@@ -59,8 +59,8 @@ class PDF extends FPDF
         $this->Ln();
         //body
         foreach ($respuesta as $key => $value) {
-            $this->Cell($size, 7, utf8_decode($value['med_nombre'] . " " . $value['med_apellido']), 1);
-            $this->Cell($size, 7, utf8_decode($value['cat_detalle']), 1);
+            $this->Cell($size, 7, mb_convert_encoding($value['med_nombre'] . " " . $value['med_apellido'], 'ISO-8859-1', 'UTF-8'), 1);
+            $this->Cell($size, 7, mb_convert_encoding($value['cat_detalle'], 'ISO-8859-1', 'UTF-8'), 1);
             $this->Cell($size, 7, $value['med_telefono'], 1);
             $this->Cell($size, 7, $value['med_direccion'], 1);
             if ($value['med_estado']==0) {

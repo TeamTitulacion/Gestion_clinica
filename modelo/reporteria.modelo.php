@@ -6,31 +6,25 @@ if ($peticionAjax) {
 }
 class ReporteriaModelo extends mainModel
 {
-    protected function MdlReporteriaGeneral()
+    public static function MdlReporteriaGeneral()
     {
-        $sql = mainModel::conectar()->prepare("SELECT * FROM tbl_visitas");
+        $sql = mainModel::conectar()->prepare("SELECT id_Visitas, vis_ip, vis_fecha FROM tbl_visitas");
         $sql->execute();
         $respuesta = $sql->fetchAll(PDO::FETCH_ASSOC);
         return $respuesta;
-        $sql->close();
-        $sql = null;
     }
-    protected function MdlReporteriaMedico()
+    public static function MdlReporteriaMedico()
     {
-        $sql = mainModel::conectar()->prepare("SELECT * FROM tbl_medico AS m, tbl_categoria AS c, tbl_perfil AS p WHERE m.id_categoria=c.id_categoria AND m.id_perfil=p.id_perfil");
+        $sql = mainModel::conectar()->prepare("SELECT m.id_medico, m.med_nombre, m.med_apellido, m.med_telefono, m.med_direccion, m.med_estado, m.med_imagen, c.cat_detalle, p.per_detalle FROM tbl_medico AS m INNER JOIN tbl_categoria AS c ON m.id_categoria = c.id_categoria INNER JOIN tbl_perfil AS p ON m.id_perfil = p.id_perfil");
         $sql->execute();
         $respuesta = $sql->fetchAll(PDO::FETCH_ASSOC);
         return $respuesta;
-        $sql->close();
-        $sql = null;
     }
-    protected function MdlReporteriaPaciente()
+    public static function MdlReporteriaPaciente()
     {
-        $sql = mainModel::conectar()->prepare("SELECT * FROM tbl_paciente");
+        $sql = mainModel::conectar()->prepare("SELECT id_paciente, pac_nombre, pac_apellido, pac_sexo, pac_nacimiento, pac_dni, pac_direccion, pac_correo, pac_telefono, pac_sangre FROM tbl_pacientep");
         $sql->execute();
         $respuesta = $sql->fetchAll(PDO::FETCH_ASSOC);
         return $respuesta;
-        $sql->close();
-        $sql = null;
     }
 }

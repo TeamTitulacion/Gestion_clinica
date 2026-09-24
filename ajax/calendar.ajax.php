@@ -27,6 +27,10 @@ if (isset($_POST['id'])|| isset($_POST['pac']) || (isset($_POST['title']) && iss
         $insCalendar = new CalendarControlador();
         print_r($insCalendar->CtrListarMed());
     }
+    if (isset($_POST['drag']) && isset($_POST['id']) && isset($_POST['fecha'])) {
+        $insCalendar = new CalendarControlador();
+        echo $insCalendar->CtrDrag();
+    }
 } else {
     session_start();
     session_destroy();

@@ -40,6 +40,35 @@ document.addEventListener("DOMContentLoaded", function () {
     hiddenDays: [0],
     events: jqxhr,
     editable: true,
+    eventDrop: function (info) {
+      const id = info.event.id;
+      const nuevaFecha = info.event.startStr;
+      console.log('Drag event:', { id, nuevaFecha });
+      $.ajax({
+        url: "./ajax/calendar.ajax.php",
+        type: "POST",
+        data: {
+          drag: true,
+          id: id,
+          fecha: nuevaFecha,
+        },
+        datatype: "json",
+        success: function (data) {
+          console.log('Drag response:', data);
+          if (data == 1 || data.success === true) {
+            Swal.fire("Exito", "La cita fue movida", "success");
+          } else {
+            Swal.fire("Error", "No se pudo mover la cita: " + JSON.stringify(data), "warning");
+            info.revert(); // Revert visual change on failure
+          }
+        },
+        error: function (xhr, status, error) {
+          console.error('Drag AJAX error:', status, error, xhr.responseText);
+          Swal.fire("Error", "Error de red: " + error, "warning");
+          info.revert();
+        },
+      });
+    },
     dateClick: function (info) {
       document.getElementById("start").value = info.dateStr;
       registrar.classList.remove("hidden");

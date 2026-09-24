@@ -12,7 +12,6 @@ class VisitasModelo extends mainModel
         ORDER BY id_Visitas ASC");
         $sql->execute(array(':ip' => $dato));
         return $sql;
-        $sql->close();
         $sql= null;
     }
     protected function MdlInsertar($dato)

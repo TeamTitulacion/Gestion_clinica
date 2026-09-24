@@ -3,4 +3,19 @@
     width: 100%;
     height: 100%;
 }
+
+/* Permitir scroll táctil nativo en FullCalendar (mobile) */
+@media (pointer: coarse) {
+  .fc .fc-dayGridMonth,
+  .fc .fc-timeGridWeek,
+  .fc .fc-timeGridDay,
+  .fc .fc-listWeek {
+    touch-action: pan-y;
+    -webkit-touch-action: pan-y;
+  }
+  .fc-scroller {
+    touch-action: pan-y;
+    -webkit-touch-action: pan-y;
+  }
+}
 /** ADD YOUR AWESOME CODES HERE **/

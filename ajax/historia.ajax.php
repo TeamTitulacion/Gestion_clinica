@@ -41,6 +41,6 @@ if (isset($_POST['his']) || (isset($_POST['pac']) && isset($_POST['fecha']) && i
      {
        
         $actualizar = new HistoriaControlador();
-        print_r($actualizar->CtrActualizar());
+        echo $actualizar->CtrActualizar();
     }
 }

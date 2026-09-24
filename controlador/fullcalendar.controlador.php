@@ -16,7 +16,7 @@ class CalendarControlador extends CalendarModelo
         $end = mainModel::limpiar_cadena($_POST['end']);
 
         $dato = ["fecha" => $fecha, "evento" => $evento, "odonto" => $odonto, "pac" => $pac, "end" => $end];
-        $consulta = mainModel::ejecutar_consulta_simple("SELECT * FROM tbl_citas WHERE cit_end BETWEEN '$fecha' AND '$end'");
+        $consulta = mainModel::ejecutar_consulta_simple("SELECT * FROM tbl_citas WHERE cit_start BETWEEN ? AND ?", [$fecha, $end]);
         if ($consulta->rowCount() >= 1) {
             echo "nocita";
         } else {
@@ -54,7 +54,7 @@ class CalendarControlador extends CalendarModelo
         $end = mainModel::limpiar_cadena($_POST['end']);
 
         $dato = ["fecha" => $fecha, "evento" => $evento, "id" => $id, "odonto" => $odonto, "pac" => $pac, "end" => $end];
-        $consulta = mainModel::ejecutar_consulta_simple("SELECT * FROM tbl_citas WHERE cit_end BETWEEN '$fecha' AND '$end'");
+        $consulta = mainModel::ejecutar_consulta_simple("SELECT * FROM tbl_citas WHERE cit_start BETWEEN ? AND ?", [$fecha, $end]);
         if ($consulta->rowCount() >= 1) {
             echo "nocita";
         } else {
@@ -68,18 +68,17 @@ class CalendarControlador extends CalendarModelo
         }
     }
 
-    // Eliminar
-    public function CtrEliminar()
+    // Arrastrar (Drag & Drop)
+    public function CtrDrag()
     {
-
-        $id = mainModel::limpiar_cadena($_POST['Eid']);
-        $eliminar = CalendarModelo::MdlEliminar($id);
-
-        if ($eliminar->rowCount() >= 1) {
-            echo "1";
+        $id = mainModel::limpiar_cadena($_POST['id']);
+        $fecha = mainModel::limpiar_cadena($_POST['fecha']);
+        $res = CalendarModelo::Mdleiminarcita($id, $fecha);
+        if ($res->rowCount() >= 0) {
+            echo 1;
         } else {
-
-            echo "2";
+            echo 2;
         }
     }
+
 }

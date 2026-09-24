@@ -50,7 +50,7 @@ class HistoriaControlador extends HistoriaModelo
         $dirr = mainModel::limpiar_cadena($_POST['Dirr']);
         $corre = mainModel::limpiar_cadena($_POST['Corre']);
         $tele = mainModel::limpiar_cadena($_POST['Tele']);
-        $consulta = mainModel::ejecutar_consulta_simple("SELECT * FROM tbl_pacientep WHERE pac_dni = '$dni'");
+        $consulta = mainModel::ejecutar_consulta_simple("SELECT * FROM tbl_pacientep WHERE pac_dni = ?", [$dni]);
         if ($consulta->rowCount() >= 1) {
             return 'existe';
         } else {

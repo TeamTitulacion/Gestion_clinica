@@ -1,5 +1,5 @@
 <?php
-const SERVERURL = 'http://localhost/Gestion_clinica';
+const SERVERURL = 'http://localhost:8080/Gestion_clinica/';
 const COMPANY   = 'Cruz Medi Dental';
-const direccion = 'C:\xampp\htdocs\Gestion_clinica';
+const direccion = 'F:\laragon\www\Gestion_clinica';
 date_default_timezone_set('America/Guayaquil');

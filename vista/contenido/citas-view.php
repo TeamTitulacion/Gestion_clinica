@@ -117,4 +117,3 @@ $pac=$med->CtrLpacientes();
 
 
 
-<script src="<?php echo SERVERURL ?>/vista/js/fullcalendar/main.min.js"></script>

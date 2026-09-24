@@ -71,14 +71,23 @@ class MedicoControlador extends MedicoModelo
         $desencryp = explode("/", $_GET['views']);
         $idpass = mainModel::decryption($desencryp[1]);
         $idpass = mainModel::limpiar_cadena($idpass);
-        $query = mainModel::ejecutar_consulta_simple("SELECT * FROM tbl_medico AS m, tbl_categoria AS c, tbl_perfil AS p WHERE id_medico='$idpass' AND m.id_categoria=c.id_categoria AND p.id_perfil=m.id_perfil");
-        $respuesta = $query->fetch();
+        $consulta = self::conectar()->prepare("SELECT * FROM tbl_medico AS m, tbl_categoria AS c, tbl_perfil AS p WHERE id_medico = ? AND m.id_categoria = c.id_categoria AND p.id_perfil = m.id_perfil");
+        $consulta->execute([$idpass]);
+        $respuesta = $consulta->fetch();
         return $respuesta;
     }
     public function CtrPerfilista($dato)
     {
         $query = mainModel::ejecutar_consulta_simple("SELECT * FROM tbl_perfil WHERE id_perfil!='$dato'");
         $respuesta = $query->fetchAll(PDO::FETCH_ASSOC);
+        return $respuesta;
+    }
+
+    public function CtrObtenerdatosID($id)
+    {
+        $consulta = self::conectar()->prepare("SELECT * FROM tbl_medico AS m, tbl_categoria AS c, tbl_perfil AS p WHERE id_medico = ? AND m.id_categoria = c.id_categoria AND p.id_perfil = m.id_perfil");
+        $consulta->execute([$id]);
+        $respuesta = $consulta->fetch();
         return $respuesta;
     }
     public function CtrCategorialista($dato)

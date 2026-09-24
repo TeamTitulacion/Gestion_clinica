@@ -33,11 +33,16 @@ class PacienteControlador extends PacienteModelo
     }
     public function CtrHistoria()
     {
-        $desencryp = explode("/", $_GET['views']);
+        $views = $_GET['views'] ?? 'CMD1727185298-1';
+        $desencryp = explode("/", $views);
         $idpass = mainModel::decryption($desencryp[1]);
-        $idpass = mainModel::limpiar_cadena($idpass);       
-        $sql=mainModel::ejecutar_consulta_simple("SELECT * FROM tbl_pacienteP AS p, tbl_encabezadop AS e, tbl_cuerpop as c, tbl_antecente_medico AS an, tbl_dientesp AS d, tbl_haccionprevP AS h, tbl_antecedente_familiar as f,tbl_ptratamientoP AS t, tbl_examenesP AS ex, tbl_signosvitalesP AS s, tbl_antecedentesP AS a,tbl_medico as m,tbl_examen_estomatologico as exa  WHERE f.id_paciente=p.id_paciente AND e.enc_nhistoria='$idpass' and p.id_paciente=e.id_paciente and e.` id_encabezado`=c.id_encabezado AND c.id_cuerpo=d.id_cuerpo AND h.id_cuerpo=c.id_cuerpo AND p.id_paciente=an.id_paciente AND t.id_cuerpo=c.id_cuerpo AND ex.id_cuerpo=c.id_cuerpo AND s.id_cuerpo=c.id_cuerpo AND a.id_paciente=p.id_paciente AND e.id_medico=m.id_medico AND exa.id_cuerpo=c.id_cuerpo");
-        $respuesta=$sql->fetch();
+        $idpass = mainModel::limpiar_cadena($idpass);
+        
+        $sql = mainModel::ejecutar_consulta_simple(
+            "SELECT * FROM tbl_pacienteP AS p INNER JOIN tbl_encabezadop AS e ON p.id_paciente = e.id_paciente INNER JOIN tbl_cuerpop AS c ON e.id_encabezado = c.id_encabezado INNER JOIN tbl_medico AS m ON e.id_medico = m.id_medico LEFT JOIN tbl_antecente_medico AS an ON p.id_paciente = an.id_paciente LEFT JOIN tbl_dientesp AS d ON c.id_cuerpo = d.id_cuerpo LEFT JOIN tbl_haccionprevP AS h ON c.id_cuerpo = h.id_cuerpo LEFT JOIN tbl_antecedente_familiar AS f ON p.id_paciente = f.id_paciente LEFT JOIN tbl_ptratamientoP AS t ON c.id_cuerpo = t.id_cuerpo LEFT JOIN tbl_examenesP AS ex ON c.id_cuerpo = ex.id_cuerpo LEFT JOIN tbl_signosvitalesP AS s ON c.id_cuerpo = s.id_cuerpo LEFT JOIN tbl_antecedentesP AS a ON p.id_paciente = a.id_paciente WHERE e.enc_nhistoria = ?",
+            [$idpass]
+        );
+        $respuesta = $sql->fetch();
         return $respuesta;
 
     }

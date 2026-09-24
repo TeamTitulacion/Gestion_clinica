@@ -22,7 +22,7 @@ class PDF extends FPDF
     //Cabecera de página
     function Header()
     {
-        $imgurl = "http://localhost/Gestion_clinica/vista/img/logo.png";
+        $imgurl = __DIR__ . "/../vista/img/logo.png";
         //Logo
         $this->Image($imgurl, 20, 8, 30, 20, "PNG");
         //Arial bold 15
@@ -68,7 +68,7 @@ foreach ($pac as $key => $value) {
     $pdf->Ln();
     $pdf->Cell($tamano, 10, "Apellidos: " . $value['pac_apellido'], 'LR', 0, 'L', false);
     $pdf->Ln();
-    $pdf->Cell($tamano, 10, "Identificacion: " . $value['pac_num_documento'], 'LR', 0, 'L', false);
+    $pdf->Cell($tamano, 10, "Identificacion: " . $value['pac_dni'], 'LR', 0, 'L', false);
     $pdf->Ln();
     if ($value['pac_sexo'] == 1) {
         $pdf->Cell($tamano, 10, "Sexo: " . "Masculino", 'LR', 0, 'L', false);
@@ -76,11 +76,11 @@ foreach ($pac as $key => $value) {
         $pdf->Cell($tamano, 10, "Sexo: " . "Femenino", 'LR', 0, 'L', false);
     }
     $pdf->Ln();
-    $pdf->Cell($tamano, 10, "Fecha de nacimiento: " . $value['pac_fecha_nacimiento'], 'LR', 0, 'L', false);
+    $pdf->Cell($tamano, 10, "Fecha de nacimiento: " . $value['pac_nacimiento'], 'LR', 0, 'L', false);
     $pdf->Ln();
     $pdf->Cell($tamano, 10, "Telefono: " . $value['pac_telefono'], 'LR', 0, 'L', false);
     $pdf->Ln();
-    $pdf->Cell($tamano, 10, "Correo: " . $value['pac_email'], 'LR', 0, 'L', false);
+    $pdf->Cell($tamano, 10, "Correo: " . $value['pac_correo'], 'LR', 0, 'L', false);
     $pdf->Ln();
     $pdf->Cell($tamano, 10, "Direccion: " . $value['pac_direccion'], 'LR', 0, 'L', false);
     $pdf->Ln();

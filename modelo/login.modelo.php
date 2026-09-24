@@ -14,9 +14,6 @@ class LoginModelo extends mainModel
         $sql->bindParam(":password", $datos['password']);
         $sql->execute();
         return $sql;
-
-        $sql->close();
-        $sql = null;
     }
     
 

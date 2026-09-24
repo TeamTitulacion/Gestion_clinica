@@ -15,13 +15,11 @@ class mainModel
     }
 
     // Consultas simples
-    protected function ejecutar_consulta_simple($consulta)
+    public static function ejecutar_consulta_simple($consulta, $parametros = [])
     {
         $respuesta = self::conectar()->prepare($consulta);
-        $respuesta->execute();
+        $respuesta->execute($parametros);
         return $respuesta;
-        $respuesta->close();
-        $respuesta = null;
     }
 
     public static function encryption($string)
@@ -56,12 +54,12 @@ class mainModel
         $cadena = str_ireplace("^", "", $cadena);
         $cadena = str_ireplace("[", "", $cadena);
         $cadena = str_ireplace("]", "", $cadena);
-        $cadena = str_ireplace("==", "", $cadena);
         return $cadena;
     }
     //Mensajes de Alerta
     protected function sweet_alert($datos)
     {
+        $alerta = "";
         if ($datos['Alerta'] == "simple") {
             $alerta = "<script>
             swal(

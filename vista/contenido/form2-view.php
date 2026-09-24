@@ -74,7 +74,7 @@ $medifo = $med->CtrDoctor();
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <span class="input-group-addon">Sexo</span>
-                                                <?php if ($res['pac_sexo'] = 1) { ?>
+                                                <?php if ($res['pac_sexo'] == 1) { ?>
                                                     <input type="text" value="Masculino" class="form-control" disabled>
                                                 <?php } else { ?>
                                                     <input type="text" value="Femenino" class="form-control" disabled>
@@ -376,7 +376,7 @@ $medifo = $med->CtrDoctor();
 
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <textarea class="form-control" value="<?php echo $res['ant_observaciones'] ?>" rows="3" placeholder="Observaciones" id="ObservaAntece" name="ObservaAntece"></textarea>
+                                            <textarea class="form-control" id="ObservaAntece" name="ObservaAntece" rows="3" placeholder="Observaciones"><?php echo htmlspecialchars($res['ant_observaciones'] ?? ''); ?></textarea>
                                         </div>
                                     </div>
 
@@ -461,7 +461,7 @@ $medifo = $med->CtrDoctor();
                                             </div>
                                             <div class="col-lg-12">
                                                 <div class="form-group">
-                                                    <textarea class="form-control" value=" <?php echo $res['anf_observaciones'] ?>" id="en_obs" rows="3" placeholder="observaciones"></textarea>
+                                                    <textarea class="form-control" id="en_obs" name="en_obs" rows="3" placeholder="observaciones"><?php echo htmlspecialchars($res['anf_observaciones'] ?? ''); ?></textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -481,93 +481,93 @@ $medifo = $med->CtrDoctor();
                                             <tbody>
                                                 <tr>
                                                     <th>Labio Superior</th>
-                                                    <td><input id="TejidosN1" <?php if ($res['exa_t1n']=='true') {
+                                                    <td><input id="TejidosN1" <?php if (($res['exa_t1n'] ?? '') == 'true') {
                                                         echo 'checked'; } ?> name="TejidosN1" type="checkbox"></td>
-                                                    <td><input id="TejidosA1" <?php if ($res['exa_t1a']=='true') {
+                                                    <td><input id="TejidosA1" <?php if (($res['exa_t1a'] ?? '') == 'true') {
                                                         echo 'checked'; } ?> name="TejidosA1" type="checkbox"></td>
                                                 </tr>
                                                 <tr>
                                                     <th>Labio Inferior</th>
-                                                    <td><input id="TejidosN2" <?php if ($res['exa_t2n']=='true') {
+                                                    <td><input id="TejidosN2" <?php if (($res['exa_t2n'] ?? '') == 'true') {
                                                         echo 'checked'; } ?> name="TejidosN2" type="checkbox"></td>
-                                                    <td><input id="TejidosA2" <?php if ($res['exa_t2a']=='true') {
+                                                    <td><input id="TejidosA2" <?php if (($res['exa_t2a'] ?? '') == 'true') {
                                                         echo 'checked'; } ?> name="TejidosA2" type="checkbox"></td>
                                                 </tr>
                                                 <tr>
                                                     <th>Comisuras</th>
-                                                    <td><input id="TejidosN3" <?php if ($res['exa_t3n']=='true') {
+                                                    <td><input id="TejidosN3" <?php if (($res['exa_t3n'] ?? '') == 'true') {
                                                         echo 'checked'; } ?> name="TejidosN3" type="checkbox"></td>
-                                                    <td><input id="TejidosA3" <?php if ($res['exa_t3a']=='true') {
+                                                    <td><input id="TejidosA3" <?php if (($res['exa_t3a'] ?? '') == 'true') {
                                                         echo 'checked'; } ?> name="TejidosA3" type="checkbox"></td>
                                                 </tr>
                                                 <tr>
                                                     <th>Mucosa Oral</th>
-                                                    <td><input id="TejidosN4" <?php if ($res['exa_t4n']=='true') {
+                                                    <td><input id="TejidosN4" <?php if (($res['exa_t4n'] ?? '') == 'true') {
                                                         echo 'checked'; } ?> name="TejidosN4" type="checkbox"></td>
-                                                    <td><input id="TejidosA4" <?php if ($res['exa_t4a']=='true') {
+                                                    <td><input id="TejidosA4" <?php if (($res['exa_t4a'] ?? '') == 'true') {
                                                         echo 'checked'; } ?> name="TejidosA4" type="checkbox"></td>
                                                 </tr>
                                                 <tr>
                                                     <th>Surcos Yugales</th>
-                                                    <td><input id="TejidosN5" <?php if ($res['exa_t5n']=='true') {
+                                                    <td><input id="TejidosN5" <?php if (($res['exa_t5n'] ?? '') == 'true') {
                                                         echo 'checked'; } ?> name="TejidosN5" type="checkbox"></td>
-                                                    <td><input id="TejidosA5" <?php if ($res['exa_t5a']=='true') {
+                                                    <td><input id="TejidosA5" <?php if (($res['exa_t5a'] ?? '') == 'true') {
                                                         echo 'checked'; } ?> name="TejidosA5" type="checkbox"></td>
                                                 </tr>
                                                 <tr>
                                                     <th>Frenillos</th>
-                                                    <td><input id="TejidosN6" <?php if ($res['exa_t6n']=='true') {
+                                                    <td><input id="TejidosN6" <?php if (($res['exa_t6n'] ?? '') == 'true') {
                                                         echo 'checked'; } ?> name="TejidosN6" type="checkbox"></td>
-                                                    <td><input id="TejidosA6" <?php if ($res['exa_t6a']=='true') {
+                                                    <td><input id="TejidosA6" <?php if (($res['exa_t6a'] ?? '') == 'true') {
                                                         echo 'checked'; } ?> name="TejidosA6" type="checkbox"></td>
                                                 </tr>
                                                 <tr>
                                                     <th>Paladar</th>
-                                                    <td><input id="TejidosN7" <?php if ($res['exa_t7n']=='true') {
+                                                    <td><input id="TejidosN7" <?php if (($res['exa_t7n'] ?? '') == 'true') {
                                                         echo 'checked'; } ?> name="TejidosN7" type="checkbox"></td>
-                                                    <td><input id="TejidosA7" <?php if ($res['exa_t7a']=='true') {
+                                                    <td><input id="TejidosA7" <?php if (($res['exa_t7a'] ?? '') == 'true') {
                                                         echo 'checked'; } ?> name="TejidosA7" type="checkbox"></td>
                                                 </tr>
                                                 <tr>
                                                     <th>Orofaringe</th>
-                                                    <td><input id="TejidosN8" <?php if ($res['exa_t8n']=='true') {
+                                                    <td><input id="TejidosN8" <?php if (($res['exa_t8n'] ?? '') == 'true') {
                                                         echo 'checked'; } ?> name="TejidosN8" type="checkbox"></td>
-                                                    <td><input id="TejidosA8" <?php if ($res['exa_t8a']=='true') {
+                                                    <td><input id="TejidosA8" <?php if (($res['exa_t8a'] ?? '') == 'true') {
                                                         echo 'checked'; } ?> name="TejidosA8" type="checkbox"></td>
                                                 </tr>
                                                 <tr>
                                                     <th>Lengua</th>
-                                                    <td><input id="TejidosN9" <?php if ($res['exa_t9n']=='true') {
+                                                    <td><input id="TejidosN9" <?php if (($res['exa_t9n'] ?? '') == 'true') {
                                                         echo 'checked'; } ?> name="TejidosN9" type="checkbox"></td>
-                                                    <td><input id="TejidosA9" <?php if ($res['exa_t9a']=='true') {
+                                                    <td><input id="TejidosA9" <?php if (($res['exa_t9a'] ?? '') == 'true') {
                                                         echo 'checked'; } ?> name="TejidosA9" type="checkbox"></td>
                                                 </tr>
                                                 <tr>
                                                     <th>Piso de boca</th>
-                                                    <td><input id="TejidosN10" <?php if ($res['exa_t10n']=='true') {
+                                                    <td><input id="TejidosN10" <?php if (($res['exa_t10n'] ?? '') == 'true') {
                                                         echo 'checked'; } ?> name="TejidosN10" type="checkbox"></td>
-                                                    <td><input id="TejidosA10" <?php if ($res['exa_t10a']=='true') {
+                                                    <td><input id="TejidosA10" <?php if (($res['exa_t10a'] ?? '') == 'true') {
                                                         echo 'checked'; } ?> name="TejidosA10" type="checkbox"></td>
                                                 </tr>
                                                 <tr>
                                                     <th>Rebordes Residuales</th>
-                                                    <td><input id="TejidosN11" <?php if ($res['exa_t11n']=='true') {
+                                                    <td><input id="TejidosN11" <?php if (($res['exa_t11n'] ?? '') == 'true') {
                                                         echo 'checked'; } ?> name="TejidosN11" type="checkbox"></td>
-                                                    <td><input id="TejidosA11" <?php if ($res['exa_t11a']=='true') {
+                                                    <td><input id="TejidosA11" <?php if (($res['exa_t11a'] ?? '') == 'true') {
                                                         echo 'checked'; } ?> name="TejidosA11" type="checkbox"></td>
                                                 </tr>
                                                 <tr>
                                                     <th>G.salivares</th>
-                                                    <td><input id="TejidosN12" <?php if ($res['exa_t12n']=='true') {
+                                                    <td><input id="TejidosN12" <?php if (($res['exa_t12n'] ?? '') == 'true') {
                                                         echo 'checked'; } ?> name="TejidosN12" type="checkbox"></td>
-                                                    <td><input id="TejidosA12" <?php if ($res['exa_t12a']=='true') {
+                                                    <td><input id="TejidosA12" <?php if (($res['exa_t12a'] ?? '') == 'true') {
                                                         echo 'checked'; } ?> name="TejidosA12" type="checkbox"></td>
                                                 </tr>
                                                 <tr>
                                                     <th>Otros Hallazgos</th>
-                                                    <td><input id="TejidosN13" <?php if ($res['exa_t13n']=='true') {
+                                                    <td><input id="TejidosN13" <?php if (($res['exa_t13n'] ?? '') == 'true') {
                                                         echo 'checked'; } ?> name="TejidosN13" type="checkbox"></td>
-                                                    <td><input id="TejidosA13" <?php if ($res['exa_t13a']=='true') {
+                                                    <td><input id="TejidosA13" <?php if (($res['exa_t13a'] ?? '') == 'true') {
                                                         echo 'checked'; } ?> name="TejidosA13" type="checkbox"></td>
                                                 </tr>
                                             </tbody>
@@ -585,52 +585,38 @@ $medifo = $med->CtrDoctor();
                                             <tbody>
                                                 <tr>
                                                     <th>Dolor Muscular</th>
-                                                    <td><input id="AtmN1" <?php if ($res['exa_atm1']=='true') {
-                                                        echo 'checked'; } ?> name="AtmN1" type="checkbox"></td>
-                                                    <td><input id="AtmA1" <?php if ($res['exa_atm1a']=='true') {
-                                                        echo 'checked'; } ?> name="AtmA1" type="checkbox"></td>
+                                                    <td><input id="AtmN1" <?php if (($res['exa_atm1'] ?? '') == 'true') { echo 'checked'; } ?> name="AtmN1" type="checkbox"></td>
+                                                    <td><input id="AtmA1" <?php if (($res['exa_atm1a'] ?? '') == 'true') { echo 'checked'; } ?> name="AtmA1" type="checkbox"></td>
                                                 </tr>
                                                 <tr>
                                                     <th>Labio Inferior</th>
-                                                    <td><input id="AtmN2" <?php if ($res['exa_atm2']=='true') {
-                                                        echo 'checked'; } ?> name="AtmN2" type="checkbox"></td>
-                                                    <td><input id="AtmA2" <?php if ($res['exa_atm2a']=='true') {
-                                                        echo 'checked'; } ?> name="AtmA2" type="checkbox"></td>
+                                                    <td><input id="AtmN2" <?php if (($res['exa_atm2'] ?? '') == 'true') { echo 'checked'; } ?> name="AtmN2" type="checkbox"></td>
+                                                    <td><input id="AtmA2" <?php if (($res['exa_atm2a'] ?? '') == 'true') { echo 'checked'; } ?> name="AtmA2" type="checkbox"></td>
                                                 </tr>
                                                 <tr>
                                                     <th>Ruido Artcular</th>
-                                                    <td><input id="AtmN3" <?php if ($res['exa_atm3']=='true') {
-                                                        echo 'checked'; } ?> name="AtmN3" type="checkbox"></td>
-                                                    <td><input id="AtmA3" <?php if ($res['exa_atm3a']=='true') {
-                                                        echo 'checked'; } ?> name="AtmA3" type="checkbox"></td>
+                                                    <td><input id="AtmN3" <?php if (($res['exa_atm3'] ?? '') == 'true') { echo 'checked'; } ?> name="AtmN3" type="checkbox"></td>
+                                                    <td><input id="AtmA3" <?php if (($res['exa_atm3a'] ?? '') == 'true') { echo 'checked'; } ?> name="AtmA3" type="checkbox"></td>
                                                 </tr>
                                                 <tr>
                                                     <th>Alteracion del Movimiento</th>
-                                                    <td><input id="AtmN4" <?php if ($res['exa_atm4']=='true') {
-                                                        echo 'checked'; } ?> name="AtmN4" type="checkbox"></td>
-                                                    <td><input id="AtmA4" <?php if ($res['exa_atm4a']=='true') {
-                                                        echo 'checked'; } ?> name="AtmA4" type="checkbox"></td>
+                                                    <td><input id="AtmN4" <?php if (($res['exa_atm4'] ?? '') == 'true') { echo 'checked'; } ?> name="AtmN4" type="checkbox"></td>
+                                                    <td><input id="AtmA4" <?php if (($res['exa_atm4a'] ?? '') == 'true') { echo 'checked'; } ?> name="AtmA4" type="checkbox"></td>
                                                 </tr>
                                                 <tr>
                                                     <th>Maloclusiones</th>
-                                                    <td><input id="AtmN5" <?php if ($res['exa_atm5']=='true') {
-                                                        echo 'checked'; } ?> name="AtmN5" type="checkbox"></td>
-                                                    <td><input id="AtmA5" <?php if ($res['exa_atm5a']=='true') {
-                                                        echo 'checked'; } ?> name="AtmA5" type="checkbox"></td>
+                                                    <td><input id="AtmN5" <?php if (($res['exa_atm5'] ?? '') == 'true') { echo 'checked'; } ?> name="AtmN5" type="checkbox"></td>
+                                                    <td><input id="AtmA5" <?php if (($res['exa_atm5a'] ?? '') == 'true') { echo 'checked'; } ?> name="AtmA5" type="checkbox"></td>
                                                 </tr>
                                                 <tr>
                                                     <th>Alteraciones Crecimiento</th>
-                                                    <td><input id="AtmN6" <?php if ($res['exa_atm6']=='true') {
-                                                        echo 'checked'; } ?> name="AtmN6" type="checkbox"></td>
-                                                    <td><input id="AtmA6" <?php if ($res['exa_atm6a']=='true') {
-                                                        echo 'checked'; } ?> name="AtmA6" type="checkbox"></td>
+                                                    <td><input id="AtmN6" <?php if (($res['exa_atm6'] ?? '') == 'true') { echo 'checked'; } ?> name="AtmN6" type="checkbox"></td>
+                                                    <td><input id="AtmA6" <?php if (($res['exa_atm6a'] ?? '') == 'true') { echo 'checked'; } ?> name="AtmA6" type="checkbox"></td>
                                                 </tr>
                                                 <tr>
                                                     <th>Otros Hallazgos</th>
-                                                    <td><input id="AtmN7" <?php if ($res['exa_atm7']=='true') {
-                                                        echo 'checked'; } ?> name="AtmN7" type="checkbox"></td>
-                                                    <td><input id="AtmA7" <?php if ($res['exa_atm7a']=='true') {
-                                                        echo 'checked'; } ?> name="AtmA7" type="checkbox"></td>
+                                                    <td><input id="AtmN7" <?php if (($res['exa_atm7'] ?? '') == 'true') { echo 'checked'; } ?> name="AtmN7" type="checkbox"></td>
+                                                    <td><input id="AtmA7" <?php if (($res['exa_atm7a'] ?? '') == 'true') { echo 'checked'; } ?> name="AtmA7" type="checkbox"></td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -639,7 +625,7 @@ $medifo = $med->CtrDoctor();
 
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <textarea class="form-control" value="<?php echo $res['exa_observaciones']?>" id="exa_obs" rows="3" placeholder="Observaciones"></textarea>
+                                            <textarea class="form-control" id="exa_obs" name="exa_obs" rows="3" placeholder="Observaciones"><?php echo htmlspecialchars($res['exa_observaciones'] ?? ''); ?></textarea>
                                         </div>
                                     </div>
 
@@ -1366,39 +1352,34 @@ $medifo = $med->CtrDoctor();
                                             <tbody>
                                                 <tr>
                                                     <th>Ha recibido charlas de higiene oral</th>
-                                                    <td><input id="AccioPreveSI1" <?php if ($res['hac_hi_oral']=='true') {
+                                                    <td><input id="AccioPreveSI1" <?php if (($res['hac_hi_oral'] ?? '') == 'true') {
                                                         echo 'checked';} ?> name="AccioPreveSI1" type="checkbox"></td>
-                                                    <td><input id="AccioPreveFre1" value="<?php echo $res['ha_hi1']; ?>" name="AccioPreveFre1" type="text"></td>
+                                                    <td><input id="AccioPreveFre1" value="<?php echo htmlspecialchars($res['ha_hi1'] ?? ''); ?>" name="AccioPreveFre1" type="text"></td>
                                                 </tr>
                                                 <tr>
                                                     <th>Practica el cepillado diario</th>
-                                                    <td><input id="AccioPreveSI2" <?php if ($res['ha_diario']=='true') {
-                                                        echo 'checked'; } ?> name="AccioPreveSI2" type="checkbox"></td>
-                                                    <td><input id="AccioPreveFre2" value="<?php echo $res['ha_hi2']; ?>" name="AccioPreveFre2" type="text"></td>
+                                                    <td><input id="AccioPreveSI2" <?php if (($res['ha_diario'] ?? '') == 'true') { echo 'checked'; } ?> name="AccioPreveSI2" type="checkbox"></td>
+                                                    <td><input id="AccioPreveFre2" value="<?php echo htmlspecialchars($res['ha_hi2'] ?? ''); ?>" name="AccioPreveFre2" type="text"></td>
                                                 </tr>
                                                 <tr>
                                                     <th>Usa seda dental</th>
-                                                    <td><input id="AccioPreveSI3" <?php if ($res['ha_dental']=='true') {
-                                                        echo 'checked'; } ?> name="AccioPreveSI3" type="checkbox"></td>
-                                                    <td><input id="AccioPreveFre3" value="<?php echo $res['ha_hi3']; ?>" name="AccioPreveFre3" type="text"></td>
+                                                    <td><input id="AccioPreveSI3" <?php if (($res['ha_dental'] ?? '') == 'true') { echo 'checked'; } ?> name="AccioPreveSI3" type="checkbox"></td>
+                                                    <td><input id="AccioPreveFre3" value="<?php echo htmlspecialchars($res['ha_hi3'] ?? ''); ?>" name="AccioPreveFre3" type="text"></td>
                                                 </tr>
                                                 <tr>
                                                     <th>Usa enjuague bucal</th>
-                                                    <td><input id="AccioPreveSI4" <?php if ($res['ha_bucal']=='true') {
-                                                        echo 'checked'; } ?> name="AccioPreveSI4" type="checkbox"></td>
-                                                    <td><input id="AccioPreveFre4" value="<?php echo $res['ha_hi4']; ?>" name="AccioPreveFre4" type="text"></td>
+                                                    <td><input id="AccioPreveSI4" <?php if (($res['ha_bucal'] ?? '') == 'true') { echo 'checked'; } ?> name="AccioPreveSI4" type="checkbox"></td>
+                                                    <td><input id="AccioPreveFre4" value="<?php echo htmlspecialchars($res['ha_hi4'] ?? ''); ?>" name="AccioPreveFre4" type="text"></td>
                                                 </tr>
                                                 <tr>
                                                     <th>Le han aplicado fluor</th>
-                                                    <td><input id="AccioPreveSI5" <?php if ($res['ha_fluor']=='true') {
-                                                        echo 'checked'; } ?> name="AccioPreveSI5" type="checkbox"></td>
-                                                    <td><input id="AccioPreveFre5" value="<?php echo $res['ha_hi5']; ?>" name="AccioPreveFre5" type="text"></td>
+                                                    <td><input id="AccioPreveSI5" <?php if (($res['ha_fluor'] ?? '') == 'true') { echo 'checked'; } ?> name="AccioPreveSI5" type="checkbox"></td>
+                                                    <td><input id="AccioPreveFre5" value="<?php echo htmlspecialchars($res['ha_hi5'] ?? ''); ?>" name="AccioPreveFre5" type="text"></td>
                                                 </tr>
                                                 <tr>
                                                     <th>Le han colocado sellantes</th>
-                                                    <td><input id="AccioPreveSI6" <?php if ($res['ha_sellantes']=='true') {
-                                                        echo 'checked'; } ?> name="AccioPreveSI6" type="checkbox"></td>
-                                                    <td><input id="AccioPreveFre6" value="<?php echo $res['ha_hi6']; ?>" name="AccioPreveFre6" type="text"></td>
+                                                    <td><input id="AccioPreveSI6" <?php if (($res['ha_sellantes'] ?? '') == 'true') { echo 'checked'; } ?> name="AccioPreveSI6" type="checkbox"></td>
+                                                    <td><input id="AccioPreveFre6" value="<?php echo htmlspecialchars($res['ha_hi6'] ?? ''); ?>" name="AccioPreveFre6" type="text"></td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -1423,7 +1404,7 @@ $medifo = $med->CtrDoctor();
                                     <input type="button" name="next" class="next btn btn-info" value="Siguiente" />
                                 </fieldset>
                                 <fieldset>
-                                 <!--   <div class="col-lg-12">
+                                 <  <div class="col-lg-12">
                                         <h2>Examenes complementarios</h2>
                                         <div class="col-lg-6">
                                             <input type="file" id="intra" name="intra" class="form-control">
@@ -1433,7 +1414,7 @@ $medifo = $med->CtrDoctor();
                                             <input class="form-control" id="intrad" type="text" placeholder="Observaciones">
                                         </div>
                                     </div>
-                                                    -->
+                                                    
                                     <div class="col-lg-6">
                                         <h3>Radiografia Extra oral</h3>
                                         <table class="table table-striped">

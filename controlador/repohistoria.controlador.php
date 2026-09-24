@@ -27,11 +27,11 @@ class PDFhistoria extends FPDF
         $this->Ln(6);
         //eslogan
         $this->SetFont('helvetica', '', 11);
-        $this->Cell(0, 0, utf8_decode('Cuidando la sonrisa de los más pequeños'), 0, 0, 'C');
+        $this->Cell(0, 0, mb_convert_encoding('Cuidando la sonrisa de los más pequeños', 'ISO-8859-1', 'UTF-8'), 0, 0, 'C');
         //Salto de línea
         $this->Ln(5);
         $this->SetFont('helvetica', '', 9);
-        $this->Cell(0, 0, utf8_decode('Panamericana sur km 0 y Av. Atacazo frente a la entrada del INIAP - Barrio Central de Cutuglagua.'), 0, 0, 'C');
+        $this->Cell(0, 0, mb_convert_encoding('Panamericana sur km 0 y Av. Atacazo frente a la entrada del INIAP - Barrio Central de Cutuglagua.', 'ISO-8859-1', 'UTF-8'), 0, 0, 'C');
         //Salto de línea
         $this->Ln(5);
     }
@@ -92,7 +92,7 @@ class PDFhistoria extends FPDF
         $this->Cell($tabla1, 5, 'Trastornos Respiratorios', 1, 0, 'l', 0, 0);
         $this->Cell(10, 5, ' ', 1, 0, 'l', 0, 0);
         $this->Ln();
-        $this->Cell($tabla1, 5, utf8_decode('Cirugias (incluye orales)'), 1, 0, 'l', 0, 0);
+        $this->Cell($tabla1, 5, mb_convert_encoding('Cirugias (incluye orales, 'ISO-8859-1', 'UTF-8')'), 1, 0, 'l', 0, 0);
         $this->Cell(10, 5, ' ', 1, 0, 'l', 0, 0);
         $this->Ln();
         $this->Cell($tabla1, 5, 'Enfermedades orales', 1, 0, 'l', 0, 0);
@@ -400,18 +400,18 @@ $fpdf->Cell(25, 5, 'Motivo: Revision anual', 0, 0, 'l', 0, 0);
 $fpdf->Ln(10);
 $fpdf->Cell(40, 5, 'Sexo: Masculino', 0, 0, 'l', 0, 0);
 $fpdf->Cell(44);
-$fpdf->Cell(51, 5, utf8_decode('Nombre del acompañante:'), 0, 0, 'l', 0, 0);
+$fpdf->Cell(51, 5, mb_convert_encoding('Nombre del acompañante:', 'ISO-8859-1', 'UTF-8'), 0, 0, 'l', 0, 0);
 $fpdf->Cell(0, 5, 'Kelly', 0, 0, 'l', 0, 0);
 $fpdf->Ln(10);
-$fpdf->Cell(40, 5,  utf8_decode('Edad: 21 años'), 0, 0, 'l', 0, 0);
+$fpdf->Cell(40, 5,  mb_convert_encoding('Edad: 21 años', 'ISO-8859-1', 'UTF-8'), 0, 0, 'l', 0, 0);
 $fpdf->Cell(45);
-$fpdf->Cell(53, 5, utf8_decode('Telefono del acompañante:'), 0, 0, 'l', 0, 0);
+$fpdf->Cell(53, 5, mb_convert_encoding('Telefono del acompañante:', 'ISO-8859-1', 'UTF-8'), 0, 0, 'l', 0, 0);
 $fpdf->Cell(0, 5, '0987654321', 0, 0, 'l', 0, 0);
 $fpdf->Ln(10);
 $fpdf->Cell(45, 5, 'Fecha de nacimiento: 2/06/2000', 0, 0, 'l', 0, 0);
 $fpdf->Cell(25, 5, '', 0, 0, 'l', 0, 0);
 $fpdf->Cell(15);
-$fpdf->Cell(9, 5, utf8_decode('VIH:'), 0, 0, 'l', 0, 0);
+$fpdf->Cell(9, 5, mb_convert_encoding('VIH:', 'ISO-8859-1', 'UTF-8'), 0, 0, 'l', 0, 0);
 $fpdf->Cell(0, 5, 'Negativo', 0, 0, 'l', 0, 0);
 $fpdf->Ln(10);
 $fpdf->Cell(16, 5, 'Sangre:', 0, 0, 'l', 0, 0);
@@ -435,7 +435,7 @@ $fpdf->Cell(18, 5, 'Estatura:', 0, 0, 'l', 0, 0);
 $fpdf->Cell(0, 5, '160cm', 0, 0, 'l', 0, 0);
 $fpdf->Ln(10);
 $fpdf->Cell(26, 5, 'Temperatura:', 0, 0, 'l', 0, 0);
-$fpdf->Cell(0, 5, utf8_decode('36°'), 0, 0, 'l', 0, 0);
+$fpdf->Cell(0, 5, mb_convert_encoding('36°', 'ISO-8859-1', 'UTF-8'), 0, 0, 'l', 0, 0);
 $fpdf->Ln(10);
 $fpdf->Cell(14, 5, 'Pulso:', 0, 0, 'l', 0, 0);
 $fpdf->Cell(0, 5, '75', 0, 0, 'l', 0, 0);
